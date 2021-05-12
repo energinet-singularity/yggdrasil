@@ -4,13 +4,13 @@
 # ingressDomain: test.domain.com 
 
 # This values is if you want to use paths instead of subdomains.
-host: testHost.com
+host: example.com
 
 networking:
   enabled: true
 
   ingress:
-    enabled: false
+    enabled: true
 
   cert-manager:
     enabled: false
@@ -19,10 +19,10 @@ tooling:
   enabled: true
 
   argowf:
-    enabled: false
+    enabled: true
 
   argo-events:
-    enabled: false
+    enabled: true
 
   harbor:
     enabled: false
@@ -34,13 +34,13 @@ monitoring:
   enabled: true
 
   prometheus:
-    enabled: false
+    enabled: true
 
   thanos:
     enabled: false
   
   grafana:
-    enabled: false
+    enabled: true
   
   loki:
     enabled: false
@@ -48,6 +48,20 @@ monitoring:
   jaeger-operator:
     enabled: false
 
+rook-ceph: 
+  enabled: true
+
+  rook:
+    enabled: true
+
+  ceph: 
+    enabled: true
+
+loadbalancer: 
+  enabled: true
+
+  loadbalancer: 
+    enabled: true
 
 # The same name as the project - This can be used to disable the whole project and namespace.
 example-guestbook:
