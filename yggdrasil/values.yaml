@@ -10,7 +10,7 @@ networking:
   enabled: true
 
   ingress:
-    enabled: false
+    enabled: true
 
   cert-manager:
     enabled: false
@@ -19,10 +19,10 @@ tooling:
   enabled: true
 
   argowf:
-    enabled: false
+    enabled: true
 
   argo-events:
-    enabled: false
+    enabled: true
 
   harbor:
     enabled: false
@@ -34,13 +34,13 @@ monitoring:
   enabled: true
 
   prometheus:
-    enabled: false
+    enabled: true
 
   thanos:
     enabled: false
   
   grafana:
-    enabled: false
+    enabled: true
   
   loki:
     enabled: false
