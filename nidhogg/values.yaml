@@ -12,12 +12,6 @@ argo-cd:
     enabled: true
   server: 
     config:
-      resource.customizations: |
-        extensions/Ingress:
-          health.lua: |
-            hs = {}
-            hs.status = "Healthy"
-            return hs
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
@@ -44,5 +38,10 @@ argo-cd:
             jsonPointers:
             - /webhooks/0/clientConfig/caBundle
             - /webhooks/0/namespaceSelector/matchExpressions/2
+        extensions/Ingress:
+          health.lua: |
+            hs = {}
+            hs.status = "Healthy"
+            return hs
     service: 
       type: NodePort
