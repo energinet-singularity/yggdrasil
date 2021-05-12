@@ -4,7 +4,7 @@
 # ingressDomain: test.domain.com 
 
 # This values is if you want to use paths instead of subdomains.
-host: example.com
+host: ingress.lynderup.net
 
 networking:
   enabled: true
@@ -61,6 +61,12 @@ loadbalancer:
   enabled: true
 
   loadbalancer: 
+    enabled: true
+
+cache: 
+  enabled: true
+  
+  cache:
     enabled: true
 
 # The same name as the project - This can be used to disable the whole project and namespace.
