@@ -12,6 +12,12 @@ argo-cd:
     enabled: true
   server: 
     config:
+      resource.customizations: |
+        extensions/Ingress:
+          health.lua: |
+            hs = {}
+            hs.status = "Healthy"
+            return hs
       repositories: |
         - type: helm
           url: https://argoproj.github.io/argo-helm
