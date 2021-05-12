@@ -16,7 +16,7 @@ project:
 apps:
   - name: ingress
     source:
-      repoURL: "https://github.com/distributed-technologies/mukube-ingress.git"
+      repoURL: "https://github.com/distributed-technologies/services-ingress.git"
       targetRevision: HEAD
       path: chart
       valuesFile: "ingress.yaml"
