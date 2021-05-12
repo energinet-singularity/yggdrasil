@@ -4,7 +4,7 @@
 # ingressDomain: test.domain.com 
 
 # This values is if you want to use paths instead of subdomains.
-host: ingress.lynderup.net
+host: example.com
 
 networking:
   enabled: true
