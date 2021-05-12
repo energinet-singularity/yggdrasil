@@ -57,6 +57,12 @@ rook-ceph:
   ceph: 
     enabled: true
 
+loadbalancer: 
+  enabled: true
+
+  loadbalancer: 
+    enabled: true
+
 # The same name as the project - This can be used to disable the whole project and namespace.
 example-guestbook:
   enabled: false
