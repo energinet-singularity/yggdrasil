@@ -13,7 +13,7 @@ apps:
   - name: rook
     source:
       repoURL: "https://github.com/distributed-technologies/services-rook.git"
-      targetRevision: rook-dependency
+      targetRevision: development
       path: chart
       valuesFile: "rook.yaml"
   - name: ceph
