@@ -1,0 +1,34 @@
+
+name: rook-ceph
+clusterService: true
+namespace: rook-ceph
+description: Rook.
+
+project:
+  name: rook-ceph
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+
+apps:
+  - name: rook
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-rook.git"
+      targetRevision: rook-dependency
+      path: chart
+      valuesFile: "rook.yaml"
+  - name: ceph
+    ingressAnnotation:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+    ingress:
+      argowf:
+        subDomain: ceph
+        path: /
+        servicePort: 8443
+        serviceName: rook-ceph-mgr-dashboard
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-ceph.git"
+      targetRevision: fileTest
+      path: chart
+      valuesFile: "ceph.yaml"
+

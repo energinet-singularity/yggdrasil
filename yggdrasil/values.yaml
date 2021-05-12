@@ -48,6 +48,14 @@ monitoring:
   jaeger-operator:
     enabled: false
 
+filesystem: 
+  enabled: true
+
+  rook:
+    enabled: true
+
+  ceph: 
+    enabled: true
 
 # The same name as the project - This can be used to disable the whole project and namespace.
 example-guestbook:
