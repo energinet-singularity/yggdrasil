@@ -17,14 +17,6 @@ apps:
       path: chart
       valuesFile: "rook.yaml"
   - name: ceph
-    ingressAnnotation:
-      traefik.ingress.kubernetes.io/router.entrypoints: web
-    ingress:
-      argowf:
-        subDomain: ceph
-        path: /
-        servicePort: 8443
-        serviceName: rook-ceph-mgr-dashboard
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"
       targetRevision: fileTest
