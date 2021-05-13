@@ -21,6 +21,14 @@ apps:
       targetRevision: dependency
       path: prometheus
       valuesFile: "prometheus.yaml"
+    ingressAnnotation:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+    ingress:
+      prometheus:
+        subDomain: prometheus
+        path: /
+        servicePort: 80
+        serviceName: prometheus
   - name: thanos
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-thanos.git'
