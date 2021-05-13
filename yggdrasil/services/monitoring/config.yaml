@@ -27,8 +27,8 @@ apps:
       prometheus:
         subDomain: prometheus
         path: /
-        servicePort: 80
-        serviceName: prometheus
+        servicePort: 9090
+        serviceName: prometheus-kube-prometheus-prometheus
   - name: thanos
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-thanos.git'

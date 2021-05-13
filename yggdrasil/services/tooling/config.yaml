@@ -23,7 +23,7 @@ apps:
         subDomain: argowf
         path: /
         servicePort: 80
-        serviceName: argowf
+        serviceName: argowf-server 
   - name: argo-events
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-argo-events.git"
