@@ -145,7 +145,7 @@ cat /tmp/config    "]
 echo { > /tmp/config.json;
 echo         \"auths\": { >> /tmp/config.json;
 echo                 \"https://index.docker.io/v1/\": { >> /tmp/config.json;
-echo                         \"auth\": \"amVsbGUxMjg6amFsbGUxMjM=\" >> /tmp/config.json;
+echo                         \"auth\": \"AUTH_HERE\" >> /tmp/config.json;
 echo                 } >> /tmp/config.json;
 echo         } >> /tmp/config.json;
 echo } >> /tmp/config.json;
@@ -195,8 +195,8 @@ cat /tmp/config.json']
           revision: "development"
     container:
       image: gcr.io/kaniko-project/executor:latest
-      args: ["--dockerfile=.devcontainer/Dockerfile",
-             "--destination=jelle128/energinet:v0.5.0"]
+      args: ["--dockerfile=.devcontainer/Dockerfile.build",
+             "--destination=jelle128/energinet:v0.5.1"]
       workingDir: /src
       env:
 
@@ -208,7 +208,7 @@ cat /tmp/config.json']
        - name: master0
          path: /workspace/mukube/overlay-artifacts/master0.tar
     container: 
-      image: jelle128/energinet:v0.5.0
+      image: jelle128/energinet:v0.5.1
 #    outputs: 
 #      artifacts: 
 #      - name: master0
