@@ -17,8 +17,8 @@ project:
 apps:
   - name: prometheus
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-prometheus.git'
-      targetRevision: dependency
+      repoURL: 'https://github.com/distributed-technologies/prometheus.git'
+      targetRevision: development
       path: prometheus
       valuesFile: "prometheus.yaml"
     ingressAnnotation:
