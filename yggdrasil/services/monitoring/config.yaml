@@ -19,7 +19,7 @@ apps:
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
       targetRevision: development
-      path: prometheus
+      path: chart
       valuesFile: "prometheus.yaml"
     ingressAnnotation:
       traefik.ingress.kubernetes.io/router.entrypoints: web
