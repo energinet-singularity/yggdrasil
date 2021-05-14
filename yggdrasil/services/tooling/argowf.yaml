@@ -1,1 +1,36 @@
-# argowf:
+argo: 
+  
+  # Influences the creation of the ConfigMap for the workflow-controller itself.
+  useDefaultArtifactRepo: true
+  useStaticCredentials: true
+  artifactRepository:
+    # archiveLogs will archive the main container logs as an artifact
+    archiveLogs: false
+    s3:
+      # Note the `key` attribute is not the actual secret, it's the PATH to
+      # the contents in the associated secret, as defined by the `name` attribute.
+      accessKeySecret:
+        name: artifactory-bucket
+        key:  AWS_ACCESS_KEY_ID
+      secretKeySecret:
+        name: artifactory-bucket
+        key: AWS_SECRET_ACCESS_KEY
+      insecure: true
+      bucket: argowf-bucket
+      endpoint: rook-ceph-rgw-my-store.rook-ceph.svc:80
+      # region:
+      # roleARN:
+      # useSDKCreds: true
+    # gcs:
+      # bucket: <project>-argo
+      # serviceAccountKeySecret is a secret selector.
+      # It references the k8s secret named 'my-gcs-credentials'.
+      # This secret is expected to have have the key 'serviceAccountKey',
+      # containing the base64 encoded credentials
+      # to the bucket.
+      #
+      # If it's running on GKE and Workload Identity is used,
+      # serviceAccountKeySecret is not needed.
+      # serviceAccountKeySecret:
+        # name: my-gcs-credentials
+        # key: serviceAcc
