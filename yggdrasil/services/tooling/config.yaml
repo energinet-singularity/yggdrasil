@@ -22,7 +22,7 @@ apps:
       argowf:
         subDomain: argowf
         path: /
-        servicePort: 80
+        servicePort: 2746
         serviceName: argowf-server 
   - name: argo-events
     source:
