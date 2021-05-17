@@ -34,3 +34,9 @@ argo:
       # serviceAccountKeySecret:
         # name: my-gcs-credentials
         # key: serviceAcc
+  minio:
+    # If set to true then chart installs minio and generate according artifactRepository section in workflow controller config map
+    install: false
+    defaultBucket:
+      enabled: false
+      name: argo-artifacts
