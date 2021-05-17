@@ -64,14 +64,6 @@ apps:
       path: loki
       # filename of values file that is local right next to this config.yaml file
       valuesFile: "loki.yaml"
-    ingressAnnotation:
-      traefik.ingress.kubernetes.io/router.entrypoints: web
-    ingress:
-      prometheus:
-        subDomain: loki
-        path: /
-        servicePort: 3100
-        serviceName: loki
   - name: jaeger-operator
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-jaeger-operator.git'
