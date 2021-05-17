@@ -1,1 +1,10 @@
-# grafana:
+grafana:
+  datasources: {}
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-kube-prometheus-prometheus
+        access: proxy
+        isDefault: true
