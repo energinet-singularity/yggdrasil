@@ -5,6 +5,10 @@ metadata:
 spec:
   serviceAccountName: workflow
   entrypoint: download-partial-build
+  volumes:
+  - name: docker
+    secret:
+      secretName: docker
   templates:
   - name: download-partial-build
     steps:
@@ -18,6 +22,8 @@ spec:
         template: helm-req
       - name: config
         template: config-req
+      - name: docker-login
+        template: generate-docker-login
     - - name: configure 
         template: configure-tar
         arguments: 
@@ -32,6 +38,10 @@ spec:
             from: "{{steps.config.outputs.artifacts.config}}"
       - name: build-mukube-container
         template: build-container
+        arguments: 
+          artifacts: 
+          - name: config
+            from: "{{steps.docker-login.outputs.artifacts.docker-config}}"
     - - name: build
         template: build-iso
         arguments:
@@ -127,6 +137,24 @@ cat /tmp/config    "]
       - name: config
         path: /tmp/config 
 
+  - name: generate-docker-login
+    container:
+      image: ubuntu:latest
+      command: [bash, -c]
+      args: ['
+echo { > /tmp/config.json;
+echo         \"auths\": { >> /tmp/config.json;
+echo                 \"https://index.docker.io/v1/\": { >> /tmp/config.json;
+echo                         \"auth\": \"AUTH_HERE\" >> /tmp/config.json;
+echo                 } >> /tmp/config.json;
+echo         } >> /tmp/config.json;
+echo } >> /tmp/config.json;
+cat /tmp/config.json']   
+    outputs:
+      artifacts:
+      - name: docker-config
+        path: /tmp/config.json
+
   - name: configure-tar
     inputs: 
       artifacts: 
@@ -158,6 +186,8 @@ cat /tmp/config    "]
   - name: build-container
     inputs: 
       artifacts: 
+      - name: config
+        path: /kaniko/.docker/config.json
       - name: source
         path: /src
         git: 
@@ -165,9 +195,10 @@ cat /tmp/config    "]
           revision: "development"
     container:
       image: gcr.io/kaniko-project/executor:latest
-      args: ["--dockerfile=.devcontainer/Dockerfile",
-             "--destination=jelle128/energinet:v0.5.0"]
+      args: ["--dockerfile=.devcontainer/Dockerfile.build",
+             "--destination=jelle128/energinet:v0.5.1"]
       workingDir: /src
+      env:
 
   - name: build-iso
     inputs:
@@ -177,7 +208,7 @@ cat /tmp/config    "]
        - name: master0
          path: /workspace/mukube/overlay-artifacts/master0.tar
     container: 
-      image: /tmp/image.tar
+      image: jelle128/energinet:v0.5.1
 #    outputs: 
 #      artifacts: 
 #      - name: master0

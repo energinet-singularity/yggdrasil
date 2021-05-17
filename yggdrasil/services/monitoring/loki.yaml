@@ -1,1 +1,6 @@
-# loki:
+loki:
+  loki:
+    enabled: true
+
+  promtail:
+    enabled: true

@@ -17,10 +17,18 @@ project:
 apps:
   - name: prometheus
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-prometheus.git'
-      targetRevision: dependency
-      path: prometheus
+      repoURL: 'https://github.com/distributed-technologies/prometheus.git'
+      targetRevision: development
+      path: chart
       valuesFile: "prometheus.yaml"
+    ingressAnnotation:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+    ingress:
+      prometheus:
+        subDomain: prometheus
+        path: /
+        servicePort: 9090
+        serviceName: prometheus-kube-prometheus-prometheus
   - name: thanos
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-thanos.git'

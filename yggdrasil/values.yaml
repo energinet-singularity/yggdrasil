@@ -4,7 +4,7 @@
 # ingressDomain: test.domain.com 
 
 # This values is if you want to use paths instead of subdomains.
-host: example.com
+ingressDomain: example.com
 
 networking:
   enabled: true
@@ -43,7 +43,7 @@ monitoring:
     enabled: true
   
   loki:
-    enabled: false
+    enabled: true
 
   jaeger-operator:
     enabled: false
