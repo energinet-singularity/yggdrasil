@@ -8,3 +8,8 @@ grafana:
         url: http://prometheus-kube-prometheus-prometheus
         access: proxy
         isDefault: true
+      - name: loki
+        type: Loki
+        url: http://loki:3100
+        access: proxy
+        isDefault: true
