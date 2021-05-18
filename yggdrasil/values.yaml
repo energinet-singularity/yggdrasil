@@ -20,7 +20,7 @@ tooling:
     enabled: true
 
   harbor:
-    enabled: false
+    enabled: true
 
   vault:
     enabled: false
