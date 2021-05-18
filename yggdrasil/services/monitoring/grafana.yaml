@@ -15,7 +15,15 @@ grafana:
           isDefault: false
   dashboards: 
     default: 
-      prom-stats: 
-        gnetId: 11454
+      ceph-dashboard:
+        gnetId: 2842
         revision: 14
+        datasource: Prometheus
+      loki:
+        gnetId: 12019
+        revision: 2
+        datasource: Loki
+      kafka:
+        gnetId: 11285
+        revision: 1
         datasource: Prometheus
