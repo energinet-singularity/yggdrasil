@@ -13,3 +13,9 @@ grafana:
           url: http://loki:3100
           access: proxy
           isDefault: false
+  dashboards: 
+    default: 
+      prom-stats: 
+        gnetId: 11454
+        revision: 14
+        datasource: Prometheus
