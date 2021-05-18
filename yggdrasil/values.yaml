@@ -20,7 +20,7 @@ tooling:
     enabled: true
 
   harbor:
-    enabled: true
+    enabled: false
 
   vault:
     enabled: false
@@ -62,6 +62,12 @@ cache:
   enabled: true
   
   cache:
+    enabled: true
+
+kafka: 
+  enabled: true
+
+  kafka: 
     enabled: true
 
 # The same name as the project - This can be used to disable the whole project and namespace.
