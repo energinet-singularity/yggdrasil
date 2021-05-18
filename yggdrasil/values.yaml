@@ -1,5 +1,5 @@
 # This values is if you want to use paths instead of subdomains.
-ingressDomain: ingress.lynderup.net
+ingressDomain: dev.garagen
 
 networking:
   enabled: true
@@ -11,7 +11,7 @@ networking:
     enabled: false
 
 tooling: 
-  enabled: true
+  enabled: false
 
   argowf:
     enabled: true
@@ -59,13 +59,13 @@ loadbalancer:
     enabled: true
 
 cache: 
-  enabled: true
+  enabled: false
   
   cache:
     enabled: true
 
 kafka: 
-  enabled: true
+  enabled: false
 
   kafka: 
     enabled: true
