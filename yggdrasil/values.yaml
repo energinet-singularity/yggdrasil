@@ -1,5 +1,5 @@
 # This values is if you want to use paths instead of subdomains.
-ingressDomain: lynderup.net
+ingressDomain: ingress.lynderup.net
 
 networking:
   enabled: true
