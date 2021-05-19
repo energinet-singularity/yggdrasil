@@ -1,1 +1,2 @@
-# this is a values file
+service: 
+  type: NodePort
