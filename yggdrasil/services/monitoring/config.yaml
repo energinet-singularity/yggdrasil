@@ -51,7 +51,7 @@ apps:
       traefik.ingress.kubernetes.io/router.entrypoints: web
     ingress:
       grafana:  
-        subDomain: grafana1
+        subDomain: grafana
         path: /
         servicePort: 80
         serviceName: grafana
