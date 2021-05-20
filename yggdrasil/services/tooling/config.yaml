@@ -36,6 +36,14 @@ apps:
       targetRevision: dependency
       path: harbor
       valuesFile: "harbor.yaml"
+    ingressAnnotation:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+    ingress:
+      argowf:
+        subDomain: harbor
+        path: /
+        servicePort: 80
+        serviceName: harbor
   - name: vault
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-vault.git"

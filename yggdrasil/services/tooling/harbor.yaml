@@ -1,1 +1,3 @@
-# harbor:
+harbor:
+  expose: 
+    type: clusterIP
