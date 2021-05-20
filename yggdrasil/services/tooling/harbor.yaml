@@ -3,6 +3,6 @@ harbor:
     type: nodePort
     tls: 
       enabled: false
-  externalURL: http://40.115.108.134
+  externalURL: http://harbor.ingress.lynderup.net:32080
   persistence: 
     enabled: false
