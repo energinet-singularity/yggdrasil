@@ -5,3 +5,11 @@ harbor:
       auto: 
         commonName: "harbor-common-name"
   externalURL: harbor
+  persistence:
+  persistentVolumeClaim:
+    registry:
+      size: 50Gi
+    chartmuseum:
+      size: 25Gi
+    jobservice:
+      size: 5Gi
