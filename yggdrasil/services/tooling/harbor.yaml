@@ -3,8 +3,6 @@ harbor:
     type: nodePort
     tls: 
       enabled: false
-      auto: 
-        commonName: "harbor-common-name"
   externalURL: 40.115.108.134
   persistence: 
     enabled: false
