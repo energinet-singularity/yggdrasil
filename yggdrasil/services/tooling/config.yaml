@@ -42,8 +42,8 @@ apps:
       harbor:
         subDomain: harbor
         path: /
-        servicePort: 80
-        serviceName: harbor
+        servicePort: 5000
+        serviceName: harbor-harbor-registry
   - name: vault
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-vault.git"
