@@ -39,7 +39,7 @@ apps:
     ingressAnnotation:
       traefik.ingress.kubernetes.io/router.entrypoints: web
     ingress:
-      argowf:
+      harbor:
         subDomain: harbor
         path: /
         servicePort: 80
