@@ -1,3 +1,6 @@
 harbor:
   expose: 
     type: clusterIP
+    tls: 
+      auto: 
+        commonName: "harbor-common-name"
