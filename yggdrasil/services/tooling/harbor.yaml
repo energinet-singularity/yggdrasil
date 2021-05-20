@@ -4,3 +4,4 @@ harbor:
     tls: 
       auto: 
         commonName: "harbor-common-name"
+  externalURL: harbor
