@@ -65,16 +65,10 @@ cache:
     enabled: true
 
 kafka: 
-  enabled: true
+  enabled: false
 
   kafka: 
-    enabled: true
-
-registry: 
-  enabled: true
-
-  registry: 
-    enabled: true
+    enabled: false
 
 # The same name as the project - This can be used to disable the whole project and namespace.
 example-guestbook:
