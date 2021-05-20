@@ -40,7 +40,7 @@ apps:
       traefik.ingress.kubernetes.io/router.entrypoints: web
     ingress:
       harbor:
-        subDomain: harbor
+        subDomain: harbor1
         path: /
         servicePort: 80
         serviceName: harbor
