@@ -65,7 +65,7 @@ cache:
     enabled: true
 
 kafka: 
-  enabled: false
+  enabled: true
 
   kafka: 
     enabled: true
