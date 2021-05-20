@@ -3,6 +3,6 @@ harbor:
     type: nodePort
     tls: 
       enabled: false
-  externalURL: https://40.115.108.134
+  externalURL: http://40.115.108.134
   persistence: 
     enabled: false
