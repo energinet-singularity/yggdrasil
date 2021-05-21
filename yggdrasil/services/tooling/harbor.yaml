@@ -1,8 +1,18 @@
-harbor:
+#harbor:
+#  expose: 
+#    type: nodePort
+#    tls: 
+#      enabled: false
+#  externalURL: http://harbor.ingress.lynderup.net:32080
+#  persistence: 
+#    enabled: false
+
+harbor: 
+  externalURL: "http://ingress.lynderup.net"
   expose: 
-    type: nodePort
     tls: 
       enabled: false
-  externalURL: http://harbor.ingress.lynderup.net:32080
-  persistence: 
-    enabled: false
+    ingress: 
+      hosts: 
+        core: ingress.lynderup.net
+
