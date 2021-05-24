@@ -32,9 +32,9 @@ apps:
       valuesFile: "argo-events.yaml"
   - name: harbor
     source:
-      repoURL: "https://github.com/Open-Olympus-Project/tooling-harbor.git"
-      targetRevision: dependency
-      path: harbor
+      repoURL: "https://github.com/distributed-technologies/services-harbor.git"
+      targetRevision: TECH-286-harbor-chart
+      path: chart
       valuesFile: "harbor.yaml"
     ingressAnnotation:
       traefik.ingress.kubernetes.io/router.entrypoints: web
