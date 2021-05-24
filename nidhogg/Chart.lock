@@ -1,9 +1,9 @@
 dependencies:
 - name: argo-cd
   repository: https://argoproj.github.io/argo-helm
-  version: 2.17.1
+  version: 3.3.5
 - name: mukube-vnet
   repository: https://distributed-technologies.github.io/helm-repository/
   version: v0.1.2
-digest: sha256:24acad6086212898cecec8cbaeda2886fe495f3171197ddc4355bd717a56f1bc
-generated: "2021-03-26T09:51:42.317177836Z"
+digest: sha256:aa615281c99da5b9dc5b7c7e7e9d48a04f01d58586a1171bef583b69ba824b05
+generated: "2021-05-20T14:24:39.33193313Z"

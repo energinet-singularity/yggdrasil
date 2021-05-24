@@ -13,6 +13,6 @@ apps:
   - name: kafka
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
-      targetRevision: kafka-dashboard
+      targetRevision: kafka-connectors
       path: chart
       valuesFile: "kafka.yaml"
