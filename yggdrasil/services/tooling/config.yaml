@@ -33,7 +33,7 @@ apps:
   - name: harbor
     source:
       repoURL: "https://github.com/distributed-technologies/services-harbor.git"
-      targetRevision: TECH-286-harbor-chart
+      targetRevision: valuesTest
       path: chart
       valuesFile: "harbor.yaml"
     ingressAnnotation:
