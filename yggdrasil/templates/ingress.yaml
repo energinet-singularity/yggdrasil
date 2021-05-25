@@ -20,7 +20,7 @@ metadata:
 spec:
   ingressClassName: "ingress-traefik"
   rules:
-    - host: {{if $root.Values.ingressDomain }} {{ printf "%s.%s" $config.subDomain $root.Values.ingressDomain | quote }} {{ else }} {{ $root.Values.host }} {{ end }}
+    - host: {{if $root.Values.ingressDomain }} {{ printf "%s.%s" .subDomain $root.Values.ingressDomain | quote }} {{ else }} {{ $root.Values.host }} {{ end }}
       http:
         paths:
           - path: {{ .path }}
