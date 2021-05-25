@@ -17,13 +17,13 @@ tooling:
   enabled: true
 
   argowf:
-    enabled: true
+    enabled: false
 
   argo-events:
-    enabled: true
+    enabled: false
 
   harbor:
-    enabled: true
+    enabled: false
 
   vault:
     enabled: false
@@ -35,16 +35,16 @@ monitoring:
   enabled: true
 
   prometheus:
-    enabled: true
+    enabled: false
 
   thanos:
     enabled: false
   
   grafana:
-    enabled: true
+    enabled: false
   
   loki:
-    enabled: true
+    enabled: false
 
   jaeger-operator:
     enabled: false
@@ -59,16 +59,16 @@ rook-ceph:
     enabled: true
 
 loadbalancer: 
-  enabled: true
+  enabled: false
 
   loadbalancer: 
-    enabled: true
+    enabled: false
 
 cache: 
-  enabled: true
+  enabled: faæse
   
   cache:
-    enabled: true
+    enabled: false
 
 kafka: 
   enabled: false
