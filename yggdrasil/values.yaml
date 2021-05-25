@@ -28,6 +28,9 @@ tooling:
   vault:
     enabled: false
 
+  trow: 
+    enabled: true
+
 monitoring:
   enabled: true
 
