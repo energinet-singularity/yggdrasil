@@ -15,4 +15,4 @@ issuers:
           metadata:
             annotations: 
               traefik.ingress.kubernetes.io/router.entrypoints: web
-        class: ingress-traefik 
+        name: trow 
