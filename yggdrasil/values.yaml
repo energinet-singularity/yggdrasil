@@ -32,7 +32,7 @@ tooling:
     enabled: true
 
 monitoring:
-  enabled: true
+  enabled: false
 
   prometheus:
     enabled: false
