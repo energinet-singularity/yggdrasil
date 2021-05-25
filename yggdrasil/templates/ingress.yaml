@@ -6,12 +6,13 @@
   {{- range $project.apps }}
     {{ if (index $projectValues .name).enabled }}
     {{- if .ingress }}
+    {{- $name := .name }}
       {{- range .ingress }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .name }}-{{ randAlphaNum 5 | quote }}
+  name: {{ $name }}-{{ randAlphaNum 5 }}
   namespace: {{ $project.namespace }}
   {{- with .annotation }}
   annotations:
