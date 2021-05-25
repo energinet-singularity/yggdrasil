@@ -1,8 +1,8 @@
-# issuer:
+issuer:
 
-#   email: <test_email>
+  email: test@test.com
  
-#   vault: 
-#     enabled: false
+  vault: 
+    enabled: false
 
 # cert-manager:
