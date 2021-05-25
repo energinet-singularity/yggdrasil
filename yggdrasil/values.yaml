@@ -8,7 +8,10 @@ networking:
     enabled: true
 
   cert-manager:
-    enabled: false
+    enabled: true
+
+  cert-manager-issuer: 
+    enabled: true
 
 tooling: 
   enabled: true
