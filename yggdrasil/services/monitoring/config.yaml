@@ -47,14 +47,13 @@ apps:
       path: grafana
       # filename of values file that is local right next to this config.yaml file
       valuesFile: "grafana.yaml"
-    ingressAnnotation:
-      traefik.ingress.kubernetes.io/router.entrypoints: web
-    ingress:
-      grafana:  
-        subDomain: grafana1
+    ingress:  
+      - subDomain: grafana1
         path: /
         servicePort: 80
         serviceName: grafana
+        annotation: 
+          traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: loki
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-loki.git'

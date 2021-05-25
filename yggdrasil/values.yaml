@@ -8,10 +8,10 @@ networking:
     enabled: true
 
   cert-manager:
-    enabled: true
+    enabled: false
 
   cert-manager-issuer: 
-    enabled: true
+    enabled: false
 
 tooling: 
   enabled: true
@@ -23,13 +23,13 @@ tooling:
     enabled: false
 
   harbor:
-    enabled: false
+    enabled: true
 
   vault:
     enabled: false
 
   trow: 
-    enabled: true
+    enabled: false
 
 monitoring:
   enabled: false
@@ -65,7 +65,7 @@ loadbalancer:
     enabled: false
 
 cache: 
-  enabled: faæse
+  enabled: false
   
   cache:
     enabled: false
