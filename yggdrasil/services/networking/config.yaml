@@ -25,4 +25,4 @@ apps:
       repoURL: "https://github.com/Open-Olympus-Project/k8s-certmanager.git"
       targetRevision: dependency
       path: cert-manager
-      valuesFile: cert-manager
+      valuesFile: "cert-manager.yaml"
