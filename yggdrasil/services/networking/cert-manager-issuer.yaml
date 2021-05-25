@@ -1,0 +1,14 @@
+issuers:
+- name: letsencrypt-prod
+  enabled: true
+  kind: ClusterIssuer
+
+  email: test@test.com
+
+  server: https://acme-v02.api.letsencrypt.org/directory
+  privateKeySecretRef: letsencrypt
+
+  solvers:
+  - http01:
+      ingress:
+        class: ingress-traefik 
