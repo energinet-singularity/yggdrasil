@@ -1,8 +1,8 @@
 harbor:
   expose: 
-    type: ingress
+    type: nodePort
     tls: 
-      enabled: true
+      enabled: false
   externalURL: harbor.ingress.lynderup.net
   persistence: 
     enabled: false
