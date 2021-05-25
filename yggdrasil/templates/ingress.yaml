@@ -11,7 +11,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .name }}
+  name: {{ .name }}-{{ .annotation.traefik.ingress.kubernetes.io/router.entrypoints }}
   namespace: {{ $project.namespace }}
   {{- with .annotation }}
   annotations:
