@@ -1,6 +1,6 @@
 harbor:
   expose: 
-    type: nodePort
+    type: clusterIP
     tls: 
       enabled: false
   externalURL: harbor.ingress.lynderup.net

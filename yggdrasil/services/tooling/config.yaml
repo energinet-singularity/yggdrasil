@@ -49,6 +49,12 @@ apps:
         serviceName: harbor-harbor-core
         annotation: 
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      - subDomain: harbor-ui
+        path: /
+        servicePort: 80
+        serviceName: harbor
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: vault
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-vault.git"
