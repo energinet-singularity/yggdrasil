@@ -1,6 +1,10 @@
 # This values is if you want to use paths instead of subdomains.
 ingressDomain: ingress.lynderup.net
 
+configs: 
+  secret:
+    argocdServerAdminPassword: $2y$12$m4KC7G9d8NFxInl7GRpQ1OpPPrF43Msa33ZQjj0YmT6f8uwjHW8AO 
+
 networking:
   enabled: true
 
