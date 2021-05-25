@@ -1,0 +1,3 @@
+replicaCount: 3
+trow: 
+  domain: trow.ingress.lynderup.net
