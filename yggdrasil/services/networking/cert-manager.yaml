@@ -5,4 +5,5 @@ issuer:
   vault: 
     enabled: false
 
-# cert-manager:
+cert-manager:
+  installCRDs: true
