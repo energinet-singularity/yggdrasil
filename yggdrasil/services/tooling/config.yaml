@@ -61,9 +61,3 @@ apps:
       targetRevision: dependency
       path: vault
       valuesFile: "vault.yaml"
-  - name: trow
-    source:
-      repoURL: "https://github.com/ContainerSolutions/trow.git"
-      targetRevision: HEAD
-      path: charts/trow
-      valuesFile: "trow.yaml"
