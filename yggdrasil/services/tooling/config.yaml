@@ -16,14 +16,13 @@ apps:
       targetRevision: argowf-dependency
       path: chart
       valuesFile: "argowf.yaml"
-    ingressAnnotation:
-      traefik.ingress.kubernetes.io/router.entrypoints: web
     ingress:
-      argowf:
-        subDomain: argowf
+      - subDomain: argowf
         path: /
         servicePort: 2746
         serviceName: argowf-server 
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: argo-events
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-argo-events.git"

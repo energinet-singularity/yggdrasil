@@ -21,31 +21,24 @@ apps:
       targetRevision: development
       path: chart
       valuesFile: "prometheus.yaml"
-    ingressAnnotation:
-      traefik.ingress.kubernetes.io/router.entrypoints: web
     ingress:
-      prometheus:
-        subDomain: prometheus
+      - subDomain: prometheus
         path: /
         servicePort: 9090
         serviceName: prometheus-kube-prometheus-prometheus
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: thanos
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-thanos.git'
-      # standard targetRevision is HEAD
-      targetRevision: dependency
-      # path to Helm chart in repo. Should be . if Helm chart is in root. 
+      targetRevision: dependency 
       path: thanos
-      # filename of values file that is local right next to this config.yaml file
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-grafana.git'
-      # standard targetRevision is HEAD
       targetRevision: dependency
-      # path to Helm chart in repo. Should be . if Helm chart is in root. 
       path: grafana
-      # filename of values file that is local right next to this config.yaml file
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana1
@@ -57,18 +50,12 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-loki.git'
-      # standard targetRevision is HEAD
-      targetRevision: dependency
-      # path to Helm chart in repo. Should be . if Helm chart is in root. 
+      targetRevision: dependency 
       path: loki
-      # filename of values file that is local right next to this config.yaml file
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-jaeger-operator.git'
-      # standard targetRevision is HEAD
       targetRevision: dependency
-      # path to Helm chart in repo. Should be . if Helm chart is in root. 
       path: jaeger-operator
-      # filename of values file that is local right next to this config.yaml file
       valuesFile: "jaeger-operator.yaml"
