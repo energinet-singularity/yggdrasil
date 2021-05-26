@@ -9,18 +9,18 @@ traefik:
 
   service:
     enabled: true
-#    type: LoadBalancer
-    type: NodePort
+    type: LoadBalancer
+#    type: NodePort
     spec: {}
 #      loadBalancerIP: 172.18.0.19
 
-  ports:
-    web:
-      nodePort: 32080
-    websecure:
-      nodePort: 32443
-      tls: 
-        enabled: true  
+#  ports:
+#    web:
+#      nodePort: 32080
+#    websecure:
+#      nodePort: 32443
+#      tls: 
+#        enabled: true  
 
   logs:
     access:
