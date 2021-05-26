@@ -13,3 +13,33 @@ grafana:
           url: http://loki:3100
           access: proxy
           isDefault: false
+  adminUser: admin
+  adminPassword: password
+
+  dashboardProviders: 
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+      - name: 'default'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/default
+
+  dashboards: 
+    default: 
+      ceph-dashboard:
+        gnetId: 2842
+        revision: 14
+        datasource: Prometheus
+      loki:
+        gnetId: 12019
+        revision: 2
+        datasource: Loki
+      kafka:
+        gnetId: 11285
+        revision: 1
+        datasource: Prometheus

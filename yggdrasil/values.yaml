@@ -1,8 +1,3 @@
-#fqdn: 
-
-# This values is if you want to have the applications as a subdomain.
-# ingressDomain: test.domain.com 
-
 # This values is if you want to use paths instead of subdomains.
 ingressDomain: example.com
 
@@ -15,6 +10,9 @@ networking:
   cert-manager:
     enabled: false
 
+  cert-manager-issuer: 
+    enabled: false
+
 tooling: 
   enabled: true
 
@@ -25,7 +23,7 @@ tooling:
     enabled: true
 
   harbor:
-    enabled: false
+    enabled: true
 
   vault:
     enabled: false
@@ -69,10 +67,8 @@ cache:
   cache:
     enabled: true
 
-# The same name as the project - This can be used to disable the whole project and namespace.
-example-guestbook:
-  enabled: false
+kafka: 
+  enabled: true
 
-  # The same name as one of the apps listed under the project.
-  example-guestbook:
-    enabled: false
+  kafka: 
+    enabled: true

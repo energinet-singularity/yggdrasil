@@ -6,30 +6,31 @@
   {{- range $project.apps }}
     {{ if (index $projectValues .name).enabled }}
     {{- if .ingress }}
+    {{- $name := .name }}
+      {{- range .ingress }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .name }}
+  name: {{ lower (printf "%s.%s" $name (randAlphaNum 5)) }}
   namespace: {{ $project.namespace }}
-  {{- with .ingressAnnotation }}
+  {{- with .annotation }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   ingressClassName: "ingress-traefik"
   rules:
-    {{- range $name, $config := .ingress }}
-    - host: {{if $root.Values.ingressDomain }} {{ printf "%s.%s" $config.subDomain $root.Values.ingressDomain | quote }} {{ else }} {{ $root.Values.host }} {{ end }}
+    - host: {{if $root.Values.ingressDomain }} {{ printf "%s.%s" .subDomain $root.Values.ingressDomain | quote }} {{ else }} {{ $root.Values.host }} {{ end }}
       http:
         paths:
-          - path: {{ $config.path }}
+          - path: {{ .path }}
             pathType: Prefix
             backend:
               service:
-                name: {{ $config.serviceName }}
+                name: {{ .serviceName }}
                 port:
-                  number: {{ $config.servicePort }}
+                  number: {{ .servicePort }}
     {{ end }}
     {{ end }}
     {{ end }} 

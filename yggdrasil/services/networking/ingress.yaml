@@ -19,3 +19,9 @@ traefik:
 #      nodePort: 32080
 #    websecure:
 #      nodePort: 32443
+#      tls: 
+#        enabled: true  
+
+  logs:
+    access:
+      enabled: true
