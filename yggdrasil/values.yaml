@@ -1,5 +1,5 @@
 # This values is if you want to use paths instead of subdomains.
-ingressDomain: ingress.lynderup.net
+ingressDomain: example.com
 
 networking:
   enabled: true
@@ -17,10 +17,10 @@ tooling:
   enabled: true
 
   argowf:
-    enabled: false
+    enabled: true
 
   argo-events:
-    enabled: false
+    enabled: true
 
   harbor:
     enabled: true
@@ -28,23 +28,20 @@ tooling:
   vault:
     enabled: false
 
-  trow: 
-    enabled: false
-
 monitoring:
-  enabled: false
+  enabled: true
 
   prometheus:
-    enabled: false
+    enabled: true
 
   thanos:
     enabled: false
   
   grafana:
-    enabled: false
+    enabled: true
   
   loki:
-    enabled: false
+    enabled: true
 
   jaeger-operator:
     enabled: false
@@ -59,27 +56,19 @@ rook-ceph:
     enabled: true
 
 loadbalancer: 
-  enabled: false
+  enabled: true
 
   loadbalancer: 
-    enabled: false
+    enabled: true
 
 cache: 
-  enabled: false
+  enabled: true
   
   cache:
-    enabled: false
+    enabled: true
 
 kafka: 
-  enabled: false
+  enabled: true
 
   kafka: 
-    enabled: false
-
-# The same name as the project - This can be used to disable the whole project and namespace.
-example-guestbook:
-  enabled: false
-
-  # The same name as one of the apps listed under the project.
-  example-guestbook:
-    enabled: false
+    enabled: true
