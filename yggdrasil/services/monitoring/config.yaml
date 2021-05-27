@@ -41,7 +41,7 @@ apps:
       path: grafana
       valuesFile: "grafana.yaml"
     ingress:  
-      - subDomain: grafana1
+      - subDomain: grafana
         path: /
         servicePort: 80
         serviceName: grafana

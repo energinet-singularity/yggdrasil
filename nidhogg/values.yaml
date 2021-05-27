@@ -51,6 +51,7 @@ argo-cd:
             return hs
     service: 
       type: NodePort
+
   configs:
     secret:
       # This is not a secret password. It is okay to be on github
