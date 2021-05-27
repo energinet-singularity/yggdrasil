@@ -1,4 +1,3 @@
-# serviceDomain: {{ .Values.fqdn }}
 
 dashboardRoute:
   host: ingress.{{ .Values.ingressDomain }}
@@ -9,16 +8,16 @@ traefik:
 
   service:
     enabled: true
-#    type: LoadBalancer
-    type: NodePort
-    spec: {}
-#      loadBalancerIP: 172.18.0.19
+    type: LoadBalancer
+    # type: NodePort
+    spec: 
+      loadBalancerIP: 192.168.1.49
 
   ports:
-    web:
-      nodePort: 32080
+#    web:
+#      nodePort: 32080
     websecure:
-      nodePort: 32443
+#      nodePort: 32443
       tls: 
         enabled: true  
 
