@@ -10,6 +10,9 @@ networking:
   cert-manager:
     enabled: false
 
+  cert-manager-issuer: 
+    enabled: false
+
 tooling: 
   enabled: false
 
@@ -69,17 +72,3 @@ kafka:
 
   kafka: 
     enabled: true
-
-registry: 
-  enabled: false
-
-  registry: 
-    enabled: true
-
-# The same name as the project - This can be used to disable the whole project and namespace.
-example-guestbook:
-  enabled: false
-
-  # The same name as one of the apps listed under the project.
-  example-guestbook:
-    enabled: false
