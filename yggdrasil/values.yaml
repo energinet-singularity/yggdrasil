@@ -72,3 +72,9 @@ kafka:
 
   kafka: 
     enabled: true
+
+dlr:
+  enabled: true
+  
+  kafka-scada-event-source: 
+    enabled: true
