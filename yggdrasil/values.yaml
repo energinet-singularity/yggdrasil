@@ -1,5 +1,5 @@
 # This values is if you want to use paths instead of subdomains.
-ingressDomain: rtp.garagen
+ingressDomain: dev.garagen
 
 networking:
   enabled: true
