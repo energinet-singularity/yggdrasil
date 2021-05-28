@@ -6,6 +6,10 @@ yggdrasil:
 installCNI: true
 
 argo-cd: 
+  global:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/quay.io/argoproj/argocd
+      tag: v2.0.1
   controller: 
     enableStatefulSet: true
   redis-ha: 
