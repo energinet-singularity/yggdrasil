@@ -6,4 +6,4 @@ dependencies:
   repository: https://distributed-technologies.github.io/helm-repository/
   version: v0.1.2
 digest: sha256:aa615281c99da5b9dc5b7c7e7e9d48a04f01d58586a1171bef583b69ba824b05
-generated: "2021-05-20T14:24:39.33193313Z"
+generated: "2021-05-28T14:10:04.315047457Z"
