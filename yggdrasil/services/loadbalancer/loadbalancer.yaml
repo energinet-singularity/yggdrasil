@@ -1,5 +1,5 @@
-ipRangeStart: 10.0.0.10
-ipRangeStop: 10.0.0.100 
+ipRangeStart: 192.168.1.40
+ipRangeStop: 192.168.1.49 
 speakerImageTag: main
 controllerImageTag: main
 imagePullPolicy: IfNotPresent

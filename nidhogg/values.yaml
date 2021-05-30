@@ -1,11 +1,15 @@
 # A reference to this repo itself.
 yggdrasil:
   repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-  targetRevision: "HEAD"
+  targetRevision: "development"
 
 installCNI: true
 
 argo-cd: 
+  global:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/quay.io/argoproj/argocd
+      tag: v2.0.1
   controller: 
     enableStatefulSet: true
   redis-ha: 
@@ -28,6 +32,12 @@ argo-cd:
         - type: helm
           url: https://grafana.github.io/helm-charts
           name: grafana
+        - type: helm
+          url: https://strimzi.io/charts/
+          name: strimzi-kafka-operator
+        - type: helm
+          url: https://confluentinc.github.io/cp-helm-charts/
+          name: cp-helm-charts
       resource.customizations: |
         admissionregistration.k8s.io/MutatingWebhookConfiguration:
           ignoreDifferences: |
@@ -45,6 +55,7 @@ argo-cd:
             return hs
     service: 
       type: NodePort
+
   configs:
     secret:
       # This is not a secret password. It is okay to be on github
