@@ -5,6 +5,16 @@ yggdrasil:
 
 installCNI: true
 
+mukube-vnet:
+  kube:
+    image: 
+      repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
+      tag: 2.8.1
+  npc:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
+      tag: 2.8.1
+
 argo-cd: 
   global:
     image:

@@ -9,6 +9,6 @@ dependencies:
     version: "3.3.5"
     repository: "https://argoproj.github.io/argo-helm"
   - name: mukube-vnet
-    version: "v0.1.2"
+    version: "v0.3.0"
     repository: "https://distributed-technologies.github.io/helm-repository/"
     condition: 'installCNI'
