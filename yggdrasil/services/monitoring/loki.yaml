@@ -1,11 +1,10 @@
-loki:
+
+loki-stack: 
   loki:
-    enabled: true
-
-  promtail:
-    enabled: true
-
-  loki-stack: 
     image: 
       repository: harbor.sc.garagen/yggdrasil/grafana/loki
       tag: 2.2.0 
+  promtail:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/grafana/promtail
+      tag: 2.2.0
