@@ -1,1 +1,5 @@
-enableDiscoveryDaemon: true
+rook-ceph:
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/rook/ceph
+    tag: v1.5.9
+  enableDiscoveryDaemon: true

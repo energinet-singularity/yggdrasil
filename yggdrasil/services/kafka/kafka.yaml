@@ -1,1 +1,12 @@
-# kafka values here
+strimzi-kafka-operator:
+  image: 
+    registry: harbor.sc.garagen/yggdrasil/quay.io
+    repository: strimzi
+    name: operator  
+    tag: 0.22.1
+  
+cp-helm-charts:
+  cp-kafka-connect: 
+    image: "yggdrasil/docker.io/jcrmindster/kafka-connector-spool-dir"
+    imageTag: "0.0.13"  
+
