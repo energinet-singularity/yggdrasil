@@ -17,10 +17,10 @@ tooling:
   enabled: false
 
   argowf:
-    enabled: true
+    enabled: false
 
   argo-events:
-    enabled: true
+    enabled: false
 
   harbor:
     enabled: false
@@ -65,7 +65,7 @@ cache:
   enabled: false
   
   cache:
-    enabled: true
+    enabled: false
 
 kafka: 
   enabled: true
