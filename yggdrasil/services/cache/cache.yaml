@@ -1,1 +1,4 @@
-# This is a values file
+docker-registry-mirror: 
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/registry
+    tag: 2.7.1

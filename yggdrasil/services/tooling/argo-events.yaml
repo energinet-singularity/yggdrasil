@@ -1,1 +1,3 @@
-# argo-events:
+argo-events:
+  registry: harbor.sc.garagen/yggdrasil/argoproj
+  imagePullPolicy: ifNotPresent

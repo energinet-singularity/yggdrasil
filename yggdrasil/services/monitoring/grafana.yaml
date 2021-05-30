@@ -1,4 +1,7 @@
 grafana:
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/grafana/grafana
+    tag: 7.5.5
   datasources: 
     datasources.yaml:
       apiVersion: 1

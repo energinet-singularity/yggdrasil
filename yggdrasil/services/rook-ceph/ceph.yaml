@@ -1,11 +1,11 @@
 # Cluster configuration
 cluster: 
   # The image of Ceph
-  image: ceph/ceph:v15.2.8
+  image: harbor.sc.garagen/yggdrasil/ceph/ceph:v15.2.9
   # The data directory host path rook will mount
   dataDirHostPath: /var/lib/rook
   # How long to wait for OSDs that are not responding
-  waitTimeoutForHealthyOSDInMinutes: 5
+  waitTimeoutForHealthyOSDInMinutes: 1
   # Number of monitor pods
   monCount: 3
   # Whether to enable the Ceph dashboard

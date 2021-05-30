@@ -4,3 +4,8 @@ loki:
 
   promtail:
     enabled: true
+
+  loki-stack: 
+    image: 
+      repository: harbor.sc.garagen/yggdrasil/grafana/loki
+      tag: 2.2.0 
