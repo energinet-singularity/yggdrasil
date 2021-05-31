@@ -1,1 +1,19 @@
-enableDiscoveryDaemon: true
+rook-ceph:
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/rook/ceph
+    tag: v1.5.9
+  enableDiscoveryDaemon: true
+
+  csi:
+    cephcsi:
+      image: harbor.sc.garagen/yggdrasil/cephcsi/cephcsi:v3.2.0
+    registrar:
+      image: harbor.sc.garagen/yggdrasil/sig-storage/csi-node-driver-registrar:v2.0.1
+    provisioner:
+      image: harbor.sc.garagen/yggdrasil/sig-storage/csi-provisioner:v2.0.0
+    snapshotter:
+      image: harbor.sc.garagen/yggdrasil/sig-storage/csi-snapshotter:v3.0.0
+    attacher:
+      image: harbor.sc.garagen/yggdrasil/sig-storage/csi-attacher:v3.0.0
+    resizer:
+      image: harbor.sc.garagen/yggdrasil/sig-storage/csi-resizer:v1.0.0

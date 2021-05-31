@@ -4,6 +4,6 @@ dependencies:
   version: 3.3.5
 - name: mukube-vnet
   repository: https://distributed-technologies.github.io/helm-repository/
-  version: v0.1.2
-digest: sha256:aa615281c99da5b9dc5b7c7e7e9d48a04f01d58586a1171bef583b69ba824b05
-generated: "2021-05-28T14:10:04.315047457Z"
+  version: v0.3.0
+digest: sha256:44352f8671365ddb6e6a4f78756bfbebd6ed5f896bfe15ae8c10af63464771bf
+generated: "2021-05-30T19:04:35.26182088Z"
