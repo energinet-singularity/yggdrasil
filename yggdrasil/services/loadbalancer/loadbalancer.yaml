@@ -1,6 +1,14 @@
 ipRangeStart: 192.168.1.40
 ipRangeStop: 192.168.1.49 
-speakerImageTag: main
-controllerImageTag: main
-imagePullPolicy: IfNotPresent
 env: prod
+speaker: 
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/metallb/speaker
+    tag: main
+    imagePullPolicy: IfNotPresent 
+ 
+controller:
+  image:
+    repository: harbor.sc.garagen/yggdrasil/metallb/controller
+    tag: main
+    imagePullPolicy: IfNotPresent
