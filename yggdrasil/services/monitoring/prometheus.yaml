@@ -22,7 +22,7 @@ kube-prometheus-stack:
     prometheusSpec: 
       image: 
         repository: harbor.sc.garagen/yggdrasil/prometheus/prometheus
-        tag: v2.27.1
+        tag: v2.26.0
 
   kube-state-metrics: 
     image:
