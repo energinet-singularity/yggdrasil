@@ -22,7 +22,7 @@ apps:
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
-      - subDomain: prometheus1
+      - subDomain: grafane
         path: /
         servicePort: 9090
         serviceName: prometheus-kube-prometheus-prometheus
