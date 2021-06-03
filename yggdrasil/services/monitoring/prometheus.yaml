@@ -14,10 +14,10 @@ kube-prometheus-stack:
           tag: v1.5.2
     image: 
       repository: harbor.sc.garagen/yggdrasil/prometheus-operator/prometheus-operator 
-      tag: v0.48.0
+      tag: v0.47.0
     prometheusConfigReloaderImage: 
       repository: harbor.sc.garagen/yggdrasil/prometheus-operator/prometheus-config-reloader
-      tag: v0.48.0
+      tag: v0.47.0
   prometheus: 
     prometheusSpec: 
       image: 
