@@ -4,8 +4,7 @@ cp-helm-charts:
     imageTag: 0.0.13
     prometheus:
       jmx:
-        image: harbor.sc.garagen/yggdrasil/solsson/kafka-prometheus-jmx-exporter
-        imageTag: latest  
+        image: harbor.sc.garagen/yggdrasil/solsson/kafka-prometheus-jmx-exporter@sha256  
 
 strimzi-kafka-operator:
   image: 
