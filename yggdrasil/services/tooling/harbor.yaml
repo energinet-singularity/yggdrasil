@@ -6,5 +6,7 @@ harbor:
   externalURL: http://harbor.dev.garagen
   persistence: 
     enabled: false
-
+    persistentVolumeClain: 
+      registry: 
+        existingClaim: "harbor-harbor-registry-block"
 
