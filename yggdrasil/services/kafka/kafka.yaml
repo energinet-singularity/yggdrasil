@@ -109,3 +109,8 @@ strimzi-kafka-operator:
       repository: strimzi
       name: kaniko-executor
       tag: 0.22.1
+
+prometheus-kafka-exporter: 
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/danielqsj/kafka-exporter
+  replicaCount: 3
