@@ -21,6 +21,7 @@ argo-cd:
       repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
       tag: v2.0.1
   controller: 
+    replicas: 3
     enableStatefulSet: true
   redis-ha: 
     enabled: true
