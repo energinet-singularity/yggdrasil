@@ -23,6 +23,13 @@ argo-cd:
   controller: 
     replicas: 3
     enableStatefulSet: true
+    affinity: 
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: argocd-application-controller
+              release: nidhogg
+          topologyKey: kubernetes.io/hostname
   redis-ha: 
     enabled: true
     image:
