@@ -1,3 +1,2 @@
 image: harbor.sc.garagen/yggdrasil/jcrmindster/kafka-scada-json-producer
-imageTag: 0.0.18
 imagePullPolicy: IfNotPresent
