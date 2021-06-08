@@ -22,7 +22,7 @@ argo-cd:
       tag: v2.0.1
   controller: 
     podLabels: 
-    - app: argocd-application-controller   
+      app: argocd-application-controller   
     affinity: 
       podAntiAffinity: 
         requiredDuringSchedulingIgnoredDuringExecution:
