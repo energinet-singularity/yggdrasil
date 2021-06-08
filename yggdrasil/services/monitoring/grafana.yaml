@@ -1,15 +1,4 @@
 grafana:
-  replicas: 3
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-          - key: app
-            operator: In
-            values:
-            - argocd-application-controller
-        topologyKey: "kubernetes.io/hostname"
   image: 
     repository: harbor.sc.garagen/yggdrasil/grafana/grafana
     tag: 7.5.5
