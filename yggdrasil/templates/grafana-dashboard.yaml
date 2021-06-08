@@ -22,7 +22,6 @@ data:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 4,
       "links": [],
       "panels": [
         {
@@ -343,7 +342,7 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "kube_node_status_condition{condition=\"Ready\",node=\"worker0\",status=\"true\"}",
+              "expr": "kube_node_status_condition{condition=\"Ready\",node=\"worker2\",status=\"true\"}",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
@@ -360,11 +359,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -425,11 +425,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -490,11 +491,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -555,11 +557,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -620,11 +623,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -685,11 +689,12 @@ data:
                 "mode": "thresholds"
               },
               "mappings": [],
+              "noValue": "0",
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
+                    "color": "super-light-blue",
                     "value": null
                   }
                 ]
@@ -752,8 +757,8 @@ data:
             "defaults": {},
             "overrides": []
           },
-          "fill": 3,
-          "fillGradient": 7,
+          "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 6,
             "w": 8,
@@ -850,7 +855,7 @@ data:
             "defaults": {},
             "overrides": []
           },
-          "fill": 3,
+          "fill": 0,
           "fillGradient": 7,
           "gridPos": {
             "h": 6,
@@ -948,7 +953,7 @@ data:
             "defaults": {},
             "overrides": []
           },
-          "fill": 3,
+          "fill": 0,
           "fillGradient": 7,
           "gridPos": {
             "h": 6,
@@ -1045,12 +1050,12 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-6h",
+        "from": "now-30m",
         "to": "now"
       },
       "timepicker": {},
       "timezone": "",
       "title": "PoC",
       "uid": "rwPaLtjGk",
-      "version": 2
+      "version": 1
     }
