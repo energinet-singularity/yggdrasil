@@ -20,6 +20,7 @@ kube-prometheus-stack:
       tag: v0.47.0
   prometheus: 
     prometheusSpec: 
+      replicas: 3
       image: 
         repository: harbor.sc.garagen/yggdrasil/prometheus/prometheus
         tag: v2.26.0
