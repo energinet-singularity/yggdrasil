@@ -20,3 +20,10 @@ apps:
       targetRevision: HEAD
       path: "."
       valuesFile: "nifi.yaml"
+    ingress:
+      - subDomain: nifi
+        path: /
+        servicePort: 8080
+        serviceName: nifi
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
