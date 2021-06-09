@@ -1,3 +1,2 @@
 zookeeper:
-  enabled: false
-  url: "my-cluster-zookeeper-client.kafka:2181"
+  enabled: true
