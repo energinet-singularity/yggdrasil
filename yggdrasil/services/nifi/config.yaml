@@ -8,11 +8,15 @@ project:
   server: https://kubernetes.default.svc
   sourceRepos:
     - '*'
+  destinations:
+    - namespace: kafka
+      server: https://kubernetes.default.svc  
 
 apps:
   - name: nifi
     replace: true
     source:
       repoURL: "https://github.com/cetic/helm-nifi.git"
+      targetRevision: HEAD
       path: "."
       valuesFile: "nifi.yaml"
