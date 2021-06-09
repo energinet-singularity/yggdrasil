@@ -14,5 +14,5 @@ apps:
     replace: true
     source:
       repoURL: "https://github.com/cetic/helm-nifi.git"
-      path: "/"
+      path: "."
       valuesFile: "nifi.yaml"
