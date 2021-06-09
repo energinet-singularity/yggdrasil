@@ -57,6 +57,18 @@ argo-cd:
       repository: harbor.sc.garagen/yggdrasil/dexidp/dex
       tag: v2.26.0
   server: 
+    podLabels:
+      app: argocd-server
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - argocd-server
+          topologyKey: "kubernetes.io/hostname"    
     replicas: 3
     config:
       repositories: |
