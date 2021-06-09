@@ -73,6 +73,12 @@ kafka:
   kafka: 
     enabled: true
 
+nifi:
+  enabled: true
+
+  nifi:
+    enabled: true
+
 dlr:
   enabled: true
   
