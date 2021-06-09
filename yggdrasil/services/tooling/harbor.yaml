@@ -3,8 +3,7 @@ harbor:
     type: nodePort
     tls: 
       enabled: false
-  externalURL: http://harbor.ingress.lynderup.net
+  externalURL: http://harbor.dev.garagen
   persistence: 
     enabled: false
-
 

@@ -1,1 +1,2 @@
-# This is a values file
+image: harbor.sc.garagen/yggdrasil/jcrmindster/kafka-scada-json-producer
+imagePullPolicy: IfNotPresent

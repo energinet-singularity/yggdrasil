@@ -1,8 +1,10 @@
-
 dashboardRoute:
   host: ingress.{{ .Values.ingressDomain }}
 
 traefik:
+  image: 
+    name: harbor.sc.garagen/yggdrasil/traefik
+    tag: "v2.4.7"
   ingressClass:
     fallbackApiVersion: "v1"
 

@@ -11,8 +11,9 @@ project:
 
 apps:
   - name: kafka
+    replace: true
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
-      targetRevision: development
+      targetRevision: kafka-dashboard
       path: chart
       valuesFile: "kafka.yaml"

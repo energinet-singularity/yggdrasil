@@ -1,4 +1,10 @@
 grafana:
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/grafana/grafana
+    tag: 7.5.5
+  downloadDashboardsImage:
+    repository: harbor.sc.garagen/yggdrasil/curlimages/curl
+    tag: 7.73.0
   datasources: 
     datasources.yaml:
       apiVersion: 1
@@ -28,6 +34,14 @@ grafana:
         editable: true
         options:
           path: /var/lib/grafana/dashboards/default
+      - name: 'external-configmap'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/external-configmap
 
   dashboards: 
     default: 
@@ -43,3 +57,5 @@ grafana:
         gnetId: 11285
         revision: 1
         datasource: Prometheus
+  dashboardsConfigMaps:
+    external-configmap: grafana-node-dashboard
