@@ -1,0 +1,19 @@
+name: nifi
+clusterService: true
+namespace: nifi
+description: Nifi.
+
+project:
+  name: nifi
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+
+apps:
+  - name: nifi
+    replace: true
+    source:
+      repoURL: "https://github.com/cetic/helm-nifi.git"
+      targetRevision: development
+      path: ""
+      valuesFile: "nifi.yaml"
