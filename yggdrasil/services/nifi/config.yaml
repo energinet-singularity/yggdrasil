@@ -27,3 +27,9 @@ apps:
         serviceName: nifi
         annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
+  - name: influxdb
+    source:
+      repoURL: "https://github.com/influxdata/helm-charts/tree/master/charts/influxdb.git"
+      targetRevision: HEAD
+      path: "."
+      valuesFile: "influxdb.yaml"
