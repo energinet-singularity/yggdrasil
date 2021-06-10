@@ -1,0 +1,5 @@
+setDefaultUser:
+  enabled: true
+  user:
+    username: "admin"
+    password: "password"
