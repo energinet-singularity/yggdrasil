@@ -29,7 +29,7 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: influxdb
     source:
-      repoURL: "https://github.com/influxdata/helm-charts/tree/master/charts/influxdb.git"
+      repoURL: "https://github.com/influxdata/helm-charts.git"
       targetRevision: HEAD
-      path: "."
+      path: "charts/influxdb"
       valuesFile: "influxdb.yaml"
