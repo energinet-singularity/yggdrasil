@@ -33,3 +33,10 @@ apps:
       targetRevision: HEAD
       path: "charts/influxdb"
       valuesFile: "influxdb.yaml"
+    ingress:
+      - subDomain: influxdb
+        path: /
+        servicePort: 8086
+        serviceName: influxdb
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
