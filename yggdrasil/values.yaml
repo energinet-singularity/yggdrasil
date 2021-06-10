@@ -79,6 +79,9 @@ nifi:
   nifi:
     enabled: true
 
+  influxdb:
+    enabled: true
+
 dlr:
   enabled: true
   
