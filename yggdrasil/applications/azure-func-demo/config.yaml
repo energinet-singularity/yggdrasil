@@ -16,11 +16,11 @@ apps:
       targetRevision: HEAD
       path: chart
       valuesFile: "azure-func-demo.yaml"
-    # ingress:
-    #   - subDomain: azure-func-demo
-    #       path: /
-    #       servicePort: 80
-    #       serviceName: azure-func-demo
-    #       annotation:
-    #       traefik.ingress.kubernetes.io/router.entrypoints: web
+    ingress:
+      - subDomain: azure-func-demo
+        path: /
+        servicePort: 80
+        serviceName: azure-func-demo
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
   
