@@ -82,6 +82,12 @@ nifi:
   influxdb:
     enabled: true
 
+azure-func-demo:
+  enabled: true
+
+  azure-func-demo:
+    enabled: true
+
 dlr:
   enabled: true
   
