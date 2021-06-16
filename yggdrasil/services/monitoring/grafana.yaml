@@ -20,13 +20,13 @@ grafana:
           access: proxy
           isDefault: false
         - name: testInflux
-          type: influxDB
+          type: influxdb
           url: http://influxdb.nifi:8086
           access: proxy
           isDefault: false
-          Database: kafkadlr
-          User: admin
-          Password: password
+          database: kafkadlr
+          user: admin
+          password: password
 
   adminUser: admin
   adminPassword: password
