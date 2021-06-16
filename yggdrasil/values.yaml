@@ -14,7 +14,7 @@ networking:
     enabled: false
 
 tooling: 
-  enabled: false
+  enabled: true
 
   argowf:
     enabled: false
@@ -23,7 +23,7 @@ tooling:
     enabled: false
 
   harbor:
-    enabled: false
+    enabled: true
 
   vault:
     enabled: false
