@@ -19,6 +19,15 @@ grafana:
           url: http://loki:3100
           access: proxy
           isDefault: false
+        - name: testInflux
+          type: InfluxDB
+          url: http://influxdb.nifi:8086
+          access: proxy
+          isDefault: false
+          Database: kafkadlr
+          User: admin
+          Password: password
+
   adminUser: admin
   adminPassword: password
 
