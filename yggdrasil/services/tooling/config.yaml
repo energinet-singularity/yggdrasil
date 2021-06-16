@@ -29,31 +29,37 @@ apps:
       targetRevision: dependency
       path: argo-events
       valuesFile: "argo-events.yaml"
-  - name: harbor
-    source:
-      repoURL: "https://github.com/distributed-technologies/services-harbor.git"
-      targetRevision: valuesTest
-      path: chart
-      valuesFile: "harbor.yaml"
     ingress:
       - subDomain: harbor
         path: /
-        servicePort: 80 
-        serviceName: harbor-harbor-core
-        annotation: 
-          traefik.ingress.kubernetes.io/router.entrypoints: web
-      - subDomain: harbor
-        path: /
         servicePort: 80
-        serviceName: harbor-harbor-core
-        annotation: 
-          traefik.ingress.kubernetes.io/router.entrypoints: websecure
-      - subDomain: harbor-ui
-        path: /
-        servicePort: 80
-        serviceName: harbor
+        serviceName: harbor-harbor-portal
         annotation:
-          traefik.ingress.kubernetes.io/router.entrypoints: web
+          traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
+      - subDomain: harbor
+        path: /api
+        servicePort: 80
+        serviceName: harbor-harbor-core
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
+      - subDomain: harbor
+        path: /service
+        servicePort: 80
+        serviceName: harbor-harbor-core
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
+      - subDomain: harbor
+        path: /v2
+        servicePort: 80
+        serviceName: harbor-harbor-core
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
+      - subDomain: harbor
+        path: /c
+        servicePort: 80
+        serviceName: harbor-harbor-core
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
   - name: vault
     source:
       repoURL: "https://github.com/Open-Olympus-Project/tooling-vault.git"
