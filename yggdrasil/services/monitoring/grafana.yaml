@@ -20,7 +20,7 @@ grafana:
           access: proxy
           isDefault: false
         - name: testInflux
-          type: InfluxDB
+          type: influxDB
           url: http://influxdb.nifi:8086
           access: proxy
           isDefault: false
