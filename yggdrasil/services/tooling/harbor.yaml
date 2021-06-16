@@ -15,36 +15,36 @@ harbor:
       registry:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/registry"
+        subPath: "registry"
         accessMode: ReadWriteMany
         size: 50Gi
       chartmuseum:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/chartmuseum"
+        subPath: "chartmuseum"
         accessMode: ReadWriteMany
         size: 5Gi
       jobservice:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/jobservice"
+        subPath: "jobservice"
         accessMode: ReadWriteMany
         size: 5Gi
       database:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/database"
+        subPath: "database"
         accessMode: ReadWriteMany
         size: 5Gi
       redis:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/redis"
+        subPath: "redis"
         accessMode: ReadWriteMany
         size: 5Gi
       trivy:
         existingClaim: "registry"
         storageClass: "rook-cephfs"
-        subPath: "/trivy"
+        subPath: "trivy"
         accessMode: ReadWriteMany
         size: 5Gi
