@@ -73,6 +73,21 @@ kafka:
   kafka: 
     enabled: true
 
+nifi:
+  enabled: true
+
+  nifi:
+    enabled: true
+
+  influxdb:
+    enabled: true
+
+azure-func-demo:
+  enabled: true
+
+  azure-func-demo:
+    enabled: true
+
 dlr:
   enabled: true
   

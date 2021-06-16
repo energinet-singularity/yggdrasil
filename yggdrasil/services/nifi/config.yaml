@@ -1,0 +1,42 @@
+name: nifi
+clusterService: true
+namespace: nifi
+description: Nifi.
+
+project:
+  name: nifi
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: kafka
+      server: https://kubernetes.default.svc  
+
+apps:
+  - name: nifi
+    replace: true
+    source:
+      repoURL: "https://github.com/cetic/helm-nifi.git"
+      targetRevision: HEAD
+      path: "."
+      valuesFile: "nifi.yaml"
+    ingress:
+      - subDomain: nifi
+        path: /
+        servicePort: 8080
+        serviceName: nifi
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+  - name: influxdb
+    source:
+      repoURL: "https://github.com/influxdata/helm-charts.git"
+      targetRevision: HEAD
+      path: "charts/influxdb"
+      valuesFile: "influxdb.yaml"
+    ingress:
+      - subDomain: influxdb
+        path: /
+        servicePort: 8086
+        serviceName: influxdb
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
