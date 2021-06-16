@@ -29,6 +29,12 @@ apps:
       targetRevision: dependency
       path: argo-events
       valuesFile: "argo-events.yaml"
+  - name: harbor
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-harbor.git"
+      targetRevision: valuesTest
+      path: chart
+      valuesFile: "harbor.yaml"
     ingress:
       - subDomain: harbor
         path: /
