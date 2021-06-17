@@ -27,17 +27,17 @@ registry:
     repository: harbor.sc.garagen/yggdrasil/apache/nifi-registry
     tag: "0.8.0"
   initContainers:
-  git:
-    image: harbor.sc.garagen/yggdrasil/alpine/git
-    tag: v2.26.2
-  alpine:
-    image: harbor.sc.garagen/yggdrasil/alpine
-    tag: 3.6
+    git:
+      image: harbor.sc.garagen/yggdrasil/alpine/git
+      tag: v2.26.2
+    alpine:
+      image: harbor.sc.garagen/yggdrasil/alpine
+      tag: 3.6
   tests:
-  images:
-    busybox:
-      image: harbor.sc.garagen/yggdrasil/busybox
-      tag: 1.32.0
+    images:
+      busybox:
+        image: harbor.sc.garagen/yggdrasil/busybox
+        tag: 1.32.0
   
 ## ref: https://github.com/bitnami/charts/blob/master/bitnami/zookeeper/values.yaml
 zookeeper: 
