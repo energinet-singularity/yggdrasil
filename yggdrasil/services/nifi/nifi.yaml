@@ -1,2 +1,16 @@
 zookeeper:
   enabled: true
+  persistence:
+    storageClass: rook-ceph-block
+nifi-registry:
+  enabled: true
+  persistence:
+    enabled: true
+    database:
+      storageClass: rook-ceph-block
+      accessMode: ReadWriteOnce
+      size: 1Gi
+    flowStorage:
+      storageClass: rook-ceph-block
+      accessMode: ReadWriteOnce
+      size: 1Gi
