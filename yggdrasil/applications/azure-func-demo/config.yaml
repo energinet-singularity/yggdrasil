@@ -23,4 +23,3 @@ apps:
         serviceName: azure-func-demo
         annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
-  
