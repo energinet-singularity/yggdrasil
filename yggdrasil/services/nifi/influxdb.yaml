@@ -3,3 +3,5 @@ setDefaultUser:
   user:
     username: "admin"
     password: "password"
+persistence:
+  storageClass: "rook-ceph-block"
