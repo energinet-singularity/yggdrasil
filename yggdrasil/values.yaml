@@ -74,13 +74,13 @@ kafka:
     enabled: false
 
 nifi:
-  enabled: false
+  enabled: true
 
   nifi:
-    enabled: false
+    enabled: true
 
   influxdb:
-    enabled: false
+    enabled: true
 
 azure-func-demo:
   enabled: false
