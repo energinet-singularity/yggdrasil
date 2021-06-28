@@ -49,7 +49,7 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: loki
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-loki.git'
+      repoURL: 'https://github.com/distributed-technologies/loki.git'
       targetRevision: dependency 
       path: loki
       valuesFile: "loki.yaml"
