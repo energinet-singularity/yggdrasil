@@ -50,8 +50,8 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/distributed-technologies/loki.git'
-      targetRevision: dependency 
-      path: loki
+      targetRevision: development 
+      path: chart
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
