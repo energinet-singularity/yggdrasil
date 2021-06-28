@@ -1,2 +1,38 @@
+image: 
+ repository: harbor.sc.garagen/yggdrasil/apache/nifi
+ tag: "1.12.1"
+sidecar: 
+ image: harbor.sc.garagen/yggdrasil/busybox
+ tag: "1.32.0"
+
 zookeeper:
   enabled: true
+  persistence:
+    storageClass: rook-ceph-block
+  image: 
+    registry: harbor.sc.garagen/yggdrasil
+    repository: bitnami/zookeeper
+    tag: 3.7.0-debian-10-r56
+
+## ref: https://github.com/dysnix/charts/blob/master/dysnix/nifi-registry/values.yaml
+registry: 
+  persistence:
+    database:
+      storageClass: rook-ceph-block
+    flowStorage:
+      storageClass: rook-ceph-block
+  image: 
+    repository: harbor.sc.garagen/yggdrasil/apache/nifi-registry
+    tag: "0.8.0"
+  initContainers:
+    git:
+      image: harbor.sc.garagen/yggdrasil/alpine/git
+      tag: v2.26.2
+    alpine:
+      image: harbor.sc.garagen/yggdrasil/alpine
+      tag: 3.6
+  tests:
+    images:
+      busybox:
+        image: harbor.sc.garagen/yggdrasil/busybox
+        tag: 1.32.0
