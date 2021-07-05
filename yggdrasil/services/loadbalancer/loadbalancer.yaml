@@ -1,6 +1,6 @@
 env: prod
 ipRangeStart: 192.168.1.40
-ipRangeStop: 192.168.1.49 
+ipRangeStop: 192.168.1.49
 speaker: 
   image: 
     repository: harbor.sc.garagen/yggdrasil/metallb/speaker

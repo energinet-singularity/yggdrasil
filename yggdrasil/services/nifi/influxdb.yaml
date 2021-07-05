@@ -5,3 +5,6 @@ setDefaultUser:
     password: "password"
 persistence:
   storageClass: "rook-ceph-block"
+image: 
+  repository: "harbor.sc.garagen/yggdrasil/influxdb"
+  tag: "1.8.0-alpine"

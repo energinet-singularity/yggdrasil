@@ -14,7 +14,7 @@ networking:
     enabled: false
 
 tooling: 
-  enabled: true
+  enabled: false
 
   argowf:
     enabled: false
@@ -23,7 +23,7 @@ tooling:
     enabled: false
 
   harbor:
-    enabled: true
+    enabled: false
 
   vault:
     enabled: false
@@ -68,28 +68,17 @@ cache:
     enabled: false
 
 kafka: 
-  enabled: true
+  enabled: false
 
   kafka: 
-    enabled: true
+    enabled: false
 
 nifi:
-  enabled: true
+  enabled: false
 
   nifi:
-    enabled: true
+    enabled: false
 
   influxdb:
-    enabled: true
+    enabled: false
 
-azure-func-demo:
-  enabled: true
-
-  azure-func-demo:
-    enabled: true
-
-dlr:
-  enabled: true
-  
-  kafka-scada-event-source: 
-    enabled: true
