@@ -25,9 +25,9 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: argo-events
     source:
-      repoURL: "https://github.com/Open-Olympus-Project/tooling-argo-events.git"
-      targetRevision: dependency
-      path: argo-events
+      repoURL: "https://github.com/distributed-technologies/services-argoevents.git"
+      targetRevision: main
+      path: chart
       valuesFile: "argo-events.yaml"
   - name: harbor
     source:
@@ -68,7 +68,7 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: "web, websecure"
   - name: vault
     source:
-      repoURL: "https://github.com/Open-Olympus-Project/tooling-vault.git"
-      targetRevision: dependency
-      path: vault
+      repoURL: "https://github.com/distributed-technologies/services-vault.git"
+      targetRevision: main
+      path: chart
       valuesFile: "vault.yaml"
