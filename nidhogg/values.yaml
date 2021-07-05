@@ -21,18 +21,6 @@ argo-cd:
       repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
       tag: v2.0.1
   controller: 
-    podLabels: 
-      app: argocd-application-controller   
-    affinity: 
-      podAntiAffinity: 
-        requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - argocd-application-controller  
-          topologyKey: "kubernetes.io/hostname"
     replicas: 3
     env:
       - name: "ARGOCD_CONTROLLER_REPLICAS"
