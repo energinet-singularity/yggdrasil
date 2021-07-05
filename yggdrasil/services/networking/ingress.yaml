@@ -3,7 +3,7 @@ dashboardRoute:
 
 traefik:
   image: 
-    name: harbor.sc.garagen/yggdrasil/traefik
+    name: {{ .Values.repository }}/traefik
     tag: "v2.4.7"
   ingressClass:
     fallbackApiVersion: "v1"

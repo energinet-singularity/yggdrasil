@@ -2,9 +2,9 @@
 loki-stack: 
   loki:
     image: 
-      repository: harbor.sc.garagen/yggdrasil/grafana/loki
+      repository: {{ .Values.repository }}/grafana/loki
       tag: 2.2.0 
   promtail:
     image:
-      repository: harbor.sc.garagen/yggdrasil/grafana/promtail
+      repository: {{ .Values.repository }}/grafana/promtail
       tag: 2.2.0

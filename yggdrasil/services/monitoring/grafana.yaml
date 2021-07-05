@@ -1,9 +1,9 @@
 grafana:
   image: 
-    repository: harbor.sc.garagen/yggdrasil/grafana/grafana
+    repository: {{ .Values.repository }}/grafana/grafana
     tag: 7.5.5
   downloadDashboardsImage:
-    repository: harbor.sc.garagen/yggdrasil/curlimages/curl
+    repository: {{ .Values.repository }}/curlimages/curl
     tag: 7.73.0
   datasources: 
     datasources.yaml:

@@ -1,3 +1,3 @@
 argo-events:
-  registry: harbor.sc.garagen/yggdrasil/argoproj
+  registry: {{ .Values.repository }}/argoproj
   imagePullPolicy: ifNotPresent

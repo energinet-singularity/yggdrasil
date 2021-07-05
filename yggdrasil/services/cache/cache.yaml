@@ -1,4 +1,4 @@
 docker-registry-mirror: 
   image: 
-    repository: harbor.sc.garagen/yggdrasil/registry
+    repository: {{ .Values.repository }}/registry
     tag: 2.7.1

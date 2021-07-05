@@ -6,5 +6,5 @@ setDefaultUser:
 persistence:
   storageClass: "rook-ceph-block"
 image: 
-  repository: "harbor.sc.garagen/yggdrasil/influxdb"
+  repository: {{ .Values.repository }}/influxdb
   tag: "1.8.0-alpine"
