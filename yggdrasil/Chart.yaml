@@ -3,3 +3,8 @@ type: application
 name: yggdrasil
 description: A Helm chart for for deploying an entire repo.
 version: v0.4.4
+
+dependencies: 
+  - name: lightvessel
+    version: "v0.1.0"
+    repository: "https://distributed-technologies.github.io/helm-repository/"
