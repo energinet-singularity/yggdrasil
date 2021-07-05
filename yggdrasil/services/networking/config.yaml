@@ -31,4 +31,3 @@ apps:
       targetRevision: dependency
       path: cert-manager-issuer
       valuesFile: "cert-manager-issuer.yaml"
-      
