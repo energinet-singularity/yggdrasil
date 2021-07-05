@@ -30,9 +30,9 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: thanos
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-thanos.git'
-      targetRevision: dependency 
-      path: thanos
+      repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
+      targetRevision: main 
+      path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
@@ -55,7 +55,7 @@ apps:
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-jaeger-operator.git'
-      targetRevision: dependency
-      path: jaeger-operator
+      repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
+      targetRevision: main
+      path: chart
       valuesFile: "jaeger-operator.yaml"
