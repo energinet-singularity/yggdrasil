@@ -59,3 +59,4 @@ apps:
       targetRevision: main
       path: chart
       valuesFile: "jaeger-operator.yaml"
+      

@@ -14,7 +14,7 @@ networking:
     enabled: false
 
 tooling: 
-  enabled: true
+  enabled: false
 
   argowf:
     enabled: false
