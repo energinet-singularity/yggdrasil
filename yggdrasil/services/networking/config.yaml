@@ -21,9 +21,9 @@ apps:
       valuesFile: "ingress.yaml"
   - name: cert-manager
     source:
-      repoURL: "https://github.com/distributed-technologies/service-cert-manager.git"
-      targetRevision: main
-      path: chart
+      repoURL: "https://github.com/Open-Olympus-Project/k8s-certmanager.git"
+      targetRevision: dependency
+      path: cert-manager
       valuesFile: "cert-manager.yaml"
   - name: cert-manager-issuer
     source:
