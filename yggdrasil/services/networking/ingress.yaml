@@ -2,10 +2,10 @@ dashboardRoute:
   host: ingress.{{ .Values.ingressDomain }}
 
 traefik:
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
   image: 
     name: {{ .Values.registry }}/traefik
-  {{- end -}}
+  {{- end }}
   ingressClass:
     fallbackApiVersion: "v1"
 

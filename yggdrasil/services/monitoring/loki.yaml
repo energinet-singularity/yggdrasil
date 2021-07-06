@@ -7,4 +7,4 @@ loki-stack:
   promtail:
     image:
       repository: {{ .Values.registry }}/grafana/promtail
-{{- end -}}
+{{- end }}

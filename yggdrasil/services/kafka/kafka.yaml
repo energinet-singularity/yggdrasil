@@ -58,11 +58,11 @@ strimzi-kafka-operator:
   kanikoExecutor:
     image:
       registry: {{ .Values.registry }}
-{{- end -}}
+{{- end }}
 
 prometheus-kafka-exporter: 
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
   image: 
     repository: {{ .Values.registry }}/danielqsj/kafka-exporter
-  {{- end -}}
+  {{- end }}
   replicaCount: 3

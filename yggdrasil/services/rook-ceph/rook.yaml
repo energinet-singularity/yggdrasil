@@ -1,11 +1,11 @@
 rook-ceph:
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
   image: 
     repository: {{ .Values.registry }}/rook/ceph
-  {{- end -}}
+  {{- end }}
   enableDiscoveryDaemon: true
 
-  {{- if .Values.registry -}}
+  {{ if .Values.registry -}}
   csi:
     cephcsi:
       image: {{ .Values.registry }}/cephcsi/cephcsi:v3.2.0
@@ -19,4 +19,4 @@ rook-ceph:
       image: {{ .Values.registry }}/sig-storage/csi-attacher:v3.0.0
     resizer:
       image: {{ .Values.registry }}/sig-storage/csi-resizer:v1.0.0
-  {{- end -}}
+  {{- end }}

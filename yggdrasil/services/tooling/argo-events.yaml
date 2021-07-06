@@ -1,4 +1,4 @@
-{{- if .Values.registry -}}
+{{- if .Values.registry }}
 argo-events:
   registry: {{ .Values.registry }}
-{{- end -}}
+{{- end }}

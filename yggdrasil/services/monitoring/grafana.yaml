@@ -1,10 +1,10 @@
 grafana:
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
   image: 
     repository: {{ .Values.registry }}/grafana/grafana
   downloadDashboardsImage:
     repository: {{ .Values.registry }}/curlimages/curl
-  {{- end -}}
+  {{- end }}
   datasources: 
     datasources.yaml:
       apiVersion: 1

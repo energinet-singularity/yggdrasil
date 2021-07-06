@@ -1,7 +1,7 @@
 kube-prometheus-stack:
   grafana:
     enabled: false
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
   alertmanager: 
     alertmanagerSpec:
       image: 
@@ -15,7 +15,7 @@ kube-prometheus-stack:
       repository: {{ .Values.registry }}/prometheus-operator/prometheus-operator 
     prometheusConfigReloaderImage: 
       repository: {{ .Values.registry }}/prometheus-operator/prometheus-config-reloader
-  {{- end -}}
+  {{- end }}
 
   prometheus: 
     prometheusSpec: 
@@ -27,7 +27,7 @@ kube-prometheus-stack:
           matchLabels:
             app: prometheus
       replicas: 3
-  {{- if .Values.registry -}}
+  {{- if .Values.registry }}
       image: 
         repository: {{ .Values.registry }}/prometheus/prometheus
 
@@ -38,4 +38,4 @@ kube-prometheus-stack:
   prometheus-node-exporter:
     image:
       repository: {{ .Values.registry }}/prometheus/node-exporter
-  {{- end -}}
+  {{- end }}

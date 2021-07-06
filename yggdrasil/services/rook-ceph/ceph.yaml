@@ -1,7 +1,7 @@
-cluster: 
-  {{- if .Values.registry -}}
+cluster:
+  {{- if .Values.registry }}
   image: {{ .Values.registry }}/ceph/ceph:v15.2.9
-  {{- end -}}
+  {{- end }}
   dataDirHostPath: /var/lib/rook
   waitTimeoutForHealthyOSDInMinutes: 1
   monCount: 3
