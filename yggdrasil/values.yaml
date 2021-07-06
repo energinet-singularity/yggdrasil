@@ -1,6 +1,6 @@
 # This values is if you want to use paths instead of subdomains.
 ingressDomain: dev.garagen
-repository: harbor.sc.garagen/yggdrasil
+registry: harbor.sc.garagen/yggdrasil
 
 networking:
   enabled: true
