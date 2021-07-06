@@ -1,4 +1,5 @@
 docker-registry-mirror: 
+  {{- if .Values.registry }}
   image: 
-    repository: harbor.sc.garagen/yggdrasil/registry
-    tag: 2.7.1
+    repository: {{ .Values.registry }}/registry
+  {{- end }}

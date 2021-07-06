@@ -1,23 +1,22 @@
 kube-prometheus-stack:
   grafana:
     enabled: false
+  {{- if .Values.registry }}
   alertmanager: 
     alertmanagerSpec:
       image: 
-        repository: harbor.sc.garagen/yggdrasil/prometheus/alertmanager
-        tag: v0.22.0
+        repository: {{ .Values.registry }}/prometheus/alertmanager
   prometheusOperator:
     admissionWebhooks: 
       patch:
         image: 
-          repository: harbor.sc.garagen/yggdrasil/jettech/kube-webhook-certgen
-          tag: v1.5.2
+          repository: {{ .Values.registry }}/jettech/kube-webhook-certgen
     image: 
-      repository: harbor.sc.garagen/yggdrasil/prometheus-operator/prometheus-operator 
-      tag: v0.47.0
+      repository: {{ .Values.registry }}/prometheus-operator/prometheus-operator 
     prometheusConfigReloaderImage: 
-      repository: harbor.sc.garagen/yggdrasil/prometheus-operator/prometheus-config-reloader
-      tag: v0.47.0
+      repository: {{ .Values.registry }}/prometheus-operator/prometheus-config-reloader
+  {{- end }}
+
   prometheus: 
     prometheusSpec: 
       topologySpreadConstraints:
@@ -28,17 +27,15 @@ kube-prometheus-stack:
           matchLabels:
             app: prometheus
       replicas: 3
+  {{- if .Values.registry }}
       image: 
-        repository: harbor.sc.garagen/yggdrasil/prometheus/prometheus
-        tag: v2.26.0
+        repository: {{ .Values.registry }}/prometheus/prometheus
 
   kube-state-metrics: 
     image:
-      repository: harbor.sc.garagen/yggdrasil/kube-state-metrics/kube-state-metrics
-      tag: v1.9.8
+      repository: {{ .Values.registry }}/kube-state-metrics/kube-state-metrics
 
   prometheus-node-exporter:
     image:
-      repository: harbor.sc.garagen/yggdrasil/prometheus/node-exporter
-      tag: v1.1.2
-      
+      repository: {{ .Values.registry }}/prometheus/node-exporter
+  {{- end }}

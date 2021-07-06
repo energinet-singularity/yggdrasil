@@ -1,116 +1,68 @@
+{{- if .Values.registry -}}
 cp-helm-charts:
   cp-kafka-connect: 
-    image: harbor.sc.garagen/yggdrasil/jcrmindster/kafka-connector-spool-dir
-    imageTag: 0.0.13
+    image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
-        image: harbor.sc.garagen/yggdrasil/solsson/kafka-prometheus-jmx-exporter@sha256  
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256  
 
 strimzi-kafka-operator:
   image: 
-    registry: harbor.sc.garagen/yggdrasil
-    repository: strimzi
-    name: operator
-    tag: 0.22.1
+    registry: {{ .Values.registry }}
 
   zookeeper:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kafka:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaConnect:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaConnects2i:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   topicOperator:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: operator
-      tag: 0.22.1
+      registry: {{ .Values.registry }}
   userOperator:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: operator
-      tag: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaInit:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: operator
-      tag: 0.22.1
+      registry: {{ .Values.registry }}
   tlsSidecarEntityOperator:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaMirrorMaker:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaBridge:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka-bridge
-      tag: 0.19.0
+      registry: {{ .Values.registry }}
   kafkaExporter:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   jmxTrans:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: jmxtrans
-      tag: 0.22.1
+      registry: {{ .Values.registry }}
   kafkaMirrorMaker2:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   cruiseControl:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   tlsSidecarCruiseControl:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kafka
-      tagPrefix: 0.22.1
+      registry: {{ .Values.registry }}
   kanikoExecutor:
     image:
-      registry: harbor.sc.garagen/yggdrasil
-      repository: strimzi
-      name: kaniko-executor
-      tag: 0.22.1
+      registry: {{ .Values.registry }}
+{{- end }}
 
 prometheus-kafka-exporter: 
+  {{- if .Values.registry }}
   image: 
-    repository: harbor.sc.garagen/yggdrasil/danielqsj/kafka-exporter
+    repository: {{ .Values.registry }}/danielqsj/kafka-exporter
+  {{- end }}
   replicaCount: 3

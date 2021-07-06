@@ -7,7 +7,7 @@ harbor:
     type: clusterIP
     tls:
       enabled: false
-  externalURL: http://harbor.dev.garagen
+  externalURL: http://harbor.{{ .Values.ingressDomain }}
   persistence:
     enabled: true
     resourcePolicy: "keep"

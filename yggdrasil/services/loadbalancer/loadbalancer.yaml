@@ -3,12 +3,9 @@ ipRangeStart: {{ .Values.clusterNetworking.ipRangeStart }}
 ipRangeStop: {{ .Values.clusterNetworking.ipRangeStop }}
 speaker: 
   image: 
-    repository: harbor.sc.garagen/yggdrasil/metallb/speaker
-    tag: main
-    imagePullPolicy: IfNotPresent 
+    repository: {{ .Values.registry }}/metallb/speaker
  
 controller:
   image:
-    repository: harbor.sc.garagen/yggdrasil/metallb/controller
-    tag: main
-    imagePullPolicy: IfNotPresent
+    repository: {{ .Values.registry }}/metallb/controller
+{{- end }}
