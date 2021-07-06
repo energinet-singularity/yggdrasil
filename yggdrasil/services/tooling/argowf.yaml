@@ -1,5 +1,17 @@
 argo: 
-  
+  images: 
+    pullPolicy: ifNotPresent
+  {{- if .Values.registry }}
+  controller: 
+    image: 
+      registry: {{ .Values.registry }}
+  executor: 
+    image: 
+     registry: {{ .Values.registry }}
+  server: 
+    image: 
+      registry: {{ .Values.registry }}
+  {{- end }}
   # Influences the creation of the ConfigMap for the workflow-controller itself.
   useDefaultArtifactRepo: true
   useStaticCredentials: true

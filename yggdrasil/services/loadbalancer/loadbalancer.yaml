@@ -1,6 +1,11 @@
-ipRangeStart: 10.0.0.10
-ipRangeStop: 10.0.0.100 
-speakerImageTag: main
-controllerImageTag: main
-imagePullPolicy: IfNotPresent
 env: prod
+ipRangeStart: {{ .Values.clusterNetworking.ipRangeStart }}
+ipRangeStop: {{ .Values.clusterNetworking.ipRangeStop }}
+{{- if .Values.registry }}
+speaker: 
+  image: 
+    repository: {{ .Values.registry }}/metallb/speaker
+controller:
+  image:
+    repository: {{ .Values.registry }}/metallb/controller
+{{- end }}

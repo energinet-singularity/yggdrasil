@@ -1,26 +1,28 @@
-# serviceDomain: {{ .Values.fqdn }}
-
 dashboardRoute:
   host: ingress.{{ .Values.ingressDomain }}
 
 traefik:
+  {{- if .Values.registry }}
+  image: 
+    name: {{ .Values.registry }}/traefik
+  {{- end }}
   ingressClass:
     fallbackApiVersion: "v1"
 
   service:
     enabled: true
     type: LoadBalancer
-#    type: NodePort
-    spec: {}
-#      loadBalancerIP: 172.18.0.19
+    # type: NodePort
+    spec: 
+      loadBalancerIP: {{ .Values.clusterNetworking.ipRangeStop }}
 
-#  ports:
+  ports:
 #    web:
 #      nodePort: 32080
-#    websecure:
+    websecure:
 #      nodePort: 32443
-#      tls: 
-#        enabled: true  
+      tls: 
+        enabled: true  
 
   logs:
     access:
