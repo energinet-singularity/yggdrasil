@@ -7,6 +7,8 @@ clusterNetworking:
 
 registry: harbor.sc.garagen/yggdrasil
 
+applicationRepo: https://github.com/distributed-technologies/application-env-test.git
+
 applications: 
   - ingress
 #  - cert-manager
