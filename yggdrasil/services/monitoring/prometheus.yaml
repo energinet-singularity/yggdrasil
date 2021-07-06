@@ -1,23 +1,22 @@
 kube-prometheus-stack:
   grafana:
     enabled: false
+  {{- if .Values.registry -}}
   alertmanager: 
     alertmanagerSpec:
       image: 
         repository: {{ .Values.repository }}/prometheus/alertmanager
-        tag: v0.22.0
   prometheusOperator:
     admissionWebhooks: 
       patch:
         image: 
           repository: {{ .Values.repository }}/jettech/kube-webhook-certgen
-          tag: v1.5.2
     image: 
       repository: {{ .Values.repository }}/prometheus-operator/prometheus-operator 
-      tag: v0.47.0
     prometheusConfigReloaderImage: 
       repository: {{ .Values.repository }}/prometheus-operator/prometheus-config-reloader
-      tag: v0.47.0
+  {{- end -}}
+
   prometheus: 
     prometheusSpec: 
       topologySpreadConstraints:
@@ -28,17 +27,15 @@ kube-prometheus-stack:
           matchLabels:
             app: prometheus
       replicas: 3
+  {{- if .Values.registry -}}
       image: 
         repository: {{ .Values.repository }}/prometheus/prometheus
-        tag: v2.26.0
 
   kube-state-metrics: 
     image:
       repository: {{ .Values.repository }}/kube-state-metrics/kube-state-metrics
-      tag: v1.9.8
 
   prometheus-node-exporter:
     image:
       repository: {{ .Values.repository }}/prometheus/node-exporter
-      tag: v1.1.2
-      
+  {{- end -}}
