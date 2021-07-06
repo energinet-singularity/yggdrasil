@@ -3,8 +3,8 @@
 loki-stack: 
   loki:
     image: 
-      repository: {{ .Values.repository }}/grafana/loki
+      repository: {{ .Values.registry }}/grafana/loki
   promtail:
     image:
-      repository: {{ .Values.repository }}/grafana/promtail
+      repository: {{ .Values.registry }}/grafana/promtail
 {{- end -}}
