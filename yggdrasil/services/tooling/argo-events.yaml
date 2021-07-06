@@ -1,3 +1,4 @@
+{{- if .Values.registry -}}
 argo-events:
-  registry: {{ .Values.repository }}/argoproj
-  imagePullPolicy: ifNotPresent
+  registry: {{ .Values.registry }}
+{{- end -}}
