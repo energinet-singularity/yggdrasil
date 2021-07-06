@@ -1,11 +1,25 @@
 # A reference to this repo itself.
 yggdrasil:
   repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-  targetRevision: "HEAD"
+  targetRevision: "development"
 
 installCNI: true
 
+CNI:
+  kube:
+    image: 
+      repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
+      tag: 2.8.1
+  npc:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
+      tag: 2.8.1
+
 argo-cd: 
+  global:
+    image:
+      repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
+      tag: v2.0.1
   controller: 
     replicas: 3
     env:
