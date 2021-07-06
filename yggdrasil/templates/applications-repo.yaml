@@ -27,7 +27,7 @@ spec:
   source:
     repoURL: {{ .Values.applicationRepo }}
     targetRevision: {{ .Values.applicationTargetRevision }}
-    path: yggdrasil
+    path: chart
     helm:
       version: v3
   destination:
