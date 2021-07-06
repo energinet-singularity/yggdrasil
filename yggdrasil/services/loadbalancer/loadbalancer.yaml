@@ -1,14 +1,13 @@
 env: prod
 ipRangeStart: 192.168.1.40
 ipRangeStop: 192.168.1.49
+
+{{- if .Values.registry -}}
 speaker: 
   image: 
-    repository: {{ .Values.repository }}/metallb/speaker
-    tag: main
-    imagePullPolicy: IfNotPresent 
+    repository: {{ .Values.registry }}/metallb/speaker
  
 controller:
   image:
-    repository: {{ .Values.repository }}/metallb/controller
-    tag: main
-    imagePullPolicy: IfNotPresent
+    repository: {{ .Values.registry }}/metallb/controller
+{{- end -}}
