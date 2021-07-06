@@ -30,6 +30,8 @@ spec:
     path: chart
     helm:
       version: v3
+      values: |
+        installNidhogg: false
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Release.Namespace }}
