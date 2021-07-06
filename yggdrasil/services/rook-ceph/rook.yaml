@@ -1,19 +1,22 @@
 rook-ceph:
+  {{- if .Values.registry -}}
   image: 
-    repository: {{ .Values.repository }}/rook/ceph
-    tag: v1.5.9
+    repository: {{ .Values.registry }}/rook/ceph
+  {{- end -}}
   enableDiscoveryDaemon: true
 
+  {{- if .Values.registry -}}
   csi:
     cephcsi:
-      image: {{ .Values.repository }}/cephcsi/cephcsi:v3.2.0
+      image: {{ .Values.registry }}/cephcsi/cephcsi:v3.2.0
     registrar:
-      image: {{ .Values.repository }}/sig-storage/csi-node-driver-registrar:v2.0.1
+      image: {{ .Values.registry }}/sig-storage/csi-node-driver-registrar:v2.0.1
     provisioner:
-      image: {{ .Values.repository }}/sig-storage/csi-provisioner:v2.0.0
+      image: {{ .Values.registry }}/sig-storage/csi-provisioner:v2.0.0
     snapshotter:
-      image: {{ .Values.repository }}/sig-storage/csi-snapshotter:v3.0.0
+      image: {{ .Values.registry }}/sig-storage/csi-snapshotter:v3.0.0
     attacher:
-      image: {{ .Values.repository }}/sig-storage/csi-attacher:v3.0.0
+      image: {{ .Values.registry }}/sig-storage/csi-attacher:v3.0.0
     resizer:
-      image: {{ .Values.repository }}/sig-storage/csi-resizer:v1.0.0
+      image: {{ .Values.registry }}/sig-storage/csi-resizer:v1.0.0
+  {{- end -}}
