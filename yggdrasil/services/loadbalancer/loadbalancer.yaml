@@ -1,8 +1,6 @@
 env: prod
-ipRangeStart: 192.168.1.40
-ipRangeStop: 192.168.1.49
-
-{{ if .Values.registry -}}
+ipRangeStart: {{ .Values.clusterNetworking.ipRangeStart }}
+ipRangeStop: {{ .Values.clusterNetworking.ipRangeStop }}
 speaker: 
   image: 
     repository: {{ .Values.registry }}/metallb/speaker

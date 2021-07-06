@@ -1,7 +1,7 @@
 # A reference to this repo itself.
 yggdrasil:
   repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-  targetRevision: "development"
+  targetRevision: "HEAD"
 
 installCNI: true
 
@@ -21,18 +21,6 @@ argo-cd:
       repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
       tag: v2.0.1
   controller: 
-    podLabels: 
-      app: argocd-application-controller   
-    affinity: 
-      podAntiAffinity: 
-        requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - argocd-application-controller  
-          topologyKey: "kubernetes.io/hostname"
     replicas: 3
     env:
       - name: "ARGOCD_CONTROLLER_REPLICAS"
@@ -56,19 +44,7 @@ argo-cd:
     image: 
       repository: harbor.sc.garagen/yggdrasil/dexidp/dex
       tag: v2.26.0
-  server: 
-    podLabels:
-      app: argocd-server
-    affinity:
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - argocd-server
-          topologyKey: "kubernetes.io/hostname"    
+  server:   
     replicas: 3
     config:
       repositories: |

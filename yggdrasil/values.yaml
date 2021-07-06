@@ -1,85 +1,27 @@
 # This values is if you want to use paths instead of subdomains.
 ingressDomain: dev.garagen
-registry: harbor.sc.garagen/yggdrasil
+clusterNetworking: 
+  ipRangeStart: 192.168.1.40
+  # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
+  ipRangeStop: 192.168.1.49
 
-networking:
-  enabled: true
-
-  ingress:
-    enabled: true
-
-  cert-manager:
-    enabled: false
-
-  cert-manager-issuer: 
-    enabled: false
-
-tooling: 
-  enabled: false
-
-  argowf:
-    enabled: false
-
-  argo-events:
-    enabled: false
-
-  harbor:
-    enabled: false
-
-  vault:
-    enabled: false
-
-monitoring:
-  enabled: true
-
-  prometheus:
-    enabled: true
-
-  thanos:
-    enabled: false
-  
-  grafana:
-    enabled: true
-  
-  loki:
-    enabled: true
-
-  jaeger-operator:
-    enabled: false
-
-rook-ceph: 
-  enabled: true
-
-  rook:
-    enabled: true
-
-  ceph: 
-    enabled: true
-
-loadbalancer: 
-  enabled: true
-
-  loadbalancer: 
-    enabled: true
-
-cache: 
-  enabled: false
-  
-  cache:
-    enabled: false
-
-kafka: 
-  enabled: false
-
-  kafka: 
-    enabled: false
-
-nifi:
-  enabled: false
-
-  nifi:
-    enabled: false
-
-  influxdb:
-    enabled: false
-
+applications: 
+#  - ingress
+#  - cert-manager
+#  - cert-manager-issuer 
+#  - argowf
+#  - argo-events
+#  - harbor
+#  - vault
+#  - prometheus
+#  - thanos
+#  - grafana
+#  - loki
+#  - jaeger-operator
+#  - rook
+#  - ceph
+#  - loadbalancer
+#  - cache
+#  - kafka
+#  - nifi
+#  - influxdb
