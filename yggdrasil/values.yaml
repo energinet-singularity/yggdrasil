@@ -13,9 +13,9 @@ applications:
 #  - argo-events
 #  - harbor
 #  - vault
-  - prometheus
+#  - prometheus
 #  - thanos
-  - grafana
+#  - grafana
 #  - loki
 #  - jaeger-operator
 #  - rook
