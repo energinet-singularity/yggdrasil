@@ -5,7 +5,7 @@ yggdrasil:
 
 installCNI: true
 
-mukube-vnet:
+CNI:
   kube:
     image: 
       repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
