@@ -5,6 +5,8 @@ clusterNetworking:
   # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
   ipRangeStop: 192.168.1.49
 
+registry: harbor.sc.garagen/yggdrasil
+
 applications: 
   - ingress
 #  - cert-manager
