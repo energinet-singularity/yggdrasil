@@ -1,13 +1,11 @@
 {{- $root := . -}}
 {{- range $path, $_ := .Files.Glob "**/**/config.yaml" }}
   {{ $project := $root.Files.Get $path | fromYaml }}
-  {{ $projectValues := index $root.Values $project.name }}
-  {{ if $projectValues.enabled }}
   {{- range $project.apps }}
-    {{ if (index $projectValues .name).enabled }}
-    {{- if .ingress }}
-    {{- $name := .name }}
-      {{- range .ingress }}
+    {{- if has .name $root.Values.applications -}}
+      {{- if .ingress }}
+      {{- $name := .name }}
+        {{- range .ingress }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -31,7 +29,6 @@ spec:
                 name: {{ .serviceName }}
                 port:
                   number: {{ .servicePort }}
-    {{ end }}
     {{ end }}
     {{ end }} 
   {{ end }}

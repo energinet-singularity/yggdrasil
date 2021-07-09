@@ -1,6 +1,10 @@
-loki:
-  loki:
-    enabled: true
 
+{{- if .Values.registry -}}
+loki-stack: 
+  loki:
+    image: 
+      repository: {{ .Values.registry }}/grafana/loki
   promtail:
-    enabled: true
+    image:
+      repository: {{ .Values.registry }}/grafana/promtail
+{{- end }}

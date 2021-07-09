@@ -1,1 +1,5 @@
-# This is a values file
+docker-registry-mirror: 
+  {{- if .Values.registry }}
+  image: 
+    repository: {{ .Values.registry }}/registry
+  {{- end }}

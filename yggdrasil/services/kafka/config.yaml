@@ -11,6 +11,7 @@ project:
 
 apps:
   - name: kafka
+    replace: true
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
       targetRevision: main
