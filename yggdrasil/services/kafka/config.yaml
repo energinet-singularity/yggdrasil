@@ -13,6 +13,6 @@ apps:
   - name: kafka
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
-      targetRevision: HEAD
+      targetRevision: main
       path: chart
       valuesFile: "kafka.yaml"

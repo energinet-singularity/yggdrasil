@@ -16,18 +16,18 @@ apps:
   - name: ingress
     source:
       repoURL: "https://github.com/distributed-technologies/services-ingress.git"
-      targetRevision: HEAD
+      targetRevision: main
       path: chart
       valuesFile: "ingress.yaml"
   - name: cert-manager
     source:
-      repoURL: "https://github.com/Open-Olympus-Project/k8s-certmanager.git"
-      targetRevision: dependency
-      path: cert-manager
+      repoURL: "https://github.com/distributed-technologies/service-cert-manager.git"
+      targetRevision: main
+      path: chart
       valuesFile: "cert-manager.yaml"
   - name: cert-manager-issuer
     source:
-      repoURL: "https://github.com/Open-Olympus-Project/k8s-certmanager.git"
-      targetRevision: dependency
-      path: cert-manager-issuer
+      repoURL: "https://github.com/distributed-technologies/services-cert-manager-issuer.git"
+      targetRevision: main
+      path: chart
       valuesFile: "cert-manager-issuer.yaml"
