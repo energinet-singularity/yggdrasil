@@ -38,7 +38,7 @@ apps:
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
       targetRevision: development
-      path: grafana
+      path: chart
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana
