@@ -37,7 +37,7 @@ apps:
   - name: grafana
     source:
       repoURL: 'https://github.com/Open-Olympus-Project/tooling-grafana.git'
-      targetRevision: dependency
+      targetRevision: feature/local_dashboards
       path: grafana
       valuesFile: "grafana.yaml"
     ingress:  
