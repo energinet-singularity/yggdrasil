@@ -5,22 +5,27 @@ clusterNetworking:
   # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
   ipRangeStop: 192.168.1.49
 
+registry: harbor.sc.garagen/yggdrasil
+
+applicationRepo: https://github.com/distributed-technologies/application-env-test.git
+applicationTargetRevision: 'development'
+
 applications: 
-#  - ingress
+  - ingress
 #  - cert-manager
 #  - cert-manager-issuer 
 #  - argowf
 #  - argo-events
 #  - harbor
 #  - vault
-#  - prometheus
+  - prometheus
 #  - thanos
-#  - grafana
+  - grafana
 #  - loki
 #  - jaeger-operator
-#  - rook
-#  - ceph
-#  - loadbalancer
+  - rook
+  - ceph
+  - loadbalancer
 #  - cache
 #  - kafka
 #  - nifi
