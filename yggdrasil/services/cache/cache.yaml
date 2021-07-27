@@ -1,0 +1,5 @@
+docker-registry-mirror: 
+  {{- if .Values.registry }}
+  image: 
+    repository: {{ .Values.registry }}/registry
+  {{- end }}

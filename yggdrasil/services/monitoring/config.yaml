@@ -1,0 +1,60 @@
+name: monitoring
+namespace: monitoring
+description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki. 
+
+project:
+  name: monitoring
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+  destinations: 
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
+    - namespace: rook-ceph
+      server: https://kubernetes.default.svc
+    
+apps:
+  - name: prometheus
+    source:
+      repoURL: 'https://github.com/distributed-technologies/prometheus.git'
+      targetRevision: development
+      path: chart
+      valuesFile: "prometheus.yaml"
+    ingress:
+      - subDomain: prometheus
+        path: /
+        servicePort: 9090
+        serviceName: prometheus-kube-prometheus-prometheus
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+  - name: thanos
+    source:
+      repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
+      targetRevision: main 
+      path: chart
+      valuesFile: "thanos.yaml"
+  - name: grafana
+    source:
+      repoURL: 'https://github.com/Open-Olympus-Project/tooling-grafana.git'
+      targetRevision: dependency
+      path: grafana
+      valuesFile: "grafana.yaml"
+    ingress:  
+      - subDomain: grafana
+        path: /
+        servicePort: 80
+        serviceName: grafana
+        annotation: 
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+  - name: loki
+    source:
+      repoURL: 'https://github.com/Open-Olympus-Project/tooling-loki.git'
+      targetRevision: dependency 
+      path: loki
+      valuesFile: "loki.yaml"
+  - name: jaeger-operator
+    source:
+      repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
+      targetRevision: main
+      path: chart
+      valuesFile: "jaeger-operator.yaml"

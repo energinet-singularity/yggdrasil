@@ -1,0 +1,68 @@
+{{- if .Values.registry -}}
+cp-helm-charts:
+  cp-kafka-connect: 
+    image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
+    prometheus:
+      jmx:
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256  
+
+strimzi-kafka-operator:
+  image: 
+    registry: {{ .Values.registry }}
+
+  zookeeper:
+    image:
+      registry: {{ .Values.registry }}
+  kafka:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaConnect:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaConnects2i:
+    image:
+      registry: {{ .Values.registry }}
+  topicOperator:
+    image:
+      registry: {{ .Values.registry }}
+  userOperator:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaInit:
+    image:
+      registry: {{ .Values.registry }}
+  tlsSidecarEntityOperator:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaMirrorMaker:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaBridge:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaExporter:
+    image:
+      registry: {{ .Values.registry }}
+  jmxTrans:
+    image:
+      registry: {{ .Values.registry }}
+  kafkaMirrorMaker2:
+    image:
+      registry: {{ .Values.registry }}
+  cruiseControl:
+    image:
+      registry: {{ .Values.registry }}
+  tlsSidecarCruiseControl:
+    image:
+      registry: {{ .Values.registry }}
+  kanikoExecutor:
+    image:
+      registry: {{ .Values.registry }}
+{{- end }}
+
+prometheus-kafka-exporter: 
+  {{- if .Values.registry }}
+  image: 
+    repository: {{ .Values.registry }}/danielqsj/kafka-exporter
+  {{- end }}
+  replicaCount: 3

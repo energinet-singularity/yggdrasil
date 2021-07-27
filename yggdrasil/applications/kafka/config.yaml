@@ -1,0 +1,17 @@
+name: kafka
+namespace: kafka
+description: kafka.
+
+project:
+  name: kafka
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+
+apps:
+  - name: kafka
+    source:
+      repoURL: "oci://kahyt.azurecr.io/test-repo2/services-kafka"
+      targetRevision: 0.1.0
+      path: chart
+      valuesFile: "kafka.yaml"

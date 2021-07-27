@@ -1,0 +1,9 @@
+issuer:
+
+  email: test@test.com
+ 
+  vault: 
+    enabled: false
+
+cert-manager:
+  installCRDs: true

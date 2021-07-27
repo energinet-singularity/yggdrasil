@@ -1,0 +1,17 @@
+name: cache
+namespace: cache
+description: Pull-through cache.
+
+project:
+  name: cache
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+
+apps:
+  - name: cache
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-cache.git"
+      targetRevision: initial-cache
+      path: chart
+      valuesFile: "cache.yaml"

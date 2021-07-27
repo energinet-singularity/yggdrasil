@@ -1,0 +1,24 @@
+name: rook-ceph
+namespace: rook-ceph
+description: Rook.
+
+project:
+  name: rook-ceph
+  server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+
+apps:
+  - name: rook
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-rook.git"
+      targetRevision: main
+      path: chart
+      valuesFile: "rook.yaml"
+  - name: ceph
+    source:
+      repoURL: "https://github.com/distributed-technologies/services-ceph.git"
+      targetRevision: main
+      path: chart
+      valuesFile: "ceph.yaml"
+

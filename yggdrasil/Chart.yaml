@@ -1,0 +1,10 @@
+apiVersion: v2
+name: application-env-repo
+description: A Helm chart for applications
+type: application
+version: 0.1.0
+
+dependencies: 
+  - name: lightvessel
+    version: "v0.1.1"
+    repository: "https://distributed-technologies.github.io/helm-repository/"
