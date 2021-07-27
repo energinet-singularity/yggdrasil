@@ -6,6 +6,9 @@
   #ipRangeStop: 192.168.1.49
 registry: harbor.sc.garagen/yggdrasil
 
+applicationRepo: https://github.com/distributed-technologies/application-env-test.git
+applicationTargetRevision: 'development'
+
 applications: 
   - ingress
 #  - cert-manager
