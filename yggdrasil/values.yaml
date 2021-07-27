@@ -1,8 +1,5 @@
 registry: harbor.sc.garagen/yggdrasil
 
-applicationRepo: https://github.com/distributed-technologies/application-env-test.git
-applicationTargetRevision: 'development'
-
 applications: 
   - ingress
 #  - cert-manager
