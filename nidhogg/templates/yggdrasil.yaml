@@ -30,6 +30,8 @@ spec:
     path: yggdrasil
     helm:
       version: v3
+      values: |
+{{ toYaml .Values.yggdrasil | indent 8 }}
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Release.Namespace }}
