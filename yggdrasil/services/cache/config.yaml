@@ -12,6 +12,6 @@ apps:
   - name: cache
     source:
       repoURL: "https://github.com/distributed-technologies/services-cache.git"
-      targetRevision: initial-cache
+      targetRevision: main
       path: chart
       valuesFile: "cache.yaml"

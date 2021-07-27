@@ -1,4 +1,4 @@
 nidhogg: 
   yggdrasil: 
-    repoURL: "https://github.com/distributed-technologies/application-env-test.git"
+    repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "development"

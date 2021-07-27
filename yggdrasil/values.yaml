@@ -1,10 +1,10 @@
 # This values is if you want to use paths instead of subdomains.
-ingressDomain: dev.garagen
+#ingressDomain: dev.garagen
 
-clusterNetworking: 
-  ipRangeStart: 192.168.1.40
+#clusterNetworking: 
+#  ipRangeStart: 192.168.1.40
   # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-  ipRangeStop: 192.168.1.49
+#  ipRangeStop: 192.168.1.49
 
 registry: harbor.sc.garagen/yggdrasil
 

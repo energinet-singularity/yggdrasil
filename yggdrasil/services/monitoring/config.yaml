@@ -17,7 +17,7 @@ apps:
   - name: prometheus
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
-      targetRevision: development
+      targetRevision: main
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
@@ -35,9 +35,9 @@ apps:
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-grafana.git'
-      targetRevision: dependency
-      path: grafana
+      repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
+      targetRevision: main
+      path: chart
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana
@@ -48,9 +48,9 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: loki
     source:
-      repoURL: 'https://github.com/Open-Olympus-Project/tooling-loki.git'
-      targetRevision: dependency 
-      path: loki
+      repoURL: 'https://github.com/distributed-technologies/services-loki.git'
+      targetRevision: main 
+      path: chart
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
