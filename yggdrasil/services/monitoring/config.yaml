@@ -18,7 +18,7 @@ apps:
   - name: prometheus
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
-      targetRevision: development
+      targetRevision: main
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
