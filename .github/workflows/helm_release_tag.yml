@@ -15,7 +15,7 @@ jobs:
           echo HELM_VERSION=$(grep "version: " yggdrasil/Chart.yaml | cut -f2 -d' ') >> $GITHUB_ENV
     
       - name: Helm lint
-        run: helm lint chart
+        run: helm lint yggdrasil
 
       # Create the release
       - name: Create Release
