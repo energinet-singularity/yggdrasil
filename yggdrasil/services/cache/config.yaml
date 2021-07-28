@@ -1,5 +1,4 @@
 name: cache
-clusterService: true
 namespace: cache
 description: Pull-through cache.
 

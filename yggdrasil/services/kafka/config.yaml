@@ -1,5 +1,4 @@
 name: kafka
-clusterService: true
 namespace: kafka
 description: Kafka.
 

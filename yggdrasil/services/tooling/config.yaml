@@ -1,5 +1,4 @@
 name: tooling
-clusterService: true
 namespace: tooling
 description: Tooling services Argo WF, Harbor.
 

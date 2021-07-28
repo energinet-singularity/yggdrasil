@@ -1,5 +1,4 @@
 name: rook-ceph
-clusterService: true
 namespace: rook-ceph
 description: Rook.
 

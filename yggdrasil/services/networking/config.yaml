@@ -1,5 +1,4 @@
 name: networking
-clusterService: true
 namespace: networking
 description: networking services like ingress, cert-manager.
 
