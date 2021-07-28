@@ -1,7 +1,7 @@
 nidhogg: 
   yggdrasil: 
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "main"
+    targetRevision: "development"
 
     # Change the ingressDomain if you would like to use it as main.garagen is not currently being used
     ingressDomain: dev.garagen
