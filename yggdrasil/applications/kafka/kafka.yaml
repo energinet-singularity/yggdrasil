@@ -1,9 +1,0 @@
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  
-prometheus-kafka-exporter:
-  enabled: false
-
-cp-helm-charts:
-  enabled: false
