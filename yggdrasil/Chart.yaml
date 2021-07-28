@@ -2,7 +2,7 @@ apiVersion: v2
 name: application-env-repo
 description: A Helm chart for applications
 type: application
-version: 0.5.0
+version: 0.5.1
 
 dependencies: 
   - name: lightvessel
