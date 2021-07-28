@@ -8,22 +8,22 @@
 registry: harbor.sc.garagen/yggdrasil
 
 applications: 
-  - example-guestbook
-  - ingress
+#  - example-guestbook
+#  - ingress
 #  - cert-manager
 #  - cert-manager-issuer 
 #  - argowf
 #  - argo-events
 #  - harbor
 #  - vault
-  - prometheus
+#  - prometheus
 #  - thanos
-  - grafana
+#  - grafana
 #  - loki
 #  - jaeger-operator
-  - rook
-  - ceph
-  - loadbalancer
+#  - rook
+#  - ceph
+#  - loadbalancer
 #  - cache
 #  - kafka
 #  - nifi
