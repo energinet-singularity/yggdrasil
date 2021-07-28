@@ -3,12 +3,11 @@ nidhogg:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "main"
 
-    # Change the ingressDomain if you would like to use it as main.garagen is not currently being used
-    ingressDomain: dev.garagen
-    clusterNetworking: 
-      ipRangeStart: 192.168.1.40
+    # ingressDomain: your-ingress-domain-here
+    # clusterNetworking: 
+      # ipRangeStart: 0.0.0.0
       # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-      ipRangeStop: 192.168.1.49
+      # ipRangeStop: 0.0.0.0
 
   installCNI: true
 
