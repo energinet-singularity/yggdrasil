@@ -11,20 +11,20 @@ applications:
   argowf:                 false
   argo-events:            false
   cache:                  false
-  ceph:                   true
+  ceph:                   false
   cert-manager:           false
   cert-manager-issuer:    false
-  example-guestbook:      true
-  grafana:                true
+  example-guestbook:      false
+  grafana:                false
   harbor:                 false
   influxdb:               false
-  ingress:                true
+  ingress:                false
   jaeger-operator:        false
   kafka:                  false
-  loadbalancer:           true
+  loadbalancer:           false
   loki:                   false
   nifi:                   false
-  prometheus:             true
-  rook:                   true
+  prometheus:             false
+  rook:                   false
   thanos:                 false
   vault:                  false
