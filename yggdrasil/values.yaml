@@ -13,7 +13,6 @@ applications:
   cache:                  false
   ceph:                   false
   cert-manager:           false
-  cert-manager-issuer:    false
   example-guestbook:      false
   grafana:                false
   harbor:                 false

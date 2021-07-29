@@ -12,13 +12,13 @@ apps:
   - name: rook
     source:
       repoURL: "https://github.com/distributed-technologies/services-rook.git"
-      targetRevision: main
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "rook.yaml"
   - name: ceph
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"
-      targetRevision: main
+      targetRevision: 0.1.1
       path: chart
       valuesFile: "ceph.yaml"
 
