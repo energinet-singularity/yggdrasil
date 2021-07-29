@@ -8,23 +8,23 @@ clusterNetworking:
 registry: harbor.sc.garagen/yggdrasil
 
 applications: 
-  argowf:                 true
-  argo-events:            true
-  cache:                  true
+  argowf:                 false
+  argo-events:            false
+  cache:                  false
   ceph:                   true
-  cert-manager:           true
-  cert-manager-issuer:    true
+  cert-manager:           false
+  cert-manager-issuer:    false
   example-guestbook:      true
   grafana:                true
-  harbor:                 true
-  influxdb:               true
+  harbor:                 false
+  influxdb:               false
   ingress:                true
-  jaeger-operator:        true
-  kafka:                  true
+  jaeger-operator:        false
+  kafka:                  false
   loadbalancer:           true
-  loki:                   true
-  nifi:                   true
+  loki:                   false
+  nifi:                   false
   prometheus:             true
   rook:                   true
-  thanos:                 true
-  vault:                  true
+  thanos:                 false
+  vault:                  false
