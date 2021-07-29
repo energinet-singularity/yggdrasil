@@ -8,23 +8,23 @@
 registry: harbor.sc.garagen/yggdrasil
 
 applications: 
-#  - example-guestbook
-#  - ingress
-#  - cert-manager
-#  - cert-manager-issuer 
-#  - argowf
-#  - argo-events
-#  - harbor
-#  - vault
-#  - prometheus
-#  - thanos
-#  - grafana
-#  - loki
-#  - jaeger-operator
-#  - rook
-#  - ceph
-#  - loadbalancer
-#  - cache
-#  - kafka
-#  - nifi
-#  - influxdb
+  argowf:                 false
+  argo-events:            false
+  cache:                  false
+  ceph:                   false
+  cert-manager:           false
+  cert-manager-issuer:    false
+  example-guestbook:      false
+  grafana:                false
+  harbor:                 false
+  influxdb:               false
+  ingress:                false
+  jaeger-operator:        false
+  kafka:                  false
+  loadbalancer:           false
+  loki:                   false
+  nifi:                   false
+  prometheus:             false
+  rook:                   false
+  thanos:                 false
+  vault:                  false
