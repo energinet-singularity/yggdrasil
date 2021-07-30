@@ -23,7 +23,7 @@ This section describes the two charts found in Yggdrasil, Nidhogg and Yggdrasil.
 
 ### Nidhogg
 Nidhogg is the first Helm chart to be installed and it bootstraps all the applications in our cluster. The Nidhogg chart has a single dependency which is on the Nidhogg release from [this repository](https://github.com/distributed-technologies/nidhogg). Contained in this Nidhogg release is two dependencies: ArgoCD and a CNI(container network interface). The CNI can be disabled by default in case your cluster already has a CNI. The chart also contains a reference to Yggdrasil. This will deploy everything within the Yggdrasil chart.
-This can seen in the following image.
+This is illustrated in the following image.
 <img src="docs/images/newCluster.png">
 
 As stated, Nidhogg also contains a reference to Yggdrasil, which will be deployed onto the cluster as well. Since Yggdrasil is the chart that holds all the applications and services that will be deployed onto the cluster, this is done automatically when Nidhogg is deployed.
