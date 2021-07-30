@@ -26,7 +26,7 @@ Nidhogg is the first Helm chart to be installed and it bootstraps all the applic
 This is illustrated in the following image.
 <img src="docs/images/newCluster.png">
 
-As stated, Nidhogg also contains a reference to Yggdrasil, which will be deployed onto the cluster as well. Since Yggdrasil is the chart that holds all the applications and services that will be deployed onto the cluster, this is done automatically when Nidhogg is deployed.
+As stated, Nidhogg also contains a reference to Yggdrasil, which will be deployed onto the cluster. Yggdrasil is the chart that holds references to all the applications and services that will be deployed onto the cluster. This deployment happens automatically when Nidhogg and ArgoCD are deployed.
 
 ### Lightvessel
 Lightvessel is a repository that holds all the templates necessary to deploy services and applications on the cluster. This is templated into Yggdrasil with the `define`-block from Helm. It was decided to separate this code from Yggdrasil to lower the need for updating your own cloned or forked code. Instead, we will release versions of Lightvessel and getting the newest update is as easy as changing the version on the dependency in Yggdrasil. The current templates are: 
