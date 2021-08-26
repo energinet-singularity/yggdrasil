@@ -38,3 +38,13 @@ blockStorage:
   allowVolumeExpansion: true 
   # What happens to data when a pod is deleted or crashes
   reclaimPolicy: Delete
+
+nfs: 
+  enabled: true
+  name: mynfs
+  namespace: rook-ceph
+  spec: 
+    radosPool: myfs-data0
+    radosNamespace: ganesha-ns
+  server: 
+    activeServers: 3
