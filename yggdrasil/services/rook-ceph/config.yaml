@@ -19,6 +19,6 @@ apps:
   - name: ceph
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"
-      targetRevision: main
+      targetRevision: feature/rook-chart
       path: chart
       valuesFile: "ceph.yaml"
