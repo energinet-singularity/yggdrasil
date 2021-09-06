@@ -1,5 +1,6 @@
 name: loadbalancer
 namespace: loadbalancer
+space: service
 description: MetalLB loadbalancer.
 
 project:

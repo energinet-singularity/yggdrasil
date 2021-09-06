@@ -1,5 +1,6 @@
 name: kafka
 namespace: kafka
+space: service
 description: Kafka.
 
 project:

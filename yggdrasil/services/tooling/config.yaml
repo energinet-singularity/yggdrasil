@@ -1,5 +1,6 @@
 name: tooling
 namespace: tooling
+space: service
 description: Tooling services Argo WF, Harbor.
 
 project:

@@ -1,5 +1,6 @@
 name: rook-ceph
 namespace: rook-ceph
+space: service
 description: Rook.
 
 project:

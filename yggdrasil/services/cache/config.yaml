@@ -1,5 +1,6 @@
 name: cache
 namespace: cache
+space: service
 description: Pull-through cache.
 
 project:
