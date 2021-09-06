@@ -1,21 +1,17 @@
 argo: 
   images: 
     pullPolicy: ifNotPresent
+  {{- if .Values.registry }}
   controller: 
     image: 
-      registry: harbor.sc.garagen/yggdrasil
-      repository: argoproj/workflow-controller
-      tag: v3.0.2  
+      registry: {{ .Values.registry }}
   executor: 
     image: 
-     registry: harbor.sc.garagen/yggdrasil
-     repository: argoproj/argoexec
-     tag: v3.0.2
+     registry: {{ .Values.registry }}
   server: 
     image: 
-      registry: harbor.sc.garagen/yggdrasil
-      repository: argoproj/argocli
-      tag: v3.0.2
+      registry: {{ .Values.registry }}
+  {{- end }}
   # Influences the creation of the ConfigMap for the workflow-controller itself.
   useDefaultArtifactRepo: true
   useStaticCredentials: true
