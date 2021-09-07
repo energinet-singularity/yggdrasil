@@ -83,7 +83,7 @@ argo-cd:
           name: cp-helm-charts
         - type: helm
           url: https://charts.rook.io/release
-          name: rook-ceph-cluster
+          name: rook-release
       resource.customizations: |
         admissionregistration.k8s.io/MutatingWebhookConfiguration:
           ignoreDifferences: |
