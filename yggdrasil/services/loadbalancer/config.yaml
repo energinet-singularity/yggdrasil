@@ -13,6 +13,6 @@ apps:
   - name: loadbalancer
     source:
       repoURL: "https://github.com/distributed-technologies/services-loadbalancer.git"
-      targetRevision: v0.1.5
+      targetRevision: main
       path: chart
       valuesFile: "loadbalancer.yaml"
