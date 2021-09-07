@@ -12,9 +12,9 @@ project:
 apps:
   - name: rook
     source:
-      repoURL: "https://github.com/distributed-technologies/services-rook.git"
-      targetRevision: main
-      path: chart
+      repoURL: "https://github.com/rook/rook.git"
+      targetRevision: v1.7.2
+      path: cluster/charts/rook-ceph
       valuesFile: "rook.yaml"
   - name: ceph
     source:
