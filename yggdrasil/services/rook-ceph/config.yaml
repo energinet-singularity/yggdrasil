@@ -18,8 +18,8 @@ apps:
       valuesFile: "rook.yaml"
   - name: ceph
     source:
-      repoURL: "https://github.com/distributed-technologies/services-ceph.git"
-      targetRevision: 0.1.3
-      path: chart
+      repoURL: "https://github.com/rook/rook.git"
+      targetRevision: v1.7.2
+      path: cluster/charts/rook-ceph-cluster
       valuesFile: "ceph.yaml"
 
