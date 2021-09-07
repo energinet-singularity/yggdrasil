@@ -19,6 +19,6 @@ apps:
   - name: ceph
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"
-      targetRevision: 0.1.1
+      targetRevision: 0.1.3
       path: chart
       valuesFile: "ceph.yaml"
