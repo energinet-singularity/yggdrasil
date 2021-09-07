@@ -4,8 +4,7 @@ image:
   repository: {{ .Values.registry }}/rook/ceph
   tag: v1.7.2
 {{- end }}
-enableDiscoveryDaemon: true
- {{ if .Values.registry -}}
+{{ if .Values.registry -}}
 csi:
   cephcsi:
     image: {{ .Values.registry }}/cephcsi/cephcsi:v3.2.0
