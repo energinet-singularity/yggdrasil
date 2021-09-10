@@ -1,5 +1,7 @@
 name: networking
 namespace: networking
+namespaceLabels:
+  space: service
 space: service
 description: networking services like ingress, cert-manager.
 

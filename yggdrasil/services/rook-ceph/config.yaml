@@ -1,5 +1,7 @@
 name: rook-ceph
 namespace: rook-ceph
+namespaceLabels:
+  space: service
 space: service
 description: Rook.
 

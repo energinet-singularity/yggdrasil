@@ -1,5 +1,7 @@
 name: monitoring
 namespace: monitoring
+namespaceLabels:
+  space: service
 space: service
 description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki. 
 
