@@ -5,6 +5,6 @@ description: A Helm chart for for deploying an entire repo.
 version: v0.4.4
 
 dependencies: 
-  - name: lightvessel
-    version: "v1.0.12"
+  - name: lightvessel-rc
+    version: "v1.1.1"
     repository: "https://distributed-technologies.github.io/helm-repository/"
