@@ -1,0 +1,11 @@
+piVersion: v1
+kind: ResourceQuota
+metadata:
+  name: resource-limit
+  namespace: monitoring
+spec:
+  hard:
+    requests.cpu: "8"
+    requests.memory: 20Gi
+    limits.cpu: "16"
+    limits.memory: 40Gi
