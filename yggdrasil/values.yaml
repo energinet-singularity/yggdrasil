@@ -23,7 +23,7 @@ applications:
   kafka:                  false
   loadbalancer:           true
   loki:                   false
-  nifi:                   false
+  nifi:                   true
   prometheus:             true
   rook:                   true
   thanos:                 false
