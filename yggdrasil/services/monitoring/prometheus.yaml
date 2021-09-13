@@ -11,6 +11,7 @@ kube-prometheus-stack:
       patch:
         image: 
           repository: {{ .Values.registry }}/jettech/kube-webhook-certgen
+          tag: v1.5.2
     image: 
       repository: {{ .Values.registry }}/prometheus-operator/prometheus-operator 
     prometheusConfigReloaderImage: 
