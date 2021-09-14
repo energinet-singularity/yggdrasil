@@ -1,5 +1,8 @@
 name: tooling
 namespace: tooling
+namespaceLabels:
+  space: service
+space: service
 description: Tooling services Argo WF, Harbor.
 
 project:

@@ -34,6 +34,8 @@ Lightvessel is a repository that holds all the templates necessary to deploy ser
 - _namespace.yaml: Where the namespace is defined.
 - _project.yaml: Where the ArgoCD project is defined if the application should be in a project.
 - _ingress.yaml: Where Ingress is specified.
+- _resources.yaml: Where a limit is set on how many resources a namespace can use and request
+- _networkPolicy: Where network policies can be set for namespaces
 
 ### Yggdrasil
 Yggdrasil is the chart in which both developers and 3rd party developers will need to add their deployments into, to deploy them onto the cluster. Kubernetes manifests are generated using Helm templates from Lightvessel.
@@ -76,6 +78,8 @@ description: <description>
 # Optional
 # Global labels - these will be set on all apps in the config
 # the label 'app: <appName>' is set by default
+namespaceLabels: 
+  label1: label1
 labels:
   label1: label1
 
