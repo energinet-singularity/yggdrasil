@@ -20,7 +20,7 @@ apps:
   - name: prometheus
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
-      targetRevision: main
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
@@ -33,13 +33,13 @@ apps:
   - name: thanos
     source:
       repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
-      targetRevision: main 
+      targetRevision: v0.1.0 
       path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: main
+      targetRevision: 0.1.2
       path: chart
       valuesFile: "grafana.yaml"
     ingress:  
@@ -52,12 +52,12 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/distributed-technologies/services-loki.git'
-      targetRevision: main 
+      targetRevision: 0.1.0 
       path: chart
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
-      targetRevision: main
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "jaeger-operator.yaml"

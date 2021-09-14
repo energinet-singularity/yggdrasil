@@ -15,7 +15,7 @@ apps:
   - name: argowf
     source:
       repoURL: "https://github.com/distributed-technologies/services-argowf.git"
-      targetRevision: main
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "argowf.yaml"
     ingress:
@@ -28,13 +28,13 @@ apps:
   - name: argo-events
     source:
       repoURL: "https://github.com/distributed-technologies/services-argoevents.git"
-      targetRevision: main
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "argo-events.yaml"
   - name: harbor
     source:
       repoURL: "https://github.com/distributed-technologies/services-harbor.git"
-      targetRevision: main
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "harbor.yaml"
     ingress:
@@ -71,6 +71,6 @@ apps:
   - name: vault
     source:
       repoURL: "https://github.com/distributed-technologies/services-vault.git"
-      targetRevision: main
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "vault.yaml"
