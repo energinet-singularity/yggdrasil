@@ -1,5 +1,8 @@
 name: monitoring
 namespace: monitoring
+namespaceLabels:
+  space: service
+space: service
 description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki. 
 
 project:
@@ -17,7 +20,7 @@ apps:
   - name: prometheus
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
-      targetRevision: v0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
@@ -30,13 +33,13 @@ apps:
   - name: thanos
     source:
       repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
-      targetRevision: v0.1.0 
+      targetRevision: main 
       path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: 0.1.2
+      targetRevision: main
       path: chart
       valuesFile: "grafana.yaml"
     ingress:  
@@ -49,12 +52,12 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/distributed-technologies/services-loki.git'
-      targetRevision: 0.1.0 
+      targetRevision: main 
       path: chart
       valuesFile: "loki.yaml"
   - name: jaeger-operator
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
-      targetRevision: v0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "jaeger-operator.yaml"

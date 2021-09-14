@@ -1,5 +1,8 @@
 name: rook-ceph
 namespace: rook-ceph
+namespaceLabels:
+  space: service
+space: service
 description: Rook.
 
 project:
@@ -12,13 +15,12 @@ apps:
   - name: rook
     source:
       repoURL: "https://github.com/distributed-technologies/services-rook.git"
-      targetRevision: 0.1.0
+      targetRevision: 0.1.1
       path: chart
       valuesFile: "rook.yaml"
   - name: ceph
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"
-      targetRevision: 0.1.1
+      targetRevision: 0.1.3
       path: chart
       valuesFile: "ceph.yaml"
-

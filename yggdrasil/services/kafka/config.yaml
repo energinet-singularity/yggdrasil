@@ -1,5 +1,8 @@
 name: kafka
 namespace: kafka
+namespaceLabels:
+  space: service
+space: service
 description: Kafka.
 
 project:
@@ -13,6 +16,6 @@ apps:
     replace: true
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
-      targetRevision: v0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "kafka.yaml"
