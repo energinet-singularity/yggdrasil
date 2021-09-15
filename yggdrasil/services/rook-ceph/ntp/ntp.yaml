@@ -3,7 +3,7 @@ image:
   {{- if .Values.registry }}
   repository: {{ .Values.registry }}/distributed-technologies/services-ntp
   {{- end }}
-
+  tag: main
   pullPolicy: IfNotPresent
 
 resources:
