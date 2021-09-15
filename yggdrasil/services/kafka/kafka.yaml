@@ -9,7 +9,7 @@ cluster:
 
 cp-helm-charts:
   cp-kafka-connect: 
-  enabled: false
+    enabled: false
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
