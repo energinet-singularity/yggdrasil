@@ -34,7 +34,8 @@ cp-helm-charts:
       bootstrapServers: my-cluster-kafka-plain-bootstrap:9092 
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
+        imageTag: theoneweneed
 
 strimzi-kafka-operator:
   image: 
