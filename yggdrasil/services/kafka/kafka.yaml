@@ -13,7 +13,7 @@ cp-helm-charts:
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256:6f82e2b0464f50da8104acd7363fb9b995001ddff77d248379f8788e78946143
 
   cp-ksql-server:
     enabled: true
@@ -23,7 +23,7 @@ cp-helm-charts:
       url: http://kafka-cp-schema-registry:8081
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
+        image: {{ .Values.registry }}/solsson//solsson/kafka-prometheus-jmx-exporter@sha256:6f82e2b0464f50da8104acd7363fb9b995001ddff77d248379f8788e78946143
 
   cp-schema-registry:
     enabled: true
