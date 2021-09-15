@@ -1,4 +1,9 @@
 {{- if .Values.registry -}}
+cluster:
+  kafka: 
+    storage: 
+      class: ceph-block
+
 cp-helm-charts:
   cp-kafka-connect: 
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
@@ -70,3 +75,5 @@ prometheus-kafka-exporter:
 connector:
   volume:
     storageClassName: ceph-filesystem
+
+
