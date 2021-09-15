@@ -8,11 +8,29 @@ cluster:
       class: ceph-filesystem
 
 cp-helm-charts:
+  enabled: false
   cp-kafka-connect: 
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256  
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256
+
+  cp-ksql-server:
+    enabled: true
+    image: confluentinc/cp-ksqldb-server
+    imageTag: 6.1.0
+    cp-schema-registry: 
+      url: http://kafka-schema-registry-cp-schema-registry:8081
+    prometheus:
+      jmx:
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256
+
+  cp-schema-registry:
+    enabled: true
+    image: confluentinc/cp-schema-registry
+    imageTag: 6.1.0
+    kafka:
+      bootstrapServers: my-cluster-kafka-plain-bootstrap:9092 
 
 strimzi-kafka-operator:
   image: 
@@ -79,16 +97,4 @@ connector:
   volume:
     storageClassName: ceph-filesystem
 
-cp-helm-charts:
-    cp-ksql-server:
-      enabled: true
-      image: confluentinc/cp-ksqldb-server
-      imageTag: 6.1.0
-      cp-schema-registry: 
-        url: http://kafka-schema-registry-cp-schema-registry:8081
-    cp-schema-registry:
-      enabled: true
-      image: confluentinc/cp-schema-registry
-      imageTag: 6.1.0
-      kafka:
-        bootstrapServers: my-cluster-kafka-plain-bootstrap:9092
+    
