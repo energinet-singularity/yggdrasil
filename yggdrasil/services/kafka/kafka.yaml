@@ -66,3 +66,7 @@ prometheus-kafka-exporter:
     repository: {{ .Values.registry }}/danielqsj/kafka-exporter
   {{- end }}
   replicaCount: 3
+
+connector:
+  volume:
+    storageClassName: ceph-filesystem
