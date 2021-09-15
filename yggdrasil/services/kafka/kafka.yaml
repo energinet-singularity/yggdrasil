@@ -13,17 +13,17 @@ cp-helm-charts:
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
 
   cp-ksql-server:
     enabled: true
     image: confluentinc/cp-ksqldb-server
     imageTag: 6.1.0
     cp-schema-registry: 
-      url: http://kafka-schema-registry-cp-schema-registry:8081
+      url: http://kafka-cp-schema-registry:8081
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
 
   cp-schema-registry:
     enabled: true
@@ -31,6 +31,9 @@ cp-helm-charts:
     imageTag: 6.1.0
     kafka:
       bootstrapServers: my-cluster-kafka-plain-bootstrap:9092 
+    prometheus:
+      jmx:
+        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter:theoneweneed
 
 strimzi-kafka-operator:
   image: 
