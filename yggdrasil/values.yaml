@@ -22,7 +22,7 @@ applications:
   jaeger-operator:        false
   kafka:                  false
   loadbalancer:           true
-  loki:                   false
+  loki:                   true
   nifi:                   false
   ntp:                    true
   prometheus:             true
