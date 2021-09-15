@@ -21,6 +21,8 @@ cp-helm-charts:
     imageTag: 6.1.0
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
+    kafka:
+      bootstrapServers: my-cluster-kafka-plain-bootstrap:9092
     prometheus:
       jmx:
         image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
