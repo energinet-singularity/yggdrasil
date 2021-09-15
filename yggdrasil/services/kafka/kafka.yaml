@@ -2,10 +2,10 @@
 cluster:
   kafka: 
     storage: 
-      class: ceph-block
+      class: ceph-filesystem
   zookeeper:
     storage: 
-      class: ceph-block
+      class: ceph-filesystem
 
 cp-helm-charts:
   cp-kafka-connect: 
