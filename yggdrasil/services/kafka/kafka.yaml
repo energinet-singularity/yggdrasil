@@ -3,6 +3,9 @@ cluster:
   kafka: 
     storage: 
       class: ceph-block
+  zookeeper:
+    storage: 
+      class: ceph-block
 
 cp-helm-charts:
   cp-kafka-connect: 
