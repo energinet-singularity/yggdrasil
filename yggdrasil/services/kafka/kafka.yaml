@@ -79,4 +79,16 @@ connector:
   volume:
     storageClassName: ceph-filesystem
 
-
+cp-helm-charts:
+    cp-ksql-server:
+      enabled: true
+      image: confluentinc/cp-ksqldb-server
+      imageTag: 6.1.0
+      cp-schema-registry: http://kafka-schema-registry-cp-schema-registry:8081
+        url: 
+    cp-schema-registry:
+      enabled: true
+      image: confluentinc/cp-schema-registry
+      imageTag: 6.1.0
+      kafka:
+        bootstrapServers: my-cluster-kafka-plain-bootstrap:9092
