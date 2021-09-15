@@ -24,6 +24,7 @@ applications:
   loadbalancer:           true
   loki:                   false
   nifi:                   false
+  ntp:                    true
   prometheus:             true
   rook:                   true
   thanos:                 false
