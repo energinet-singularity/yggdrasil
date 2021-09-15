@@ -8,7 +8,7 @@ rook-ceph:
   {{ if .Values.registry -}}
   csi:
     cephcsi:
-      image: {{ .Values.registry }}/cephcsi/cephcsi:v3.2.0
+      image: {{ .Values.registry }}/cephcsi/cephcsi:v3.4.0
     registrar:
       image: {{ .Values.registry }}/sig-storage/csi-node-driver-registrar:v2.0.1
     provisioner:
