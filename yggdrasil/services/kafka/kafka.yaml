@@ -8,8 +8,8 @@ cluster:
       class: ceph-filesystem
 
 cp-helm-charts:
-  enabled: false
   cp-kafka-connect: 
+  enabled: false
     image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
     prometheus:
       jmx:
