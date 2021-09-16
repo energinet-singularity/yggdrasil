@@ -53,17 +53,12 @@ grafana:
         options:
           path: /var/lib/grafana/dashboards/default
 
-  dashboards: 
-    default: 
-      ceph-dashboard:
-        gnetId: 2842
-        revision: 14
-        datasource: Prometheus
-      loki:
-        gnetId: 12019
-        revision: 2
-        datasource: Loki
-      kafka:
-        gnetId: 11285
-        revision: 1
-        datasource: Prometheus
+  dashboards:
+   default:
+     ceph-dashboard:
+       file: dashboards/ceph-dashboard.json
+     loki:
+       file: dashboards/loki-dashboard.json
+     kafka:
+       file: dashboards/strimzi-kafka-dashboard.json
+
