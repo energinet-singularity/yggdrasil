@@ -52,6 +52,14 @@ grafana:
         editable: true
         options:
           path: /var/lib/grafana/dashboards/default
+      - name: 'external-configmap'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/external-configmap
 
   dashboards: 
     default: 
@@ -67,3 +75,5 @@ grafana:
         gnetId: 11285
         revision: 1
         datasource: Prometheus
+  dashboardsConfigMaps:
+    external-configmap: grafana-dashboards
