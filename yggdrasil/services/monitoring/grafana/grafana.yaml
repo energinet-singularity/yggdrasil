@@ -44,14 +44,14 @@ grafana:
     dashboardproviders.yaml:
       apiVersion: 1
       providers:
-      - name: 'default'
+      - name: 'external-configmap'
         orgId: 1
         folder: ''
         type: file
         disableDeletion: false
         editable: true
         options:
-          path: /var/lib/grafana/dashboards/default
+          path: /var/lib/grafana/dashboards/external-configmap
 
   dashboards:
    default:
@@ -114,3 +114,6 @@ grafana:
       # Otherwise the namespace in which the sidecar is running will be used.
       # It's also possible to specify ALL to search in all namespaces
       searchNamespace: null
+
+  dashboardsConfigMaps:
+    external-configmap: grafana-dashboards
