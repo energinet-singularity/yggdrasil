@@ -37,6 +37,7 @@ apps:
       path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
+    replace: true
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
       targetRevision: feature/grafana-local-dashboards
