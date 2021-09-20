@@ -40,28 +40,6 @@ grafana:
   adminUser: admin
   adminPassword: password
 
-#  dashboardProviders: 
-#    dashboardproviders.yaml:
-#      apiVersion: 1
-#      providers:
-#      - name: 'external-configmap'
-#        orgId: 1
-#        folder: ''
-#        type: file
-#        disableDeletion: false
-#        editable: true
-#        options:
-#          path: /var/lib/grafana/dashboards/external-configmap
-
-#  dashboards:
-#   default:
-#     ceph-dashboard:
-#       file: dashboards/ceph-dashboard.json
-#     loki:
-#       file: dashboards/loki-dashboard.json
-#     kafka:
-#       file: dashboards/strimzi-kafka-dashboard.json
-
   sidecar:
   {{- if .Values.registry }}
     image:
