@@ -13,4 +13,4 @@ jaeger-operator:
 
 elasticsearch: 
   volumeClaimTemplate: 
-    storageClass: "ceph-filesystem"
+    storageClassName: "ceph-filesystem"
