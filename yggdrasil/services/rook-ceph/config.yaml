@@ -21,7 +21,7 @@ apps:
   - name: rook-helper
     source:
       repoURL: "https://github.com/distributed-technologies/services-rook-helper.git"
-      targetRevision: 0.1.0
+      targetRevision: development
       path: chart
       valuesFile: "rook-helper.yaml"
   - name: ceph
