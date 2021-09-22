@@ -59,6 +59,6 @@ apps:
   - name: jaeger-operator
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
-      targetRevision: main
+      targetRevision: feature/tracing-with-jaeger
       path: chart
       valuesFile: "jaeger-operator.yaml"
