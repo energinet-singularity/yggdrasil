@@ -27,5 +27,6 @@ applications:
   ntp:                    true
   prometheus:             true
   rook:                   true
+  rook-helper:            true
   thanos:                 false
   vault:                  false
