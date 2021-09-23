@@ -56,9 +56,9 @@ apps:
       targetRevision: main 
       path: chart
       valuesFile: "loki.yaml"
-  - name: jaeger-operator
+  - name: jaeger
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
       targetRevision: feature/tracing-with-jaeger
       path: chart
-      valuesFile: "jaeger-operator.yaml"
+      valuesFile: "jaeger.yaml"
