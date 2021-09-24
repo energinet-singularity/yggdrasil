@@ -62,3 +62,10 @@ apps:
       targetRevision: feature/tracing-with-jaeger
       path: chart
       valuesFile: "jaeger.yaml"
+    ingress:
+      - subDomain: jaeger
+        path: /
+        servicePort: 80
+        serviceName: jaeger-query
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
