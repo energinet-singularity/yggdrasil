@@ -40,7 +40,7 @@ apps:
     replace: true
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: feature/grafana-local-dashboards
+      targetRevision: main
       path: chart
       valuesFile: "grafana.yaml"
     ingress:  
