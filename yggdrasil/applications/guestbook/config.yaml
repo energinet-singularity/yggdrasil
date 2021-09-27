@@ -1,4 +1,4 @@
-name: example-guestbook
+name: monitoring
 namespace: example-guestbook
 description: example-guestbook.
 
