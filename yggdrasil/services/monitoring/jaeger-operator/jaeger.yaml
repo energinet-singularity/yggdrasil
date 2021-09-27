@@ -1,4 +1,4 @@
-jaeger-operator:
+jaeger:
   provisionDataStore:
     cassandra: false
     elasticsearch: true
