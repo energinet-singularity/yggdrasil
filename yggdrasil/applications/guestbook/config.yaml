@@ -1,9 +1,9 @@
-name: monitoring
+name: example-guestbook
 namespace: example-guestbook
 description: example-guestbook.
 
 project:
-  name: example-guestbook
+  name: monitoring
   server: https://kubernetes.default.svc
   sourceRepos:
     - '*'
