@@ -1,5 +1,5 @@
 name: example-guestbook
-namespace: monitorering
+namespace: monitoring
 description: example-guestbook.
 
 project:
