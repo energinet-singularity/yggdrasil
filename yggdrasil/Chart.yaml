@@ -6,5 +6,5 @@ version: v0.4.4
 
 dependencies: 
   - name: lightvessel
-    version: "v1.1.4-rc-2"
+    version: "v1.1.4-rc-3"
     repository: "https://distributed-technologies.github.io/helm-repository/"
