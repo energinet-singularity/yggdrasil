@@ -1,9 +1,6 @@
 dependencies:
-- name: argo-cd
-  repository: https://argoproj.github.io/argo-helm
-  version: 3.3.5
-- name: mukube-vnet
+- name: nidhogg
   repository: https://distributed-technologies.github.io/helm-repository/
-  version: v0.3.0
-digest: sha256:44352f8671365ddb6e6a4f78756bfbebd6ed5f896bfe15ae8c10af63464771bf
-generated: "2021-05-30T19:04:35.26182088Z"
+  version: v1.0.2-rc-3
+digest: sha256:8fd6c818f037f8df04c65226bf68578ed6af4f55529e75863930bea960494b87
+generated: "2021-09-30T23:41:51.344235755+02:00"
