@@ -1,4 +1,5 @@
 nidhogg: 
+  cloud: true
   yggdrasil: 
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "main"
@@ -9,20 +10,9 @@ nidhogg:
       # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
       # ipRangeStop: 0.0.0.0
 
-  installCNI: true
-
-  CNI:
-    kube:
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
-    npc:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
+  installCNI: false
 
   argo-cd: 
-    global:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
     controller: 
       replicas: 3
       env:
@@ -31,18 +21,8 @@ nidhogg:
       enableStatefulSet: true
     redis-ha: 
       enabled: true
-      image:
-        repository: harbor.sc.garagen/yggdrasil/redis
-      haproxy:
-        image: 
-          repository: harbor.sc.garagen/yggdrasil/haproxy
-      exporter:
-        image: harbor.sc.garagen/yggdrasil/oliver006/redis_exporter
     redis:
       enabled: false
-      dex:
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/dexidp/dex
     server:   
       replicas: 3
       config:
@@ -86,8 +66,6 @@ nidhogg:
               hs = {}
               hs.status = "Healthy"
               return hs
-      service: 
-        type: NodePort
 
     configs:
       secret:
