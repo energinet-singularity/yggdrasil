@@ -4,7 +4,7 @@ nidhogg:
     # If this URL does not end with ".git" the template will assume that it's from a chart repo
     # If this URL does end with ".git" the template will assume that it's from a git repo
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "main"
+    targetRevision: "feature/nidhogg-updates"
     # Set the ingress domain you would like to use for your ingress services
     ingressDomain: cluster.local
     clusterNetworking: 
