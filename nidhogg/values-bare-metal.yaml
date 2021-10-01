@@ -16,17 +16,17 @@ nidhogg:
 
   argo-cd: 
     controller: 
-      replicas: 1
+      replicas: 3
       env:
         - name: "ARGOCD_CONTROLLER_REPLICAS"
-          value: "1"
+          value: "3"
       enableStatefulSet: true
     redis-ha: 
       enabled: true
     redis:
       enabled: false
     server:   
-      replicas: 1
+      replicas: 3
       config:
         repositories: |
           - type: helm
