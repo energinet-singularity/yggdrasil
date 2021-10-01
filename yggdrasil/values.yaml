@@ -13,7 +13,7 @@ applications:
   cache:                  false
   cert-manager:           false
   example-guestbook:      false
-  grafana:                true
+  grafana:                false
   harbor:                 false
   influxdb:               false
   ingress:                false
@@ -22,6 +22,6 @@ applications:
   loadbalancer:           false
   loki:                   false
   nifi:                   false
-  prometheus:             true
+  prometheus:             false
   thanos:                 false
   vault:                  false
