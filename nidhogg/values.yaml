@@ -1,14 +1,16 @@
 nidhogg: 
-  baremetal: false
-  yggdrasil: 
+  baremetal: true
+  yggdrasil:
+    # If this URL does not end with ".git" the template will assume that it's from a chart repo
+    # If this URL does end with ".git" the template will assume that it's from a git repo
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "main"
-
-    # ingressDomain: your-ingress-domain-here
-    # clusterNetworking: 
-      # ipRangeStart: 0.0.0.0
+    targetRevision: "feature/nidhogg-updates"
+    # Set the ingress domain you would like to use for your ingress services
+    ingressDomain: cluster.local
+    clusterNetworking: 
+      ipRangeStart: 172.16.0.0
       # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-      # ipRangeStop: 0.0.0.0
+      ipRangeStop: 172.16.0.9
 
   argo-cd: 
     controller: 
@@ -64,9 +66,33 @@ nidhogg:
               hs = {}
               hs.status = "Healthy"
               return hs
+      service: 
+        type: NodePort
 
     configs:
       secret:
         # This is not a secret password. It is okay to be on github
         argocdServerAdminPassword: $2y$12$m4KC7G9d8NFxInl7GRpQ1OpPPrF43Msa33ZQjj0YmT6f8uwjHW8AO
         argocdServerAdminPasswordMtime: "2021-01-02T15:04:05Z"
+
+#  rookCeph: 
+#    repoURL: https://github.com/distributed-technologies/services-rook.git
+#    targetRevision: 0.1.2
+#    path: "chart"
+
+#  rookCephCluster: 
+#    repoURL: https://github.com/distributed-technologies/services-ceph.git
+#    targetRevision: 0.1.4
+#    path: "chart"
+
+#  rookCephHelper: 
+#    repoURL: https://github.com/distributed-technologies/services-rook-helper.git
+#    targetRevision: "main"
+#    path: "chart"
+
+#  ntp: 
+#    repoURL: https://github.com/distributed-technologies/services-ntp.git
+#    targetRevision: "v0.1.0"
+#    path: "chart"
+#    image: 
+#      tag: main
