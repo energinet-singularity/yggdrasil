@@ -1,5 +1,5 @@
 nidhogg: 
-  cloud: false
+  baremetal: true
   yggdrasil:
     # If this URL does not end with ".git" the template will assume that it's from a chart repo
     # If this URL does end with ".git" the template will assume that it's from a git repo
@@ -11,8 +11,6 @@ nidhogg:
       ipRangeStart: 172.16.0.0
       # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
       ipRangeStop: 172.16.0.9
-
-  installCNI: true
 
   argo-cd: 
     controller: 
