@@ -12,6 +12,7 @@ applications:
   argowf:                 false
   argo-events:            false
   cache:                  false
+  ceph:                   true
   cert-manager:           false
   example-guestbook:      true
   grafana:                true
@@ -23,6 +24,9 @@ applications:
   loadbalancer:           true
   loki:                   false
   nifi:                   false
+  ntp:                    true
   prometheus:             true
+  rook:                   true
+  rook-helper             false
   thanos:                 false
   vault:                  false
