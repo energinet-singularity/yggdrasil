@@ -24,6 +24,6 @@ apps:
   - name: cert-manager
     source:
       repoURL: "https://github.com/distributed-technologies/service-cert-manager.git"
-      targetRevision: main
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "cert-manager.yaml"

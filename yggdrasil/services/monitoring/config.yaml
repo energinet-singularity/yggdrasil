@@ -33,7 +33,7 @@ apps:
   - name: thanos
     source:
       repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
-      targetRevision: main 
+      targetRevision: v0.1.0 
       path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
