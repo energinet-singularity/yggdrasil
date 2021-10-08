@@ -1,4 +1,12 @@
 jaeger:
+  {{- if .Values.registry }}
+  agent:
+    image: {{ .Values.registry }}/jaegertracing/jaeger-agent
+  collector:
+    image: {{ .Values.registry }}/jaegertracing/jaeger-collector
+  query:
+    image: {{ .Values.registry }}/jaegertracing/jaeger-query
+  {{- end }}
   provisionDataStore:
     cassandra: false
     elasticsearch: true
@@ -9,8 +17,7 @@ jaeger:
   elasticsearch:
     user: admin
     usePassword: true
-    password: password
-
-elasticsearch: 
-  volumeClaimTemplate: 
-    storageClassName: "ceph-filesystem"
+    password: password 
+    image: {{ .Values.registry }}/elasticsearch/elasticsearch
+    volumeClaimTemplate: 
+      storageClassName: "ceph-filesystem"
