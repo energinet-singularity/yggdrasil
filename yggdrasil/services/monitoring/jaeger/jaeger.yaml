@@ -1,11 +1,11 @@
 jaeger:
   {{- if .Values.registry }}
   agent:
-    image: {{ .Values.registry }}/jaegertracing/jaeger-agent
+    image: {{ .Values.registry }}/jaeger-agent
   collector:
-    image: {{ .Values.registry }}/jaegertracing/jaeger-collector
+    image: {{ .Values.registry }}/jaeger-collector
   query:
-    image: {{ .Values.registry }}/jaegertracing/jaeger-query
+    image: {{ .Values.registry }}jaeger-query
   {{- end }}
   provisionDataStore:
     cassandra: false
