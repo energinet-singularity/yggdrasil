@@ -1,26 +1,11 @@
 nidhogg: 
-  baremetal: true
   # A reference to this repo itself.
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "jesper_dev"
-
-
-  mukube-vnet:
-    kube:
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
-        tag: 2.8.1
-    npc:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
-        tag: 2.8.1
+    baremetal: true
 
   argo-cd: 
-    global:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
-        tag: v2.0.1
     controller: 
       replicas: 3
       env:
@@ -29,22 +14,8 @@ nidhogg:
       enableStatefulSet: true
     redis-ha: 
       enabled: true
-      image:
-        repository: harbor.sc.garagen/yggdrasil/redis
-        tag: 6.2.2-alpine
-      haproxy:
-        image: 
-          repository: harbor.sc.garagen/yggdrasil/haproxy
-          tag: 2.0.4
-      exporter:
-        image: harbor.sc.garagen/yggdrasil/oliver006/redis_exporter
-        tag: v1.15.1
     redis:
       enabled: false
-    dex:
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/dexidp/dex
-        tag: v2.26.0
     server: 
       podLabels:
         app: argocd-server

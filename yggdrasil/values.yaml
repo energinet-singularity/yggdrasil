@@ -6,7 +6,7 @@ clusterNetworking:
 #  ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
   ipRangeStop: 192.168.1.89
 
-registry: harbor.sc.garagen/yggdrasil
+#registry: harbor.sc.garagen/yggdrasil
 
 applications: 
   argowf:                 false
@@ -14,19 +14,19 @@ applications:
   cache:                  false
   ceph:                   true
   cert-manager:           false
-  example-guestbook:      true
-  grafana:                true
+  example-guestbook:      false
+  grafana:                false
   harbor:                 false
   influxdb:               false
   ingress:                false
-  jaeger:                 true
+  jaeger:                 false
   kafka:                  false
-  loadbalancer:           true
+  loadbalancer:           false
   loki:                   false
   nifi:                   false
-  ntp:                    true
-  prometheus:             true
+  ntp:                    false
+  prometheus:             false
   rook:                   true
-  rook-helper:             false
+  rook-helper:            true
   thanos:                 false
   vault:                  false
