@@ -1,6 +1,6 @@
 argo: 
   images: 
-    pullPolicy: ifNotPresent
+    pullPolicy: IfNotPresent
   {{- if .Values.registry }}
   controller: 
     image: 
