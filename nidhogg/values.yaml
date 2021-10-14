@@ -5,7 +5,18 @@ nidhogg:
     targetRevision: "jesper_dev"
     baremetal: true
 
+  CNI:
+    kube:
+      image: 
+        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
+    npc:
+      image:
+        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
+
   argo-cd: 
+    global:
+      image:
+        repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
     controller: 
       replicas: 3
       env:
@@ -14,8 +25,18 @@ nidhogg:
       enableStatefulSet: true
     redis-ha: 
       enabled: true
+      image:
+        repository: harbor.sc.garagen/yggdrasil/redis
+      haproxy:
+        image: 
+          repository: harbor.sc.garagen/yggdrasil/haproxy
+      exporter:
+        image: harbor.sc.garagen/yggdrasil/oliver006/redis_exporter
     redis:
       enabled: false
+    dex: 
+      image: 
+        repository: harbor.sc.garagen/yggdrasil/dexidp/dex    
     server: 
       podLabels:
         app: argocd-server
