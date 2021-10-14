@@ -14,7 +14,7 @@ traefik:
       cpu: "100m"
       memory: "50Mi"
     limits: 
-      cpi: "300m"
+      cpu: "300m"
       memory: "150Mi"
 
   service:
