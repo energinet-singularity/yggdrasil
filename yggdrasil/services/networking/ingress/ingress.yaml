@@ -9,6 +9,14 @@ traefik:
   ingressClass:
     fallbackApiVersion: "v1"
 
+  resources: 
+    request: 
+      cpu: "100m"
+      memory: "50Mi"
+    limits: 
+      cpi: "300m"
+      memory: "150Mi"
+
   service:
     enabled: true
     type: LoadBalancer
