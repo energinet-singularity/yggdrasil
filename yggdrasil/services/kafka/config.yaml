@@ -5,12 +5,6 @@ namespaceLabels:
 space: service
 description: Kafka.
 
-project:
-  name: kafka
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: kafka
     replace: true
