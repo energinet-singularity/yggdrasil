@@ -18,10 +18,10 @@ nidhogg:
       image:
         repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
     controller: 
-      replicas: 3
+      replicas: 2
       env:
         - name: "ARGOCD_CONTROLLER_REPLICAS"
-          value: "3"
+          value: "2"
       enableStatefulSet: true
     redis-ha: 
       enabled: true
@@ -50,7 +50,7 @@ nidhogg:
                 values:
                 - argocd-server
             topologyKey: "kubernetes.io/hostname"    
-      replicas: 3
+      replicas: 2
       config:
         repositories: |
           - type: helm
