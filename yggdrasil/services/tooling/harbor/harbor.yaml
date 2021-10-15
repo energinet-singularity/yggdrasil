@@ -11,40 +11,42 @@ harbor:
   persistence:
     enabled: true
     resourcePolicy: "keep"
+{{- if .Values.applications.ceph }}
     persistentVolumeClaim:
       registry:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "registry"
         accessMode: ReadWriteMany
         size: 50Gi
       chartmuseum:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "chartmuseum"
         accessMode: ReadWriteMany
         size: 5Gi
       jobservice:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "jobservice"
         accessMode: ReadWriteMany
         size: 5Gi
       database:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "database"
         accessMode: ReadWriteMany
         size: 5Gi
       redis:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "redis"
         accessMode: ReadWriteMany
         size: 5Gi
       trivy:
         existingClaim: "registry"
-        storageClass: "rook-cephfs"
+        storageClass: {{ .Values.storageClass | quote }}
         subPath: "trivy"
         accessMode: ReadWriteMany
         size: 5Gi
+{{- end }}

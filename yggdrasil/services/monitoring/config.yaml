@@ -28,9 +28,9 @@ apps:
   - name: grafana
     replace: true
     source:
-      repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: main
-      path: chart
+      repoURL: 'https://github.com/grafana/helm-charts.git'
+      targetRevision: grafana-6.16.14
+      path: charts/grafana
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana
