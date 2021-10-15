@@ -27,9 +27,9 @@ apps:
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
-      repoURL: 'https://github.com/grafana/helm-charts.git'
-      targetRevision: grafana-6.16.14
-      path: charts/grafana
+      repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
+      targetRevision: main
+      path: chart
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana
