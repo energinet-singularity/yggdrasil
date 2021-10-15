@@ -27,7 +27,7 @@ apps:
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
-      repoURL: 'https://github.com/distributed-technologies/services-thanos.git'
+      repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
       targetRevision: main
       path: chart
       valuesFile: "grafana.yaml"
