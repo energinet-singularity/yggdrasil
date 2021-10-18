@@ -3,7 +3,8 @@ nidhogg:
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "jesper_dev"
-    baremetal: true
+
+  installCNI: true
 
   CNI:
     kube:
