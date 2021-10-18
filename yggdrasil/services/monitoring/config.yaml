@@ -28,7 +28,7 @@ apps:
   - name: grafana
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: main
+      targetRevision: feature/added-k8s-dashboards
       path: chart
       valuesFile: "grafana.yaml"
     ingress:  
