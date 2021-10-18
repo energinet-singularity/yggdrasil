@@ -3,11 +3,14 @@ ingressDomain: jesperdev.garagen
 
 clusterNetworking: 
   ipRangeStart: 192.168.1.80
-#  ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
+# ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
   ipRangeStop: 192.168.1.89
 
+# By setting the storage class, you enable the hard-coded ceph storageclass in the values files. If not set,
+# the charts will default to the standard storage class
 storageClass: ceph-filesystem
 
+# If registry is not set, it will pull from the default registries
 registry: harbor.sc.garagen/yggdrasil
 
 applications: 
