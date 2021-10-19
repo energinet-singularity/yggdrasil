@@ -33,18 +33,6 @@ nidhogg:
     redis:
       enabled: false
     server: 
-      podLabels:
-        app: argocd-server
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - argocd-server
-            topologyKey: "kubernetes.io/hostname"    
       replicas: 3
       config:
         repositories: |
