@@ -1,5 +1,13 @@
 <img src="docs/images/Energinet-logo.png" width="250" style="margin-bottom: 3%">
 
+# Changes in 2.0.0
+In this version we have done the following changes: 
+- Removed project definition from config.yaml and put it into its own file
+- Added networkPolicy and resourceQuota definitions for namespaces
+
+### Upgrading from 1.x.x to 2.0.0
+In order to upgrade from the previous version, you need to delete the project definition from your config.yaml in all your namespaces. These project definitions should then be added as a file on the same path as the config.yaml but be called project.yaml instead. This file can only contain the spec part of the project manifest, which can be found [here](https://argo-cd.readthedocs.io/en/latest/operator-manual/project.yaml): 
+
 # Yggdrasil
 This is the repository for the cluster environment. It contains two Helm charts called Nidhogg and Yggdrasil.
 
