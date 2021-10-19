@@ -1,5 +1,5 @@
 dashboardRoute:
-  host: ingress.{{ .Values.ingress.ingressDomain }}
+  host: traefik.{{ .Values.ingress.ingressDomain }}
 
 traefik:
   {{- if .Values.registry }}
