@@ -4,55 +4,34 @@ nidhogg:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "jesper_dev"
 
-    ingress:  
+    # ingress:  
       # Set either a subdomain or a path here
-      ingressDomain: jesperdev.garagen
-      loadBalancerIP: 192.168.1.89
+      # ingressDomain: <your-ingress-domain-here>
+      # loadBalancerIP: 0.0.0.0
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
 
     # Configure the loadbalancer if you plan on using the loadbalancer included in SCCP
-    loadbalancer:
-      ipRangeStart: 192.168.1.80
-      # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-      ipRangeStop: 192.168.1.89
+    # loadbalancer:
+      # ipRangeStart: 0.0.0.0
+      # ipRangeStop: 0.0.0.0
 
   installCNI: true
 
-  CNI:
-    kube:
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
-    npc:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
-
   argo-cd: 
-    global:
-      image:
-        repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
     controller: 
-      replicas: 2
+      replicas: 3
       env:
         - name: "ARGOCD_CONTROLLER_REPLICAS"
-          value: "2"
+          value: "3"
       enableStatefulSet: true
     redis-ha: 
       enabled: true
-      replicas: 2
-      image:
-        repository: harbor.sc.garagen/yggdrasil/redis
+      replicas: 3
       haproxy:
-        replicas: 2
-        image: 
-          repository: harbor.sc.garagen/yggdrasil/haproxy
-      exporter:
-        image: harbor.sc.garagen/yggdrasil/oliver006/redis_exporter
+        replicas: 3
     redis:
       enabled: false
-    dex: 
-      image: 
-        repository: harbor.sc.garagen/yggdrasil/dexidp/dex    
     server: 
       podLabels:
         app: argocd-server
@@ -66,7 +45,7 @@ nidhogg:
                 values:
                 - argocd-server
             topologyKey: "kubernetes.io/hostname"    
-      replicas: 2
+      replicas: 3
       config:
         repositories: |
           - type: helm
@@ -121,24 +100,3 @@ nidhogg:
         # This is not a secret password. It is okay to be on github
         argocdServerAdminPassword: $2y$12$m4KC7G9d8NFxInl7GRpQ1OpPPrF43Msa33ZQjj0YmT6f8uwjHW8AO
         argocdServerAdminPasswordMtime: "2021-01-02T15:04:05Z"
-#  rookCeph: 
-#    repoURL: https://github.com/distributed-technologies/services-rook.git
-#    targetRevision: 0.1.2
-#    path: "chart"
-
-#  rookCephCluster: 
-#    repoURL: https://github.com/distributed-technologies/services-ceph.git
-#    targetRevision: 0.1.4
-#    path: "chart"
-
-#  rookCephHelper: 
-#    repoURL: https://github.com/distributed-technologies/services-rook-helper.git
-#    targetRevision: "main"
-#    path: "chart"
-
-#  ntp: 
-#    repoURL: https://github.com/distributed-technologies/services-ntp.git
-#    targetRevision: "v0.1.0"
-#    path: "chart"
-#    image: 
-#      tag: main
