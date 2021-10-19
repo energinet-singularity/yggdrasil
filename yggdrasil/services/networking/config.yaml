@@ -6,12 +6,12 @@ space: service
 description: networking services like ingress, cert-manager.
 
 apps:
-  - name: ingress
+  - name: traefik
     source:
       repoURL: "https://github.com/distributed-technologies/services-ingress.git"
       targetRevision: main
       path: chart
-      valuesFile: "ingress.yaml"
+      valuesFile: "traefik.yaml"
   - name: cert-manager
     source:
       repoURL: "https://github.com/distributed-technologies/service-cert-manager.git"

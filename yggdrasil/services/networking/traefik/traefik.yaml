@@ -1,5 +1,5 @@
 dashboardRoute:
-  host: ingress.{{ .Values.ingressDomain }}
+  host: ingress.{{ .Values.ingress.ingressDomain }}
 
 traefik:
   {{- if .Values.registry }}
@@ -12,15 +12,13 @@ traefik:
   service:
     enabled: true
     type: LoadBalancer
-    # type: NodePort
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-resource-group: {{ .Values.ingress.loadbalancerResourceGroup | quote }}
     spec: 
-      loadBalancerIP: {{ .Values.clusterNetworking.ipRangeStop }}
+      loadBalancerIP: {{ .Values.ingress.loadBalancerIP }}
 
   ports:
-#    web:
-#      nodePort: 32080
     websecure:
-#      nodePort: 32443
       tls: 
         enabled: true  
 
