@@ -9,7 +9,7 @@ apps:
   - name: argowf
     source:
       repoURL: "https://github.com/distributed-technologies/services-argowf.git"
-      targetRevision: main
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "argowf.yaml"
     ingress:
@@ -28,7 +28,7 @@ apps:
   - name: harbor
     source:
       repoURL: "https://github.com/distributed-technologies/services-harbor.git"
-      targetRevision: main
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "harbor.yaml"
     ingress:

@@ -12,12 +12,6 @@ apps:
       targetRevision: 0.1.2
       path: chart
       valuesFile: "rook.yaml"
-  - name: rook-helper
-    source:
-      repoURL: "https://github.com/distributed-technologies/services-rook-helper.git"
-      targetRevision: development
-      path: chart
-      valuesFile: "rook-helper.yaml"
   - name: ceph
     source:
       repoURL: "https://github.com/distributed-technologies/services-ceph.git"

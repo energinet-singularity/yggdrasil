@@ -41,13 +41,13 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/distributed-technologies/services-loki.git'
-      targetRevision: main 
+      targetRevision: 0.1.0
       path: chart
       valuesFile: "loki.yaml"
   - name: jaeger
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
-      targetRevision: feature/tracing-with-jaeger
+      targetRevision: v0.1.0
       path: chart
       valuesFile: "jaeger.yaml"
     ingress:

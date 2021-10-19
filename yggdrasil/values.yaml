@@ -24,6 +24,5 @@ applications:
   ntp:                    false
   prometheus:             false
   rook:                   false
-  rook-helper:            false
   thanos:                 false
   vault:                  false

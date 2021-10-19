@@ -6,7 +6,7 @@ nidhogg:
 
     # ingress:  
       # Set either a subdomain or a path here
-      # ingressDomain: <your-ingress-domain-here>
+      # domain: <your-ingress-domain-here>
       # loadBalancerIP: 0.0.0.0
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
