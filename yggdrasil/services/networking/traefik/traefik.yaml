@@ -12,8 +12,10 @@ traefik:
   service:
     enabled: true
     type: LoadBalancer
+{{- if .Values.ingress.loadbalancerResourceGroup }}
     annotations:
       service.beta.kubernetes.io/azure-load-balancer-resource-group: {{ .Values.ingress.loadbalancerResourceGroup | quote }}
+{{- end }}
     spec: 
       loadBalancerIP: {{ .Values.ingress.loadBalancerIP }}
 
