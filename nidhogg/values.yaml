@@ -2,7 +2,7 @@ nidhogg:
   # A reference to this repo itself.
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "jesper_dev"
+    targetRevision: "main"
 
     # ingress:  
       # Set either a subdomain or a path here
