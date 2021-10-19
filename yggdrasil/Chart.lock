@@ -1,6 +1,6 @@
 dependencies:
 - name: lightvessel
   repository: https://distributed-technologies.github.io/helm-repository/
-  version: v1.1.9-rc-15
-digest: sha256:fd3f021a2a3ab718bfe950a719dfd3b007b96775ad6f58ddf92c0f6b2e18768d
-generated: "2021-10-19T11:19:03.084856386+02:00"
+  version: v1.1.9-rc-14
+digest: sha256:e897a049db6a1b8991965c65f99c1e1a508775a3ec7539f114c4c258ffba5094
+generated: "2021-10-19T11:41:00.642179916+02:00"
