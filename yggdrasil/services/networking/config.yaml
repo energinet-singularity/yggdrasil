@@ -8,7 +8,7 @@ description: networking services like ingress, cert-manager.
 apps:
   - name: traefik
     source:
-      repoURL: "https://github.com/distributed-technologies/services-ingress.git"
+      repoURL: "https://github.com/distributed-technologies/services-traefik.git"
       targetRevision: main
       path: chart
       valuesFile: "traefik.yaml"
