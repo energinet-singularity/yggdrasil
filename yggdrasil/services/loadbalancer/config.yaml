@@ -5,16 +5,10 @@ namespaceLabels:
 space: service
 description: MetalLB loadbalancer.
 
-project:
-  name: loadbalancer
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: loadbalancer
     source:
       repoURL: "https://github.com/distributed-technologies/services-loadbalancer.git"
-      targetRevision: v0.1.5
+      targetRevision: main
       path: chart
       valuesFile: "loadbalancer.yaml"

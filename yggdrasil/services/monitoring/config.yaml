@@ -4,23 +4,12 @@ namespaceLabels:
   space: service
 space: service
 description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki. 
-
-project:
-  name: monitoring
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-  destinations: 
-    - namespace: kube-system
-      server: https://kubernetes.default.svc
-    - namespace: rook-ceph
-      server: https://kubernetes.default.svc
     
 apps:
   - name: prometheus
     source:
       repoURL: 'https://github.com/distributed-technologies/prometheus.git'
-      targetRevision: v0.1.0
+      targetRevision: 0.1.1
       path: chart
       valuesFile: "prometheus.yaml"
     ingress:
@@ -37,10 +26,9 @@ apps:
       path: chart
       valuesFile: "thanos.yaml"
   - name: grafana
-    replace: true
     source:
       repoURL: 'https://github.com/distributed-technologies/services-grafana.git'
-      targetRevision: 0.1.2
+      targetRevision: 0.1.7
       path: chart
       valuesFile: "grafana.yaml"
     ingress:  
@@ -53,12 +41,19 @@ apps:
   - name: loki
     source:
       repoURL: 'https://github.com/distributed-technologies/services-loki.git'
-      targetRevision: 0.1.0 
+      targetRevision: main 
       path: chart
       valuesFile: "loki.yaml"
-  - name: jaeger-operator
+  - name: jaeger
     source:
       repoURL: 'https://github.com/distributed-technologies/services-jaeger.git'
-      targetRevision: v0.1.0
+      targetRevision: feature/tracing-with-jaeger
       path: chart
-      valuesFile: "jaeger-operator.yaml"
+      valuesFile: "jaeger.yaml"
+    ingress:
+      - subDomain: jaeger
+        path: /
+        servicePort: 80
+        serviceName: jaeger-query
+        annotation:
+          traefik.ingress.kubernetes.io/router.entrypoints: web

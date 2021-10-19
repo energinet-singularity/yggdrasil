@@ -1,10 +1,9 @@
 apiVersion: v2
 name: yggdrasil
-description: A Helm chart for deploying services and applications
-type: application
-version: v1.0.6
+description: A Helm chart for for deploying an entire repo.
+version: v0.4.4
 
 dependencies: 
   - name: lightvessel
-    version: "v1.1.2"
+    version: "v1.1.9-rc-15"
     repository: "https://distributed-technologies.github.io/helm-repository/"

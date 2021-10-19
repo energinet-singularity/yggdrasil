@@ -5,16 +5,10 @@ namespaceLabels:
 space: service
 description: Pull-through cache.
 
-project:
-  name: cache
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: cache
     source:
       repoURL: "https://github.com/distributed-technologies/services-cache.git"
-      targetRevision: 0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "cache.yaml"

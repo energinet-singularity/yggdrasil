@@ -2,12 +2,6 @@ name: example-guestbook
 namespace: example-guestbook
 description: example-guestbook.
 
-project:
-  name: example-guestbook
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: example-guestbook
     source:

@@ -5,17 +5,11 @@ namespaceLabels:
 space: service
 description: Tooling services Argo WF, Harbor.
 
-project:
-  name: tooling
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: argowf
     source:
       repoURL: "https://github.com/distributed-technologies/services-argowf.git"
-      targetRevision: 0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "argowf.yaml"
     ingress:
@@ -34,7 +28,7 @@ apps:
   - name: harbor
     source:
       repoURL: "https://github.com/distributed-technologies/services-harbor.git"
-      targetRevision: v0.1.0
+      targetRevision: main
       path: chart
       valuesFile: "harbor.yaml"
     ingress:

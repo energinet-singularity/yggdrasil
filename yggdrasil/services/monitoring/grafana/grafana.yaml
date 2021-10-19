@@ -36,7 +36,6 @@ grafana:
           user: admin
           password: password
 
-
   adminUser: admin
   adminPassword: password
 
@@ -86,4 +85,3 @@ grafana:
         allowUiUpdates: false
         # allow Grafana to replicate dashboard structure from filesystem
         foldersFromFilesStructure: false
-
