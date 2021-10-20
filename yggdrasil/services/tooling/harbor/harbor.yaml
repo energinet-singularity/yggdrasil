@@ -15,7 +15,7 @@ harbor:
     persistentVolumeClaim:
       registry:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "registry"
@@ -23,7 +23,7 @@ harbor:
         size: 50Gi
       chartmuseum:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "chartmuseum"
@@ -31,7 +31,7 @@ harbor:
         size: 5Gi
       jobservice:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "jobservice"
@@ -39,7 +39,7 @@ harbor:
         size: 5Gi
       database:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "database"
@@ -47,7 +47,7 @@ harbor:
         size: 5Gi
       redis:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "redis"
@@ -55,7 +55,7 @@ harbor:
         size: 5Gi
       trivy:
         existingClaim: "registry"
-        {{- if .Values.storageClass | quote }}
+        {{- if .Values.storageClass }}
         storageClass: {{ .Values.storageClass | quote }}
         {{- end }}
         subPath: "trivy"
