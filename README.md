@@ -2,7 +2,7 @@
 
 # Changes in 2.0.0
 In this version we have done the following changes: 
-- Removed project definition from config.yaml and put it into its own file
+- Removed project definition from config.yaml and put it into its own file. This has been done because we are seeing a need to use all the configurations an argo project gives us, not just the limited subset that we had first configured. 
 - Added networkPolicy and resourceQuota definitions for namespaces
 
 ### Upgrading from 1.x.x to 2.0.0
