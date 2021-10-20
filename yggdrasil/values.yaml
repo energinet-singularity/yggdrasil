@@ -29,7 +29,7 @@ applications:
   harbor:                 false
   influxdb:               false
   ingress:                true
-  jaeger:                 false
+  jaeger:                 true
   kafka:                  false
   loadbalancer:           true
   loki:                   true
