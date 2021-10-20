@@ -5,17 +5,11 @@ namespaceLabels:
 space: service
 description: Rook.
 
-project:
-  name: rook-ceph
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: rook
     source:
       repoURL: "https://github.com/distributed-technologies/services-rook.git"
-      targetRevision: 0.1.1
+      targetRevision: 0.1.2
       path: chart
       valuesFile: "rook.yaml"
   - name: ceph

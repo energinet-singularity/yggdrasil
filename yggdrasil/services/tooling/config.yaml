@@ -5,12 +5,6 @@ namespaceLabels:
 space: service
 description: Tooling services Argo WF, Harbor.
 
-project:
-  name: tooling
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: argowf
     source:

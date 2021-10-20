@@ -5,12 +5,6 @@ namespaceLabels:
 space: service
 description: Pull-through cache.
 
-project:
-  name: cache
-  server: https://kubernetes.default.svc
-  sourceRepos:
-    - '*'
-
 apps:
   - name: cache
     source:
