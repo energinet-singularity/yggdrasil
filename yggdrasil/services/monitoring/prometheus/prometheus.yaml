@@ -1,3 +1,4 @@
+# https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
 kube-prometheus-stack:
   grafana:
     enabled: false
@@ -13,6 +14,8 @@ kube-prometheus-stack:
         image: 
           repository: {{ .Values.registry }}/ingress-nginx/kube-webhook-certgen
           sha: ""
+          tag: v.1.5.0
+          
     image: 
       repository: {{ .Values.registry }}/prometheus-operator/prometheus-operator 
     prometheusConfigReloaderImage: 
