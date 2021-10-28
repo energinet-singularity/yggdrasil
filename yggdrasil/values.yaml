@@ -1,10 +1,8 @@
-ingressDomain: dev.garagen
+# By setting the storage class, you enable the hard-coded ceph storageclass in the values files. If not set,
+# the charts will default to the standard storage class
+storageClass: ceph-filesystem
 
-clusterNetworking: 
-  ipRangeStart: 192.168.1.40
-  # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-  ipRangeStop: 192.168.1.49
-
+# If registry is not set, it will pull from the default registries
 registry: harbor.sc.garagen/yggdrasil
 
 applications: 
@@ -13,17 +11,17 @@ applications:
   cache:                  false
   ceph:                   true
   cert-manager:           false
-  cert-manager-issuer:    false
-  example-guestbook:      true
+  example-guestbook:      false
   grafana:                true
   harbor:                 false
   influxdb:               false
   ingress:                true
-  jaeger-operator:        false
+  jaeger:                 false
   kafka:                  true
   loadbalancer:           true
   loki:                   false
-  nifi:                   true
+  nifi:                   false
+  ntp:                    true
   prometheus:             true
   rook:                   true
   thanos:                 false

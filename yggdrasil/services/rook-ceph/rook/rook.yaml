@@ -1,10 +1,9 @@
-rook-ceph:
+rook-ceph: 
   {{- if .Values.registry }}
   image: 
     repository: {{ .Values.registry }}/rook/ceph
+    tag: v1.7.2
   {{- end }}
-  enableDiscoveryDaemon: true
-
   {{ if .Values.registry -}}
   csi:
     cephcsi:

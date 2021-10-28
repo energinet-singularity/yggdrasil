@@ -1,13 +1,19 @@
 nidhogg: 
-  yggdrasil: 
+  # A reference to this repo itself.
+  yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "development"
 
-    # Change the ingressDomain if you would like to use it as main.garagen is not currently being used
-    ingressDomain: dev.garagen
-    clusterNetworking: 
+    ingress:  
+      # Set either a subdomain or a path here
+      domain: dev.garagen
+      loadBalancerIP: 192.168.1.49
+      # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
+      # loadbalancerResourceGroup: <your-resource-group-here>
+
+    # Configure the loadbalancer if you plan on using the loadbalancer included in SCCP
+    loadbalancer:
       ipRangeStart: 192.168.1.40
-      # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
       ipRangeStop: 192.168.1.49
 
   installCNI: true
@@ -16,17 +22,14 @@ nidhogg:
     kube:
       image: 
         repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-kube
-        tag: 2.8.1
     npc:
       image:
         repository: harbor.sc.garagen/yggdrasil/weaveworks/weave-npc
-        tag: 2.8.1
 
-  argo-cd: 
+  argo-cd:
     global:
       image:
         repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
-        tag: v2.0.1
     controller: 
       replicas: 3
       env:
@@ -35,23 +38,21 @@ nidhogg:
       enableStatefulSet: true
     redis-ha: 
       enabled: true
+      replicas: 3
       image:
         repository: harbor.sc.garagen/yggdrasil/redis
-        tag: 6.2.2-alpine
       haproxy:
-        image: 
+        replicas: 3
+        image:
           repository: harbor.sc.garagen/yggdrasil/haproxy
-          tag: 2.0.4
       exporter:
         image: harbor.sc.garagen/yggdrasil/oliver006/redis_exporter
-        tag: v1.15.1
     redis:
       enabled: false
-      dex:
+    dex: 
       image: 
-        repository: harbor.sc.garagen/yggdrasil/dexidp/dex
-        tag: v2.26.0
-    server:   
+        repository: harbor.sc.garagen/yggdrasil/dexidp/dex 
+    server: 
       replicas: 3
       config:
         repositories: |
@@ -76,6 +77,9 @@ nidhogg:
           - type: helm
             url: https://confluentinc.github.io/cp-helm-charts/
             name: cp-helm-charts
+          - type: helm
+            url: https://charts.rook.io/release
+            name: rook-release
         resource.customizations: |
           admissionregistration.k8s.io/MutatingWebhookConfiguration:
             ignoreDifferences: |
@@ -86,6 +90,11 @@ nidhogg:
               jsonPointers:
               - /webhooks/0/clientConfig/caBundle
               - /webhooks/0/namespaceSelector/matchExpressions/2
+          extensions/Ingress:
+            health.lua: |
+              hs = {}
+              hs.status = "Healthy"
+              return hs
           networking.k8s.io/Ingress:
             health.lua: |
               hs = {}
