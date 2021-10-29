@@ -14,7 +14,7 @@ kube-prometheus-stack:
         image: 
           repository: {{ .Values.registry }}/ingress-nginx/kube-webhook-certgen
           sha: ""
-          tag: v.1.5.0
+          tag: v1.0
           
     image: 
       repository: {{ .Values.registry }}/prometheus-operator/prometheus-operator 
