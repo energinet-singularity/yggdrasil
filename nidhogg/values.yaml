@@ -38,7 +38,7 @@ nidhogg:
       enableStatefulSet: true
     redis-ha: 
       enabled: true
-      replicas: 2
+      replicas: 1
       image:
         repository: harbor.sc.garagen/yggdrasil/redis
       haproxy:
