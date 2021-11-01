@@ -6,7 +6,7 @@ nidhogg:
 
     ingress:  
       # Set either a subdomain or a path here
-      domain: sng.garagen
+      domain: sig.garagen
       loadBalancerIP: 192.168.129.130
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
