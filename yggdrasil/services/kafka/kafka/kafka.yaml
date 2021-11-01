@@ -27,6 +27,13 @@ cp-helm-charts:
       jmx:
         image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
         imageTag: theoneweneed
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
     resources:
       limits:
         cpu: 200m
