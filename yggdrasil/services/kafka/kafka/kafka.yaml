@@ -28,12 +28,12 @@ cp-helm-charts:
         image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
         imageTag: theoneweneed
     resources:
-     limits:
-       cpu: 200m
-       memory: 256Mi
-     requests:
-       cpu: 200m
-       memory: 256Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+      requests:
+        cpu: 200m
+        memory: 256Mi
 
   cp-schema-registry:
     enabled: true
@@ -46,12 +46,12 @@ cp-helm-charts:
         image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
         imageTag: theoneweneed
     resources:
-     limits:
-       cpu: 100m
-       memory: 128Mi
-     requests:
-       cpu: 100m
-       memory: 128Mi
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
 
 strimzi-kafka-operator:
   image: 
