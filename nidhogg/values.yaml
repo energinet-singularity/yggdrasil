@@ -6,15 +6,15 @@ nidhogg:
 
     ingress:  
       # Set either a subdomain or a path here
-      domain: dev.garagen
-      loadBalancerIP: 192.168.1.49
+      domain: sng.garagen
+      loadBalancerIP: 192.168.1.130
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
 
     # Configure the loadbalancer if you plan on using the loadbalancer included in SCCP
     loadbalancer:
-      ipRangeStart: 192.168.1.40
-      ipRangeStop: 192.168.1.49
+      ipRangeStart: 192.168.129.120
+      ipRangeStop: 192.168.129.130
 
   installCNI: true
 
