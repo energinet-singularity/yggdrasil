@@ -41,7 +41,7 @@ nidhogg:
       image:
         repository: harbor.sc.garagen/yggdrasil/redis
       haproxy:
-        replicas: 3
+        replicas: 2
         image:
           repository: harbor.sc.garagen/yggdrasil/haproxy
       exporter:
