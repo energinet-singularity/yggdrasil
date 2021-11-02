@@ -126,6 +126,13 @@ prometheus-kafka-exporter:
   image: 
     repository: {{ .Values.registry }}/danielqsj/kafka-exporter
   {{- end }}
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
   replicaCount: 3
 
 connector:
