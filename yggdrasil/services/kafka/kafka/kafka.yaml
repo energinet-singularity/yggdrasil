@@ -109,6 +109,13 @@ cp-helm-charts:
 strimzi-kafka-operator:
   image: 
     registry: {{ .Values.registry }}
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: "200m"
+    limits:
+      memory: 400Mi
+      cpu: "400m"
 
   zookeeper:
     image:
