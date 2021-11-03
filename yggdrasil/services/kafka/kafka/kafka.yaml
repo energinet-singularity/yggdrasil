@@ -5,10 +5,10 @@ cluster:
       class: ceph-filesystem
     resources:
       requests:
-        memory: 512Mi
+        memory: 256Mi
         cpu: "100m"
       limits:
-        memory: 1G
+        memory: 512Mi
         cpu: "500m"
   zookeeper:
     storage: 
