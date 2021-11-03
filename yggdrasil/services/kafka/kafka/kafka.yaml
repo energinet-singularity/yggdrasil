@@ -60,10 +60,10 @@ cp-helm-charts:
         imageTag: theoneweneed
         resources:
           limits:
-            cpu: 200m
+            cpu: 400m
             memory: 512Mi
           requests:
-            cpu: 300m
+            cpu: 200m
             memory: 256Mi
     resources:
       limits:
