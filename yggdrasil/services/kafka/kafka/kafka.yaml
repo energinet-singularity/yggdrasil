@@ -66,6 +66,14 @@ cp-helm-charts:
       requests:
         cpu: 100m
         memory: 128Mi
+  kafkaExporter:
+    resources:
+        requests:
+          memory: 128Mi
+          cpu: "100m"
+        limits:
+          memory: 128Mi
+          cpu: "100m"
 
 strimzi-kafka-operator:
   image: 
