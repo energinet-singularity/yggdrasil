@@ -10,6 +10,6 @@ apps:
     replace: true
     source:
       repoURL: "https://github.com/distributed-technologies/services-kafka.git"
-      targetRevision: v0.3.0
+      targetRevision: v0.3.1
       path: chart
       valuesFile: "kafka.yaml"
