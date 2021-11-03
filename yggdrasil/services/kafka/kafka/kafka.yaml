@@ -3,6 +3,13 @@ cluster:
   kafka: 
     storage: 
       class: ceph-filesystem
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: "100m"
+      limits:
+        memory: 512Mi
+        cpu: "500m"
   zookeeper:
     storage: 
       class: ceph-filesystem
