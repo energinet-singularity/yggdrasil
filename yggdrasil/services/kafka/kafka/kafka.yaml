@@ -15,6 +15,14 @@ cluster:
         limits:
           memory: 128Mi
           cpu: 200m
+  topicOperator:
+      resources:
+        requests:
+          memory: 256Mi
+          cpu: "100m"
+        limits:
+          memory: 256Mi
+          cpu: "200m"
 
 cp-helm-charts:
   cp-kafka-connect: 
