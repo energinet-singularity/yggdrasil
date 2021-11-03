@@ -5,20 +5,20 @@ cluster:
       class: ceph-filesystem
     resources:
       requests:
-        memory: 256Mi
+        memory: 128Mi
         cpu: "100m"
       limits:
-        memory: 512Mi
+        memory: 128Mi
         cpu: "500m"
   zookeeper:
     storage: 
       class: ceph-filesystem
     resources:
       requests:
-        memory: 256Mi
+        memory: 128Mi
         cpu: "100m"
       limits:
-        memory: 512Mi
+        memory: 128Mi
         cpu: "500m"
   entityOperator:
     tlsSidecar:
