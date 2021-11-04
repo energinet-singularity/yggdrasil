@@ -54,6 +54,8 @@ cp-helm-charts:
       url: http://kafka-cp-schema-registry:8081
     kafka:
       bootstrapServers: my-cluster-kafka-plain-bootstrap:9092
+    external:
+      enabled: true
     prometheus:
       jmx:
         image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
