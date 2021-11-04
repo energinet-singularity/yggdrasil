@@ -16,13 +16,13 @@ applications:
   harbor:                 false
   influxdb:               false
   ingress:                true
-  jaeger:                 false
+  jaeger:                 true
   kafka:                  true
   loadbalancer:           true
-  loki:                   false
+  loki:                   true
   nifi:                   false
   ntp:                    true
   prometheus:             true
   rook:                   true
-  thanos:                 false
+  thanos:                 true
   vault:                  false
