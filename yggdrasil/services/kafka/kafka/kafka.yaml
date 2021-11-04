@@ -85,18 +85,18 @@ cp-helm-charts:
         imageTag: theoneweneed
         resources:
           limits:
-            cpu: 300m
-            memory: 256Mi
+            cpu: 100m
+            memory: 128Mi
           requests:
-            cpu: 300m
-            memory: 256Mi
+            cpu: 100m
+            memory: 128Mi
     resources:
       limits:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 300m
+        memory: 256Mi
       requests:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 300m
+        memory: 256Mi
   kafkaExporter:
     resources:
       requests:
