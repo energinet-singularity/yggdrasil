@@ -187,4 +187,21 @@ connector:
   volume:
     storageClassName: ceph-filesystem
 
+topics: 
+  - name: dlr_test
+    partitions: 1
+    replicas: 1
+  - name: dlr_test2
+    partitions: 1
+    replicas: 1
+  - name: dlr_scada_amps
+    partitions: 1
+    replicas: 1
+  - name: WEATHER_FORECAST_RAW
+    partitions: 1
+    replicas: 1
+
+  
+  
+  
     
