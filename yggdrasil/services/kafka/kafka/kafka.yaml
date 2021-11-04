@@ -188,16 +188,16 @@ connector:
     storageClassName: ceph-filesystem
 
 topics: 
-  - name: dlr_test
+  - name: dlr-test
     partitions: 1
     replicas: 1
-  - name: dlr_test2
+  - name: dlr-test2
     partitions: 1
     replicas: 1
-  - name: dlr_scada_amps
+  - name: dlr-scada-amps
     partitions: 1
     replicas: 1
-  - name: WEATHER_FORECAST_RAW
+  - name: weather-forecast-raw
     partitions: 1
     replicas: 1
 
