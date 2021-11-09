@@ -1,6 +1,6 @@
 dependencies:
 - name: nidhogg
-  repository: https://distributed-technologies.github.io/helm-repository/
-  version: v1.0.4
-digest: sha256:3efe3110b65cecb87cf83c924c2ff4877bdc6d4ef9bef5362a97ea3f8c45d2a2
-generated: "2021-10-18T10:33:46.993691886+02:00"
+  repository: https://distributed-technologies.github.io/helm-charts/
+  version: 1.0.10
+digest: sha256:ac50e06ca749cd60913b5669f331ff4f188ea58faf3ed757faefa429435a3f66
+generated: "2021-11-09T12:23:24.785282635+01:00"
