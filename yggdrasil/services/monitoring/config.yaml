@@ -10,7 +10,7 @@ apps:
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
       targetRevision: 0.1.2
-      path: charts/prometheus/chart
+      chart: prometheus
       valuesFile: "prometheus.yaml"
     ingress:
       - subDomain: prometheus
@@ -23,13 +23,13 @@ apps:
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
       targetRevision: 0.1.1
-      path: charts/thanos/chart
+      chart: thanos
       valuesFile: "thanos.yaml"
   - name: grafana
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
       targetRevision: 0.1.8
-      path: charts/grafana/chart
+      chart: grafana
       valuesFile: "grafana.yaml"
     ingress:  
       - subDomain: grafana
@@ -42,13 +42,13 @@ apps:
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
       targetRevision: 0.1.2
-      path: charts/loki/chart
+      chart: loki
       valuesFile: "loki.yaml"
   - name: jaeger
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
       targetRevision: 0.1.2
-      path: charts/jaeger/chart
+      chart: jaeger
       valuesFile: "jaeger.yaml"
     ingress:
       - subDomain: jaeger

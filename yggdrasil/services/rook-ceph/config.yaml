@@ -10,17 +10,17 @@ apps:
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.1.3
-      path: charts/rook/chart
+      chart: rook
       valuesFile: "rook.yaml"
   - name: ceph
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.1.6
-      path: charts/ceph/chart
+      chart: ceph
       valuesFile: "ceph.yaml"
   - name: ntp
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.1.2
-      path: charts/ntp/chart
+      chart: ntp
       valuesFile: "ntp.yaml"

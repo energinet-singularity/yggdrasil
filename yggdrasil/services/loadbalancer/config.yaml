@@ -10,5 +10,5 @@ apps:
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.1.6
-      path: charts/loadbalancer/chart
+      chart: loadbalancer
       valuesFile: "loadbalancer.yaml"
