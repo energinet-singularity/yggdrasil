@@ -63,10 +63,10 @@ cp-helm-charts:
         resources:
           limits:
             cpu: 400m
-            memory: 256Mi
+            memory: 64Mi
           requests:
             cpu: 200m
-            memory: 128Mi
+            memory: 64Mi
     resources:
       limits:
         cpu: 600m
@@ -88,10 +88,10 @@ cp-helm-charts:
         resources:
           limits:
             cpu: 100m
-            memory: 128Mi
+            memory: 64Mi
           requests:
             cpu: 100m
-            memory: 128Mi
+            memory: 64Mi
     resources:
       limits:
         cpu: 300m
