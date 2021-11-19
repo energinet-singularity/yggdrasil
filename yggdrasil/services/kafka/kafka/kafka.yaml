@@ -69,10 +69,10 @@ cp-helm-charts:
             memory: 64Mi
     resources:
       limits:
-        cpu: 2000m
+        cpu: 1600m
         memory: 1Gi
       requests:
-        cpu: 2000m
+        cpu: 1600m
         memory: 1Gi
 
   cp-schema-registry:
@@ -114,10 +114,10 @@ strimzi-kafka-operator:
   resources:
     requests:
       memory: 200Mi
-      cpu: "200m"
+      cpu: "300m"
     limits:
       memory: 400Mi
-      cpu: "400m"
+      cpu: "300m"
 
   zookeeper:
     image:
