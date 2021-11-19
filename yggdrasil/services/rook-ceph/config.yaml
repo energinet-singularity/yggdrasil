@@ -16,7 +16,7 @@ apps:
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.1.6
-      chart: ceph
+      chart: rook-ceph-cluster
       valuesFile: "ceph.yaml"
   - name: ntp
     source:
