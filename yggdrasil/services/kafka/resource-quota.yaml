@@ -2,4 +2,4 @@ hard:
   requests.cpu: "4"
   requests.memory: 8Gi
   limits.cpu: "12"
-  limits.memory: 16Gi
+  limits.memory: 24Gi
