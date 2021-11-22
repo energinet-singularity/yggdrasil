@@ -57,7 +57,7 @@ cp-helm-charts:
     resources:
       limits:
         cpu: 4000m
-        memory: 5Gi
+        memory: 4Gi
       requests:
         cpu: 0m
         memory: 1Gi
