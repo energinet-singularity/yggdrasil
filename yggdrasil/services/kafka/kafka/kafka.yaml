@@ -41,11 +41,6 @@ cluster:
 cp-helm-charts:
   cp-kafka-connect: 
     enabled: false
-    image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
-    prometheus:
-      jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
-        imageTag: theoneweneed
   cp-ksql-server:
     enabled: true
     image: confluentinc/cp-ksqldb-server
@@ -58,15 +53,7 @@ cp-helm-charts:
       enabled: true
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
-        imageTag: theoneweneed
-        resources:
-          limits:
-            cpu: 100m
-            memory: 64Mi
-          requests:
-            cpu: 100m
-            memory: 64Mi
+        enabled: false
     resources:
       limits:
         cpu: 1600m
@@ -83,15 +70,7 @@ cp-helm-charts:
       bootstrapServers: my-cluster-kafka-plain-bootstrap:9092 
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter
-        imageTag: theoneweneed
-        resources:
-          limits:
-            cpu: 100m
-            memory: 64Mi
-          requests:
-            cpu: 100m
-            memory: 64Mi
+        enabled: false
     resources:
       limits:
         cpu: 300m
