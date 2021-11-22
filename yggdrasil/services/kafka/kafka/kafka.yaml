@@ -56,10 +56,10 @@ cp-helm-charts:
         enabled: false
     resources:
       limits:
-        cpu: 1600m
-        memory: 1Gi
+        cpu: 2000m
+        memory: 2Gi
       requests:
-        cpu: 1600m
+        cpu: 0m
         memory: 1Gi
 
   cp-schema-registry:
