@@ -56,8 +56,8 @@ cp-helm-charts:
         enabled: false
     resources:
       limits:
-        cpu: 2000m
-        memory: 2Gi
+        cpu: 4000m
+        memory: 8Gi
       requests:
         cpu: 0m
         memory: 1Gi
