@@ -55,6 +55,13 @@ cp-helm-charts:
     prometheus:
       jmx:
         enabled: true
+        resources:
+          limits:
+            cpu: 200m
+            memory: 254mi
+          requests:
+            cpu: 0m
+            memory: 64Mi    
     resources:
       limits:
         cpu: 4000m
