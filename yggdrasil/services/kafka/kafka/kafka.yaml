@@ -5,8 +5,10 @@ cluster:
       port: 9092
       type: internal
       tls: false
+    {{- if .Values.storageClass -}}
     storage: 
-      class: ceph-filesystem
+      class: {{ .Values.storageClass }}
+    {{- end }}
     resources:
       requests:
         memory: 1Gi
@@ -15,8 +17,10 @@ cluster:
         memory: 2Gi
         cpu: "500m"
   zookeeper:
+    {{- if .Values.storageClass -}}
     storage: 
-      class: ceph-filesystem
+      class: {{ .Values.storageClass }}
+    {{- end }}
     resources:
       requests:
         memory: 256Mi
