@@ -54,7 +54,7 @@ cp-helm-charts:
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
     kafka:
-      bootstrapServers: my-cluster-kafka-bootstrap:9091
+      bootstrapServers: my-cluster-kafka-bootstrap
     external:
       enabled: true
     prometheus:
@@ -80,7 +80,7 @@ cp-helm-charts:
     image: confluentinc/cp-schema-registry
     imageTag: 6.2.1
     kafka:
-      bootstrapServers: my-cluster-kafka-bootstrap:9091 
+      bootstrapServers: my-cluster-kafka-bootstrap
     prometheus:
       jmx:
         enabled: false
