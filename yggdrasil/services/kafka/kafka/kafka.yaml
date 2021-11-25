@@ -1,11 +1,6 @@
 cluster:
   kafka: 
-    listeners:
-    - name: internal
-      port: 9092
-      type: internal
-      tls: false
-    {{- if .Values.storageClass -}}
+    {{- if .Values.storageClass }}
     storage: 
       class: {{ .Values.storageClass }}
     {{- end }}
@@ -17,7 +12,7 @@ cluster:
         memory: 2Gi
         cpu: "500m"
   zookeeper:
-    {{- if .Values.storageClass -}}
+    {{- if .Values.storageClass }}
     storage: 
       class: {{ .Values.storageClass }}
     {{- end }}
@@ -56,7 +51,7 @@ cp-helm-charts:
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
     kafka:
-      bootstrapServers: my-cluster-kafka-internal-bootstrap:9092
+      bootstrapServers: my-cluster-kafka-bootstrap:9092
     external:
       enabled: false
     prometheus:
@@ -75,7 +70,7 @@ cp-helm-charts:
     image: confluentinc/cp-schema-registry
     imageTag: 6.2.1
     kafka:
-      bootstrapServers: my-cluster-kafka-internal-bootstrap:9092
+      bootstrapServers: my-cluster-kafka-bootstrap:9092
     prometheus:
       jmx:
         enabled: false
