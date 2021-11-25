@@ -11,5 +11,5 @@ apps:
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.3.3
-      path: kafka
+      chart: kafka
       valuesFile: "kafka.yaml"
