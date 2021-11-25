@@ -106,10 +106,10 @@ strimzi-kafka-operator:
   resources:
     requests:
       memory: 200Mi
-      cpu: "300m"
+      cpu: "0m"
     limits:
       memory: 400Mi
-      cpu: "0m"
+      cpu: "300m"
 
   zookeeper:
     image:
