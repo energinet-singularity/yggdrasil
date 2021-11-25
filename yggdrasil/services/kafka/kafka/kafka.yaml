@@ -72,7 +72,7 @@ cp-helm-charts:
         cpu: 4000m
         memory: 4Gi
       requests:
-        cpu: 0m
+        cpu: 100m
         memory: 2Gi
 
   cp-schema-registry:
@@ -89,7 +89,7 @@ cp-helm-charts:
         cpu: 600m
         memory: 1Gi
       requests:
-        cpu: "0m"
+        cpu: "100m"
         memory: 256Mi
   kafkaExporter:
     resources:
