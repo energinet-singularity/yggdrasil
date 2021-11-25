@@ -1,4 +1,3 @@
-{{- if .Values.registry -}}
 cluster:
   kafka: 
     listeners:
@@ -49,7 +48,6 @@ cp-helm-charts:
   cp-ksql-server:
     enabled: true
     heapOptions: "-Xms1024M -Xmx2048M"
-    image: confluentinc/cp-ksqldb-server
     imageTag: 6.2.1
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
@@ -86,8 +84,6 @@ cp-helm-charts:
         memory: 256Mi
 
 strimzi-kafka-operator:
-  image: 
-    registry: {{ .Values.registry }}
   resources:
     requests:
       memory: 200Mi
@@ -95,56 +91,6 @@ strimzi-kafka-operator:
     limits:
       memory: 400Mi
       cpu: "300m"
-
-  zookeeper:
-    image:
-      registry: {{ .Values.registry }}
-  kafka:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaConnect:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaConnects2i:
-    image:
-      registry: {{ .Values.registry }}
-  topicOperator:
-    image:
-      registry: {{ .Values.registry }}
-  userOperator:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaInit:
-    image:
-      registry: {{ .Values.registry }}
-  tlsSidecarEntityOperator:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaMirrorMaker:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaBridge:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaExporter:
-    image:
-      registry: {{ .Values.registry }}
-  jmxTrans:
-    image:
-      registry: {{ .Values.registry }}
-  kafkaMirrorMaker2:
-    image:
-      registry: {{ .Values.registry }}
-  cruiseControl:
-    image:
-      registry: {{ .Values.registry }}
-  tlsSidecarCruiseControl:
-    image:
-      registry: {{ .Values.registry }}
-  kanikoExecutor:
-    image:
-      registry: {{ .Values.registry }}
-{{- end }}
 
 prometheus-kafka-exporter: 
   enabled: false
