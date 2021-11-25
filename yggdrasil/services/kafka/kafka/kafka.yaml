@@ -1,14 +1,115 @@
 {{- if .Values.registry -}}
+cluster:
+  kafka: 
+    listeners:
+    - name: internal
+      port: 9092
+      type: internal
+      tls: false
+    storage: 
+      class: ceph-filesystem
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: "0m"
+      limits:
+        memory: 2Gi
+        cpu: "500m"
+  zookeeper:
+    storage: 
+      class: ceph-filesystem
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: "0m"
+      limits:
+        memory: 1Gi
+        cpu: "500m"
+  entityOperator:
+    tlsSidecar:
+      resources:
+        requests:
+          memory: 64Mi
+          cpu: "0m"
+        limits:
+          memory: 128Mi
+          cpu: 200m
+  topicOperator:
+      resources:
+        requests:
+          memory: 256Mi
+          cpu: "0m"
+        limits:
+          memory: 256Mi
+          cpu: "200m"
+
 cp-helm-charts:
   cp-kafka-connect: 
-    image: {{ .Values.registry }}/jcrmindster/kafka-connector-spool-dir
+    enabled: false
+  cp-ksql-server:
+    enabled: true
+    heapOptions: "-Xms1024M -Xmx2048M"
+    image: confluentinc/cp-ksqldb-server
+    imageTag: 6.2.1
+    cp-schema-registry: 
+      url: http://kafka-cp-schema-registry:8081
+    kafka:
+      bootstrapServers: my-cluster-kafka-internal-bootstrap:9092
+    external:
+      enabled: false
     prometheus:
       jmx:
-        image: {{ .Values.registry }}/solsson/kafka-prometheus-jmx-exporter@sha256  
+        enabled: true
+        resources:
+          limits:
+            cpu: 200m
+            memory: 254Mi
+          requests:
+            cpu: 0m
+            memory: 64Mi    
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+      requests:
+        cpu: 0m
+        memory: 1Gi
+
+  cp-schema-registry:
+    enabled: true
+    image: confluentinc/cp-schema-registry
+    imageTag: 6.2.1
+    kafka:
+      bootstrapServers: my-cluster-kafka-internal-bootstrap:9092
+    prometheus:
+      jmx:
+        enabled: false
+    resources:
+      limits:
+        cpu: 600m
+        memory: 1Gi
+      requests:
+        cpu: 0m
+        memory: 256Mi
+  kafkaExporter:
+    resources:
+      requests:
+        memory: 128Mi
+        cpu: "0m"
+      limits:
+        memory: 128Mi
+        cpu: "100m"
 
 strimzi-kafka-operator:
   image: 
     registry: {{ .Values.registry }}
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: "0m"
+    limits:
+      memory: 400Mi
+      cpu: "300m"
 
   zookeeper:
     image:
@@ -65,4 +166,28 @@ prometheus-kafka-exporter:
   image: 
     repository: {{ .Values.registry }}/danielqsj/kafka-exporter
   {{- end }}
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: "0m"
+      memory: 128Mi
   replicaCount: 3
+
+topics: 
+  - name: dlr-test
+    partitions: 1
+    replicas: 1
+  - name: dlr-test2
+    partitions: 1
+    replicas: 1
+  - name: dlr-scada-amps
+    partitions: 1
+    replicas: 1
+  - name: weather-forecast-raw
+    partitions: 1
+    replicas: 1
+  - name: vku-test
+    partitions: 1
+    replicas: 1
