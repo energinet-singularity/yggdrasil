@@ -73,7 +73,7 @@ cp-helm-charts:
         memory: 4Gi
       requests:
         cpu: 0m
-        memory: 2Gi
+        memory: 1Gi
 
   cp-schema-registry:
     enabled: true
