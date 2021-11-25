@@ -59,14 +59,7 @@ cp-helm-charts:
       enabled: false
     prometheus:
       jmx:
-        enabled: true
-        resources:
-          limits:
-            cpu: 200m
-            memory: 254Mi
-          requests:
-            cpu: 0m
-            memory: 64Mi    
+        enabled: false   
     resources:
       limits:
         cpu: 2000m
@@ -91,14 +84,6 @@ cp-helm-charts:
       requests:
         cpu: 0m
         memory: 256Mi
-  kafkaExporter:
-    resources:
-      requests:
-        memory: 128Mi
-        cpu: "0m"
-      limits:
-        memory: 128Mi
-        cpu: "100m"
 
 strimzi-kafka-operator:
   image: 
@@ -162,18 +147,7 @@ strimzi-kafka-operator:
 {{- end }}
 
 prometheus-kafka-exporter: 
-  {{- if .Values.registry }}
-  image: 
-    repository: {{ .Values.registry }}/danielqsj/kafka-exporter
-  {{- end }}
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: "0m"
-      memory: 128Mi
-  replicaCount: 3
+  enabled: false
 
 topics: 
   - name: dlr-test
