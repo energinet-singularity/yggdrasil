@@ -4,7 +4,7 @@ cluster:
     listeners:
     - name: external
       port: 9092
-      type: external
+      type: loadbalancer
       tls: false
     storage: 
       class: ceph-filesystem
