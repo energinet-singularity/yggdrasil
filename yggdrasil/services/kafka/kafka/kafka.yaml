@@ -1,6 +1,11 @@
 {{- if .Values.registry -}}
 cluster:
   kafka: 
+    listeners:
+    - name: external
+      port: 9092
+      type: loadbalancer
+      tls: false
     storage: 
       class: ceph-filesystem
     resources:
