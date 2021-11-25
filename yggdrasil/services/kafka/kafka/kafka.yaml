@@ -1,11 +1,6 @@
 {{- if .Values.registry -}}
 cluster:
   kafka: 
-    listeners:
-    - name: external
-      port: 9092
-      type: loadbalancer
-      tls: false
     storage: 
       class: ceph-filesystem
     resources:
@@ -54,7 +49,7 @@ cp-helm-charts:
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
     kafka:
-      bootstrapServers: my-cluster-kafka-external-bootstrap:9092
+      bootstrapServers: my-cluster-kafka-bootstrap:9092
     external:
       enabled: true
     prometheus:
@@ -80,7 +75,7 @@ cp-helm-charts:
     image: confluentinc/cp-schema-registry
     imageTag: 6.2.1
     kafka:
-      bootstrapServers: my-cluster-kafka-external-bootstrap:9092
+      bootstrapServers: my-cluster-kafka-bootstrap:9092
     prometheus:
       jmx:
         enabled: false
