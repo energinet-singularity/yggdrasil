@@ -54,7 +54,7 @@ cp-helm-charts:
     cp-schema-registry: 
       url: http://kafka-cp-schema-registry:8081
     kafka:
-      bootstrapServers: my-cluster-kafka-bootstrap:9092
+      bootstrapServers: my-cluster-kafka-bootstrap:9091
     external:
       enabled: true
     prometheus:
@@ -72,7 +72,7 @@ cp-helm-charts:
         cpu: 4000m
         memory: 4Gi
       requests:
-        cpu: 100m
+        cpu: 0m
         memory: 2Gi
 
   cp-schema-registry:
@@ -80,7 +80,7 @@ cp-helm-charts:
     image: confluentinc/cp-schema-registry
     imageTag: 6.2.1
     kafka:
-      bootstrapServers: my-cluster-kafka-bootstrap:9092 
+      bootstrapServers: my-cluster-kafka-bootstrap:9091 
     prometheus:
       jmx:
         enabled: false
@@ -89,7 +89,7 @@ cp-helm-charts:
         cpu: 600m
         memory: 1Gi
       requests:
-        cpu: "100m"
+        cpu: 0m
         memory: 256Mi
   kafkaExporter:
     resources:
