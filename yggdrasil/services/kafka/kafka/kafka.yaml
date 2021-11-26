@@ -3,7 +3,7 @@ cluster:
   kafka: 
     listeners:
     - name: external
-      port: 9092
+      port: 9093
       type: loadbalancer
       tls: false
     - name: internal
