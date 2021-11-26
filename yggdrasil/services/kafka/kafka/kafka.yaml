@@ -6,6 +6,10 @@ cluster:
       port: 9092
       type: loadbalancer
       tls: false
+    - name: internal
+      port: 9092
+      type: internal
+      tls: false
     storage: 
       class: ceph-filesystem
     resources:
