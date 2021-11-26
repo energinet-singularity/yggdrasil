@@ -100,7 +100,7 @@ strimzi-kafka-operator:
       memory: 200Mi
       cpu: "0m"
     limits:
-      memory: 400Mi
+      memory: 800Mi
       cpu: "300m"
 
   zookeeper:
