@@ -1,5 +1,10 @@
 cluster:
   kafka: 
+    listeners:
+    - name: internal
+      port: 9092
+      type: internal
+      tls: false
     storage:
       size: 5Gi 
     {{- if .Values.storageClass }}
