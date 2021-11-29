@@ -16,7 +16,7 @@ apps:
       - subDomain: argowf
         path: /
         servicePort: 2746
-        serviceName: argowf-server 
+        serviceName: argowf-server
         annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: argo-events

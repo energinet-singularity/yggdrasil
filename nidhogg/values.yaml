@@ -1,10 +1,10 @@
-nidhogg: 
+nidhogg:
   # A reference to this repo itself.
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "main"
 
-    # ingress:  
+    # ingress:
       # Set either a subdomain or a path here
       # domain: <your-ingress-domain-here>
       # loadBalancerIP: 0.0.0.0
@@ -19,21 +19,21 @@ nidhogg:
   installCNI: true
 
   argo-cd-proxy-chart:
-    argo-cd: 
-      controller: 
+    argo-cd:
+      controller:
         replicas: 3
         env:
           - name: "ARGOCD_CONTROLLER_REPLICAS"
             value: "3"
         enableStatefulSet: true
-      redis-ha: 
+      redis-ha:
         enabled: true
         replicas: 3
         haproxy:
           replicas: 3
       redis:
         enabled: false
-      server: 
+      server:
         replicas: 3
         config:
           resource.customizations: |
@@ -56,7 +56,7 @@ nidhogg:
                 hs = {}
                 hs.status = "Healthy"
                 return hs
-        service: 
+        service:
           type: NodePort
 
       configs:

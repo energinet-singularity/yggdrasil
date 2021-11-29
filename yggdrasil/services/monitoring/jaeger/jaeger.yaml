@@ -21,11 +21,11 @@ jaeger:
   elasticsearch:
     user: admin
     usePassword: true
-    password: password 
+    password: password
     {{- if .Values.registry }}
     image: {{ .Values.registry }}/elasticsearch/elasticsearch
     {{- end }}
     {{- if .Values.storageClass }}
-    volumeClaimTemplate: 
+    volumeClaimTemplate:
       storageClassName: {{ .Values.storageClass | quote }}
     {{- end }}

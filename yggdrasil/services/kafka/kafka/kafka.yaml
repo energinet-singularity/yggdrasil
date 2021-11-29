@@ -1,12 +1,12 @@
 cluster:
-  kafka: 
+  kafka:
     listeners:
     - name: internal
       port: 9092
       type: internal
       tls: false
     storage:
-      size: 5Gi 
+      size: 5Gi
     {{- if .Values.storageClass }}
       class: {{ .Values.storageClass }}
     {{- end }}
@@ -20,7 +20,7 @@ cluster:
   zookeeper:
     storage:
       size: 5Gi
-    {{- if .Values.storageClass }} 
+    {{- if .Values.storageClass }}
       class: {{ .Values.storageClass }}
     {{- end }}
     resources:
@@ -49,13 +49,13 @@ cluster:
           cpu: "200m"
 
 cp-helm-charts:
-  cp-kafka-connect: 
+  cp-kafka-connect:
     enabled: false
   cp-ksql-server:
     enabled: true
     heapOptions: "-Xms1024M -Xmx2048M"
     imageTag: 6.2.1
-    cp-schema-registry: 
+    cp-schema-registry:
       url: http://kafka-cp-schema-registry:8081
     kafka:
       bootstrapServers: my-cluster-kafka-bootstrap:9092
@@ -63,7 +63,7 @@ cp-helm-charts:
       enabled: false
     prometheus:
       jmx:
-        enabled: false   
+        enabled: false
     resources:
       limits:
         cpu: 2000m
@@ -98,10 +98,10 @@ strimzi-kafka-operator:
       memory: 400Mi
       cpu: "300m"
 
-prometheus-kafka-exporter: 
+prometheus-kafka-exporter:
   enabled: false
 
-topics: 
+topics:
   - name: dlr-test
     partitions: 1
     replicas: 1

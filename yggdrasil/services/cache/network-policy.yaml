@@ -3,12 +3,12 @@ policyTypes:
 - Ingress
 - Egress
 ingress:
-- from: 
-  - namespaceSelector: 
-      matchLabels: 
+- from:
+  - namespaceSelector:
+      matchLabels:
         space: service
 egress:
-- to: 
+- to:
   - namespaceSelector:
-      matchLabels: 
+      matchLabels:
         space: service

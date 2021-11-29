@@ -1,8 +1,7 @@
-
 {{- if .Values.registry -}}
-loki-stack: 
+loki-stack:
   loki:
-    image: 
+    image:
       repository: {{ .Values.registry }}/grafana/loki
   promtail:
     image:
