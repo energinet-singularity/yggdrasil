@@ -11,6 +11,7 @@ cluster:
       type: internal
       tls: false
     storage: 
+      size: 5Gi
       class: ceph-filesystem
     resources:
       requests:
@@ -20,7 +21,8 @@ cluster:
         memory: 2Gi
         cpu: "500m"
   zookeeper:
-    storage: 
+    storage:
+      size: 2Gi
       class: ceph-filesystem
     resources:
       requests:
