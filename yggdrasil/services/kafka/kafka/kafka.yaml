@@ -196,4 +196,24 @@ topics:
   - name: lfc-p.correction.value
     partitions: 1
     replicas: 1
-    
+  - name: lfc-p.demand.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.input.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.input.calc.state
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.target.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.target.calc.state
+    partitions: 1
+    replicas: 1
+  - name: lfc-mw.diff.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-pbr.response.value
+    partitions: 1
+    replicas: 1
