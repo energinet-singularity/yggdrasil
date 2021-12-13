@@ -3,7 +3,7 @@ dashboardRoute:
 
 traefik:
   {{- if .Values.registry }}
-  image: 
+  image:
     name: {{ .Values.registry }}/traefik
   {{- end }}
   ingressClass:
@@ -16,13 +16,13 @@ traefik:
     annotations:
       service.beta.kubernetes.io/azure-load-balancer-resource-group: {{ .Values.ingress.loadbalancerResourceGroup | quote }}
 {{- end }}
-    spec: 
+    spec:
       loadBalancerIP: {{ .Values.ingress.loadBalancerIP }}
 
   ports:
     websecure:
-      tls: 
-        enabled: true  
+      tls:
+        enabled: true
 
   logs:
     access:

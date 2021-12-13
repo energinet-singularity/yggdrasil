@@ -11,8 +11,8 @@ issuers:
   solvers:
   - http01:
       ingress:
-        ingressTemplate: 
+        ingressTemplate:
           metadata:
-            annotations: 
+            annotations:
               traefik.ingress.kubernetes.io/router.entrypoints: web
-        name: ingress-traefik 
+        name: ingress-traefik

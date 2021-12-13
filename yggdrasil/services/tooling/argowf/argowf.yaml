@@ -1,8 +1,8 @@
-argo: 
-  images: 
+argo:
+  images:
     pullPolicy: IfNotPresent
   {{- if .Values.registry }}
-  controller: 
+  controller:
     resources:
       requests:
         cpu: "100m"
@@ -10,12 +10,12 @@ argo:
       limits:
         cpu: "300m"
         memory: "150Mi"
-    image: 
+    image:
       registry: {{ .Values.registry }}
-  executor: 
-    image: 
+  executor:
+    image:
      registry: {{ .Values.registry }}
-  server: 
+  server:
     resources:
       requests:
         cpu: "100m"
@@ -23,7 +23,7 @@ argo:
       limits:
         cpu: "300m"
         memory: "150Mi"
-    image: 
+    image:
       registry: {{ .Values.registry }}
   {{- end }}
   # Influences the creation of the ConfigMap for the workflow-controller itself.

@@ -5,24 +5,24 @@
 # If registry is not set, it will pull from the default registries
 # registry: <your-registry-here>
 
-applications: 
-  argowf:                 false
-  argo-events:            false
-  cache:                  false
-  ceph:                   false
-  cert-manager:           false
-  example-guestbook:      false
-  grafana:                false
-  harbor:                 false
-  influxdb:               false
-  ingress:                false
-  jaeger:                 false
-  kafka:                  false
-  loadbalancer:           false
-  loki:                   false
-  nifi:                   false
-  ntp:                    false
-  prometheus:             false
-  rook:                   false
-  thanos:                 false
-  vault:                  false
+applications:
+  argowf: false
+  argo-events: false
+  cache: false
+  ceph: false
+  cert-manager: false
+  example-guestbook: false
+  grafana: false
+  harbor: false
+  influxdb: false
+  ingress: false
+  jaeger: false
+  kafka: false
+  loadbalancer: false
+  loki: false
+  nifi: false
+  ntp: false
+  prometheus: false
+  rook: false
+  thanos: false
+  vault: false

@@ -3,8 +3,8 @@ namespace: monitoring
 namespaceLabels:
   space: service
 space: service
-description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki. 
-    
+description: All the monitoring apps, including but not limited to prometheus, grafana, thanos, loki.
+
 apps:
   - name: prometheus
     source:
@@ -31,12 +31,12 @@ apps:
       targetRevision: 0.1.8
       chart: grafana
       valuesFile: "grafana.yaml"
-    ingress:  
+    ingress:
       - subDomain: grafana
         path: /
         servicePort: 80
         serviceName: grafana
-        annotation: 
+        annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: loki
     source:

@@ -3,8 +3,7 @@
 remote: origin
 target-branch: main
 chart-dirs:
-  - yggdrasil
-  - nidhogg
+  - "."
 chart-repos:
   - helmcharts=https://distributed-technologies.github.io/helm-charts/
 validate-chart-schema: false

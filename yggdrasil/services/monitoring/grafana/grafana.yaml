@@ -1,11 +1,11 @@
 grafana:
   {{- if .Values.registry }}
-  image: 
+  image:
     repository: {{ .Values.registry }}/grafana/grafana
   downloadDashboardsImage:
     repository: {{ .Values.registry }}/curlimages/curl
   {{- end }}
-  datasources: 
+  datasources:
     datasources.yaml:
       apiVersion: 1
       datasources:
@@ -46,7 +46,7 @@ grafana:
       tag: 1.12.2
   {{- end }}
     imagePullPolicy: IfNotPresent
-    resources: {} 
+    resources: {}
     #   limits:
     #     cpu: 100m
     #     memory: 100Mi
