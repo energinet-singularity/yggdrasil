@@ -8,7 +8,7 @@ description: MetalLB loadbalancer.
 apps:
   - name: loadbalancer
     source:
-      repoURL: "https://github.com/distributed-technologies/services-loadbalancer.git"
-      targetRevision: main
-      path: chart
+      repoURL: "https://distributed-technologies.github.io/helm-charts/"
+      targetRevision: 0.1.7
+      chart: loadbalancer
       valuesFile: "loadbalancer.yaml"

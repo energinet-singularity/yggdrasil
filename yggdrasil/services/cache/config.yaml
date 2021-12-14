@@ -8,7 +8,7 @@ description: Pull-through cache.
 apps:
   - name: cache
     source:
-      repoURL: "https://github.com/distributed-technologies/services-cache.git"
-      targetRevision: main
-      path: chart
+      repoURL: "https://distributed-technologies.github.io/helm-charts/"
+      targetRevision: 0.1.4
+      chart: cache
       valuesFile: "cache.yaml"

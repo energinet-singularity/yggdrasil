@@ -1,5 +1,13 @@
 <img src="docs/images/Energinet-logo.png" width="250" style="margin-bottom: 3%">
 
+# Changes in 2.0.0
+In this version we have done the following changes: 
+- Removed project definition from config.yaml and put it into its own file. This has been done because we are seeing a need to use all the configurations an argo project gives us, not just the limited subset that we had first configured. 
+- Added networkPolicy and resourceQuota definitions for namespaces
+
+### Upgrading from 1.x.x to 2.0.0
+In order to upgrade from the previous version, you need to delete the project definition from your config.yaml in all your namespaces. These project definitions should then be added as a file on the same path as the config.yaml but be called project.yaml instead. This file can only contain the spec part of the project manifest, which can be found [here](https://argo-cd.readthedocs.io/en/latest/operator-manual/project.yaml): 
+
 # Yggdrasil
 This is the repository for the cluster environment. It contains two Helm charts called Nidhogg and Yggdrasil.
 
@@ -34,7 +42,7 @@ Lightvessel is a repository that holds all the templates necessary to deploy ser
 - _namespace.yaml: Where the namespace is defined.
 - _project.yaml: Where the ArgoCD project is defined if the application should be in a project.
 - _ingress.yaml: Where Ingress is specified.
-- _resources.yaml: Where a limit is set on how many resources a namespace can use and request
+- _resourceQuota.yaml: Where a limit is set on how many resources a namespace can use and request
 - _networkPolicy: Where network policies can be set for namespaces
 
 ### Yggdrasil
@@ -83,19 +91,6 @@ namespaceLabels:
 labels:
   label1: label1
 
-
-project:
-  # name of argocd project
-  name: <projectName>
-  # default source repo should be '*'
-  sourceRepos:
-    - '<sourceRepo>'
-  # Optional
-  # if the project needs access to any namespace
-  destinations:
-    - namespace: <namespace>
-      server: <server>
-
 # This defines the applications that will be deployed.
 # It is a list in cause you would like to deploy multiple applications
 # to the same argocd project and namespace
@@ -139,7 +134,52 @@ project:
   indentedValue: <indentedValue>
 ```
 
-This PR will then need to be approved by the cluster development team, before it is merged into Yggdrasil. When this is merged, ArgoCD will automatically deploy the application onto the cluster.
+# Defining a project
+Next to the config.yaml file, every namespace should have a project definition. This is important because projects isolate namespaces and services from interfering with each other. 
+A project definition could look like this: 
+``` yaml
+description: <name> Argo Project
+sourceRepos:
+- '*'
+destinations:
+- namespace: <namespace>
+  server: https://kubernetes.default.svc
+clusterResourceWhitelist:
+- group: '*'
+  kind: 'Deployment'
+```
+More options to configure the project can be found [here](https://argo-cd.readthedocs.io/en/latest/operator-manual/project.yaml). 
+
+Contributors should also define a networkPolicy and a resourceQuota for your namespace. These files should be placed next to the config.yaml and be called network-policy.yaml and resource-quota.yaml. It is only possible to include the `spec` part of these resources. A typical network-policy could look like this: 
+``` yaml
+podSelector: {}
+policyTypes:
+- Ingress
+- Egress
+ingress:
+- from: 
+  - namespaceSelector: 
+      matchLabels: 
+        space: service
+egress:
+- to: 
+  - namespaceSelector:
+      matchLabels: 
+        space: service
+```
+
+A typical resource-quota could look like this: 
+``` yaml
+hard:
+  requests.cpu: "8"
+  requests.memory: 20Gi
+  limits.cpu: "16"
+  limits.memory: 40Gi
+```
+
+Example of these can also be found throughout the yggdrasil/services folder. 
+
+A PR will then need to be approved by the cluster development team, before it is merged into Yggdrasil. When this is merged, ArgoCD will automatically deploy the application onto the cluster.
 When the deployment is done, ArgoCD will poll the environment repository every 3 minutes, to check for changes to the application.
 
 ## Installing chart
