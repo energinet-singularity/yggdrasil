@@ -11,7 +11,6 @@ applications:
   cache:                  false
   ceph:                   true
   cert-manager:           false
-  example-guestbook:      true
   grafana:                true
   harbor:                 false
   influxdb:               false
