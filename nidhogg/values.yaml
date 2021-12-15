@@ -32,18 +32,18 @@ nidhogg:
       image:
         repository: harbor.sc.garagen/yggdrasil/argoproj/argocd
     controller: 
-      replicas: 2
+      replicas: 3
       env:
         - name: "ARGOCD_CONTROLLER_REPLICAS"
-          value: "2"
+          value: "3"
       enableStatefulSet: true
     redis-ha: 
       enabled: true
-      replicas: 2
+      replicas: 3
       image:
         repository: harbor.sc.garagen/yggdrasil/redis
       haproxy:
-        replicas: 2
+        replicas: 3
         image: 
           repository: harbor.sc.garagen/yggdrasil/haproxy
       exporter:
