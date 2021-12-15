@@ -93,6 +93,9 @@ nidhogg:
           - type: helm
             url: https://charts.rook.io/release
             name: rook-release
+          - type: helm
+            url: https://distributed-technologies.github.io/helm-charts/
+            name: helm-charts
         resource.customizations: |
           admissionregistration.k8s.io/MutatingWebhookConfiguration:
             ignoreDifferences: |
