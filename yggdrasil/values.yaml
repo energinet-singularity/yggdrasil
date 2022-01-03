@@ -34,7 +34,7 @@ applications:
   loadbalancer:           true
   loki:                   true
   nifi:                   false
-  ntp:                    true
+  ntp:                    false
   prometheus:             true
   rook:                   true
   rook-helper:            false
