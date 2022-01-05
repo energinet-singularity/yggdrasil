@@ -30,7 +30,7 @@ applications:
   influxdb:               false
   ingress:                true
   jaeger:                 false
-  kafka:                  false
+  kafka:                  true
   loadbalancer:           true
   loki:                   true
   nifi:                   false
