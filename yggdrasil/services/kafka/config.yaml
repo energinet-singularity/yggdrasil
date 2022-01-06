@@ -7,7 +7,6 @@ description: Kafka.
 
 apps:
   - name: kafka
-    replace: true
     source:
       repoURL: "https://distributed-technologies.github.io/helm-charts/"
       targetRevision: 0.3.3
