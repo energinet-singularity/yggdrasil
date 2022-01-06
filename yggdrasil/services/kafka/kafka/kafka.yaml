@@ -10,13 +10,8 @@ cluster:
       type: loadbalancer
       tls: true
       configuration:
-        brokers: 
-          - broker: 0
-            advertisedHost: 192.168.1.84
-          - broker: 1
-            advertisedHost: 192.168.1.85
-          - broker: 2
-            advertisedHost: 192.168.1.86
+        bootstrap: 
+          host: 192.168.1.87
         loadBalancerSourceRanges:
           - 192.168.1.84/30
     storage:
