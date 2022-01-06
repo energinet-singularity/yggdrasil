@@ -11,7 +11,7 @@ cluster:
       tls: true
       configuration:
         bootstrap: 
-          host: 192.168.1.87
+          loadBalancerIP: 192.168.1.87
         loadBalancerSourceRanges:
           - 192.168.1.84/30
     storage:
