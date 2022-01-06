@@ -6,7 +6,7 @@ cluster:
       type: internal
       tls: false
     - name: external
-      port: 9094
+      port: 9093
       type: loadbalancer
       tls: true
       configuration:
