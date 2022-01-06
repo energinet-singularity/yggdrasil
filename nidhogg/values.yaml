@@ -17,6 +17,11 @@ nidhogg:
       # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
       ipRangeStop: 192.168.1.89
 
+    storageClass: ceph-filesystem
+
+    # If registry is not set, it will pull from the default registries
+    registry: harbor.sc.garagen/yggdrasil
+
   installCNI: true
   monitorNidhogg: true
 

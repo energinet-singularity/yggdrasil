@@ -1,24 +1,3 @@
-# By setting the storage class, you enable the hard-coded ceph storageclass in the values files. If not set,
-# the charts will default to the standard storage class
-storageClass: ceph-filesystem
-
-# If registry is not set, it will pull from the default registries
-registry: harbor.sc.garagen/yggdrasil
-
-ingress:
-  # Set either a subdomain or a path here
-  domain: jesperdev.garagen
-  loadBalancerIP: 192.168.1.89
-  # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
-  # loadbalancerResourceGroup: <your-resource-group-here>
-
-# Configure the loadbalancer if you plan on using the loadbalancer included in SCCP
-loadbalancer:
-  ipRangeStart: 192.168.1.80
-  # ipRangeStop is both the ipRangeStop but also the ingress loadBalancerIP
-  ipRangeStop: 192.168.1.89
-
-
 applications: 
   argowf:                 false
   argo-events:            false
