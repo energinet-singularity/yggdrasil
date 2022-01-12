@@ -223,3 +223,12 @@ topics:
   - name: scada-status
     partitions: 1
     replicas: 1
+  - name: lfc-bsp.lmol.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-bsp.activated.value
+    partitions: 1
+    replicas: 1
+  - name: scada-point
+    partitions: 1
+    replicas: 1
