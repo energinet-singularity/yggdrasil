@@ -25,7 +25,7 @@ git clone https://github.com/distributed-technologies/yggdrasil.git
 cd yggdrasil/
 ```
 
-To set any cluster configurations, you should edit the nidhogg/values.yaml file. Once you are satisfied with the configurations of the cluster, edit the yggdrasil/values.yaml file and enable the services that you would like to enable on the cluster. 
+To set any cluster configurations, you should edit the nidhogg/values.yaml file. Once you are satisfied with the configurations of the cluster, edit the yggdrasil/values.yaml file and enable the services that you would like to enable on the cluster. You should change the installCNI flag to "false" and change the enableCephAKS to "true". 
 You are now ready to install Yggdrasil on the cluster by running the command: 
 
 ```

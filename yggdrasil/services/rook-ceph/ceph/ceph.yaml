@@ -4,3 +4,63 @@ rook-ceph-cluster:
       {{- if .Values.registry }}
       image: {{ .Values.registry }}/ceph/ceph:v16.2.5
       {{- end }}
+    {{- if .Values.enableCephAKS }}
+    mon: 
+      volumeClaimTemplate:
+        spec:
+          storageClassName: managed-premium
+          resources:
+            requests:
+              storage: 10Gi
+    storage:
+      storageClassDeviceSets:
+      - name: set1
+      # This is the number of OSDs that will be created.
+        count: 4 
+        portable: true
+        placement:
+          tolerations:
+          - key: storage-node
+            operator: Exists
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorterms:
+              - matchExpressions:
+                - key: agentpool
+                  operator: In
+                  values:
+                  - npstorage
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                    - rook-ceph-osd
+                  - key: app
+                    operator: In
+                    values:
+                    - rook-ceph-osd-prepare
+                topologyKey: kubernetes.io/hostname
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "4Gi"
+          requests:
+            cpu: "500m"
+            memory: "2Gi"
+        volumeClaimTemplates:
+        - metadata:
+            name: data
+          spec:
+            resources:
+              requests:
+                storage: 100Gi
+            storageClassName: managed-premium
+            volumeMode: Block
+            accessModes:
+              - ReadWriteOnce
+    {{- end }}
