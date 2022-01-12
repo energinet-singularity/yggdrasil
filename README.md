@@ -1,6 +1,6 @@
 <img src="docs/images/Energinet-logo.png" width="250" style="margin-bottom: 3%">
 
-# Deploy the platform for development
+# Deploy the platform for development on Azure
 You can create a development environment that uses Yggdrasil. This development environment will consist of 3 nodes and 3 storage nodes that together form an AKS cluster.
 When clicking the deployment button, you will be redirected to Azure. Here, you will have to configure the deployment the way you would like. Most settings are preconfigured with values that are standard. However, you have to fill in the resource group you would like for the resource to be created in. 
 
