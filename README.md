@@ -1,5 +1,64 @@
 <img src="docs/images/Energinet-logo.png" width="250" style="margin-bottom: 3%">
 
+# Deploy the platform for development
+You can create a development environment that uses Yggdrasil. This development environment will consist of 3 nodes and 3 storage nodes that together form an AKS cluster.
+When clicking the deployment button, you will be redirected to Azure. Here, you will have to configure the deployment the way you would like. Most settings are preconfigured with values that are standard. However, you have to fill in the resource group you would like for the resource to be created in. 
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdistributed-technologies%2Fyggdrasil%2Faks-cluster%2Farm-templates%2Ftemplate.json)
+
+When the resource creation finishes, you can choose to either use the shell in Azure found in the top right corner where the terminal icon is, or if you would like to authenticate to the cluster from your local development machine. We recommend authenticating from your own machine. A prerequisite to do this is the Azure CLI. You can find information on how to install that [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). When you have installed the Azure CLI, you can use the following command to authenticate to the AKS cluster: 
+```
+az aks get-credentials --resource-group <YOUR-RESOURCE-GROUP-NAME> --name <YOUR-RESOURCE-NAME>
+```
+
+This should allow you to see the Kubernetes nodes by typing:
+```
+kubectl get nodes
+```
+You now have access to your new Kubernetes development environment. The next thing we need to do is deploy the SCCP platform onto the cluster. Since we are using AKS, it will not be the whole SCCP platform that will be deployed, but rather the top part of the stack, called Yggdrasil. 
+To install Yggdrasil on the AKS cluster, you need to have Helm installed. A guide to install helm can be found [here](https://helm.sh/docs/intro/install/).
+
+Once Helm has been installed, you need to clone the Yggdrasil repository and cd into it. 
+
+```
+git clone https://github.com/distributed-technologies/yggdrasil.git
+cd yggdrasil/
+```
+
+To set any cluster configurations, you should edit the nidhogg/values.yaml file. Once you are satisfied with the configurations of the cluster, edit the yggdrasil/values.yaml file and enable the services that you would like to enable on the cluster. 
+You are now ready to install Yggdrasil on the cluster by running the command: 
+
+```
+helm install --create-namespace -n yggdrasil nidhogg nidhogg/
+```
+
+The platform will now bootstrap onto the AKS cluster and you can follow this process by executing the command: 
+
+```
+watch kubectl get pods -A
+```
+
+Once the pods are all in a Running state, it is possible for you to gain access to the ArgoCD dashboard. In order to do so, you will need to change the service to a type Loadbalancer and you will need to extract the password from the secret inside the cluster. 
+
+The default user is "admin". To extract the password, run:
+
+```
+kubectl -n yggdrasil get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+
+Once you have the password, you need to change the service to a loadbalancer and let Azure create a loadbalancer for you. This will create a public IP, which you can use to access the ArgoCD dashboard. Run the command: 
+
+```
+kubectl patch svc nidhogg-argocd-server -n yggdrasil -p '{"spec": {"type": "LoadBalancer"}}'
+```
+
+To find the public IP of the loadbalancer, run: 
+
+```
+kubectl get svc -n yggdrasil
+```
+Here, you should see the service called nidhogg-argocd-server and be able to see a public IP that you can access from your browser and login with the username and password. 
+
 # Changes in 2.0.0
 In this version we have done the following changes: 
 - Removed project definition from config.yaml and put it into its own file. This has been done because we are seeing a need to use all the configurations an argo project gives us, not just the limited subset that we had first configured. 
