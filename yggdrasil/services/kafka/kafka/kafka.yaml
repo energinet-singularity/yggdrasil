@@ -217,3 +217,9 @@ topics:
   - name: lfc-pbr.response.value
     partitions: 1
     replicas: 1
+  - name: scada-analog
+    partitions: 1
+    replicas: 1
+  - name: scada-status
+    partitions: 1
+    replicas: 1
