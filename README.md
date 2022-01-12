@@ -15,7 +15,7 @@ This should allow you to see the Kubernetes nodes by typing:
 ```
 kubectl get nodes
 ```
-You now have access to your new Kubernetes development environment. The next thing we need to do is deploy the SCCP platform onto the cluster. Since we are using AKS, it will not be the whole SCCP platform that will be deployed, but rather the top part of the stack, called Yggdrasil. 
+You now have access to your new Kubernetes development environment. The next thing we need to do is deploy Yggdrasil onto the cluster.
 To install Yggdrasil on the AKS cluster, you need to have Helm installed. A guide to install helm can be found [here](https://helm.sh/docs/intro/install/).
 
 Once Helm has been installed, you need to clone the Yggdrasil repository and cd into it. 
