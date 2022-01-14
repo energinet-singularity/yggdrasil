@@ -40,9 +40,6 @@ rook-ceph-cluster:
                     operator: In
                     values:
                     - rook-ceph-osd
-                  - key: app
-                    operator: In
-                    values:
                     - rook-ceph-osd-prepare
                 topologyKey: kubernetes.io/hostname
         resources:
