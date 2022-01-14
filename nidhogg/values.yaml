@@ -2,7 +2,7 @@ nidhogg:
   # A reference to this repo itself.
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "main"
+    targetRevision: "test/xansk-config"
     # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
     enableCephAKS: false
 
@@ -26,20 +26,17 @@ nidhogg:
   argo-cd-proxy-chart:
     argo-cd:
       controller:
-        replicas: 3
+        replicas: 1
         env:
           - name: "ARGOCD_CONTROLLER_REPLICAS"
-            value: "3"
-        enableStatefulSet: true
+            value: "1"
+        enableStatefulSet: false
       redis-ha:
-        enabled: true
-        replicas: 3
-        haproxy:
-          replicas: 3
-      redis:
         enabled: false
+      redis:
+        enabled: true
       server:
-        replicas: 3
+        replicas: 1
         config:
           resource.customizations: |
             admissionregistration.k8s.io/MutatingWebhookConfiguration:
