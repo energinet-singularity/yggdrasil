@@ -24,7 +24,7 @@ rook-ceph-cluster:
             operator: Exists
           nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorterms:
+              nodeSelectorTerms:
               - matchExpressions:
                 - key: agentpool
                   operator: In
