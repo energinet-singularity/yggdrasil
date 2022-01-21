@@ -18,16 +18,19 @@ kubectl get nodes
 You now have access to your new Kubernetes development environment. The next thing we need to do is deploy Yggdrasil onto the cluster.
 To install Yggdrasil on the AKS cluster, you need to have Helm installed. A guide to install helm can be found [here](https://helm.sh/docs/intro/install/).
 
-Once Helm has been installed, you need to clone the Yggdrasil repository and cd into it. 
+Once Helm has been installed, you need to clone the Yggdrasil repository, cd into it and run a helm dependency update. 
 
 ```
 git clone https://github.com/distributed-technologies/yggdrasil.git
 cd yggdrasil/
+helm dependency update nidhogg/
 ```
 
 Yggdrasil uses a GitOps architecture and therefore needs to have an environment repository to monitor. It is therefore necessary that you configure Yggdrasil to fit your environment and then push it to your own repository.
 
 To set any cluster configurations, you should edit the nidhogg/values.yaml file. Once you are satisfied with the configurations of the cluster, edit the yggdrasil/values.yaml file and enable the services that you would like to enable on the cluster. You should change the installCNI flag to "false" and change the enableCephAKS to "true". The value nidhogg.yggdrasil.repoURL should be set to the repository URL of your new github repository. You should also configure the nidhogg.yggdrasil.targetRevision to be the branch you are using in your repository. 
+
+For development purposes, the admin password during development for argoCD has been set in the Nidhogg values file. However, since you might expose argoCD with a public IP through a loadbalancer, it is recommended that you remove this value and let argoCD create an admin password and store it in a secret. Delete the value argo-cd-proxy-chart.argo-cd.configs.secret. 
 
 You are now ready to install Yggdrasil on the cluster by running this command: 
 
@@ -43,7 +46,7 @@ watch kubectl get pods -A
 
 Once the pods are all in a Running state, it is possible for you to gain access to the ArgoCD dashboard. In order to do so, you will need to change the service to a type Loadbalancer and you will need to extract the password from the secret inside the cluster. 
 
-The default user is "admin". To extract the password, run:
+The default user is "admin". To extract the password(if you have unset it in the Nidhogg values file), run:
 
 ```
 kubectl -n yggdrasil get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
