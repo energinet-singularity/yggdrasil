@@ -1,4 +1,3 @@
-{{- if .Values.registry -}}
 cluster:
   kafka: 
     listeners:
@@ -99,8 +98,10 @@ cp-helm-charts:
         memory: 256Mi
 
 strimzi-kafka-operator:
+  {{- if .Values.registry }}
   image: 
     registry: {{ .Values.registry }}
+  {{- end }}
   resources:
     requests:
       memory: 200Mi
@@ -109,6 +110,7 @@ strimzi-kafka-operator:
       memory: 800Mi
       cpu: "300m"
 
+{{- if .Values.registry }}
   zookeeper:
     image:
       registry: {{ .Values.registry }}
