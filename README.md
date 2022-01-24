@@ -32,6 +32,12 @@ To set any cluster configurations, you should edit the nidhogg/values.yaml file.
 
 For development purposes, the admin password during development for argoCD has been set in the Nidhogg values file. However, since you might expose argoCD with a public IP through a loadbalancer, it is recommended that you remove this value and let argoCD create an admin password and store it in a secret. Delete the value nidhogg.argo-cd-proxy-chart.argo-cd.configs.secret. In order to access the argoCD dashboard through a public IP, you need to change the service type value nidhogg.argo-cd-proxy-chart.argo-cd.server.service.type to LoadBalancer. 
 
+You also need to set the storage class that Yggdrasils applications and services should use. This is done in the yggdrasil/values.yaml file. If you choose to use the Ceph filesystem for storage, this value should be "ceph-filesystem". If you do not want to enable Ceph on AKS, you should put "default". 
+
+```
+storageClass: <your-storageclass-here>
+```
+
 You are now ready to install Yggdrasil on the cluster by running this command: 
 
 ```
