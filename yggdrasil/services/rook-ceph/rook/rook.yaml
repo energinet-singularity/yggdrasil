@@ -4,8 +4,8 @@ rook-ceph:
     repository: {{ .Values.registry }}/rook/ceph
     tag: v1.7.2
   {{- end }}
-  {{- if .Values.registry }}
   csi:
+  {{- if .Values.registry }}
     cephcsi:
       image: {{ .Values.registry }}/cephcsi/cephcsi:v3.4.0
     registrar:
@@ -18,4 +18,14 @@ rook-ceph:
       image: {{ .Values.registry }}/sig-storage/csi-attacher:v3.2.1
     resizer:
       image: {{ .Values.registry }}/sig-storage/csi-resizer:v1.2.0
+  {{- end }}
+  {{- if .Values.enableCephAKS }}
+    provisionerTolerations:
+      - key: storage-node
+        operator: Exists
+        effect: NoSchedule
+    pluginTolerations:
+      - key: storage-node
+        operator: Exists
+        effect: NoSchedule
   {{- end }}

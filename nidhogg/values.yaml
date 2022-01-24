@@ -16,7 +16,12 @@ nidhogg:
       # ipRangeStart: 0.0.0.0
       # ipRangeStop: 0.0.0.0
 
+  # Whether to install the container network interface on the cluster. Should be false when using a managed Kubernetes solution (ex: Azure's AKS)
   installCNI: true
+  # Whether to enable the circular reference to allow nidhogg to monitor itself
+  monitorNidhogg: true
+  # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
+  enableCephAKS: false
 
   argo-cd-proxy-chart:
     argo-cd:

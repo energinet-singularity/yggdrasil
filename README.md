@@ -1,5 +1,70 @@
 <img src="docs/images/Energinet-logo.png" width="250" style="margin-bottom: 3%">
 
+# Deploy the platform for development on Azure
+You can create a development environment that uses Yggdrasil. This development environment will consist of 3 nodes and 3 storage nodes that together form an AKS cluster.
+When clicking the deployment button, you will be redirected to Azure. Here, you will have to configure the deployment the way you would like. Most settings are preconfigured with values that are standard. However, you have to fill in the resource group you would like for the resource to be created in. 
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdistributed-technologies%2Fyggdrasil%2Faks-cluster%2Farm-templates%2Ftemplate.json)
+
+When the resource creation finishes, you can choose to either use the shell in Azure found in the top right corner where the terminal icon is, or if you would like to authenticate to the cluster from your local development machine. We recommend authenticating from your own machine. A prerequisite to do this is the Azure CLI. You can find information on how to install that [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). When you have installed the Azure CLI, you can use the following command to authenticate to the AKS cluster: 
+```
+az aks get-credentials --resource-group <YOUR-RESOURCE-GROUP-NAME> --name <YOUR-RESOURCE-NAME>
+```
+
+This should allow you to see the Kubernetes nodes by typing:
+```
+kubectl get nodes
+```
+You now have access to your new Kubernetes development environment. The next thing we need to do is deploy Yggdrasil onto the cluster.
+To install Yggdrasil on the AKS cluster, you need to have Helm installed. A guide to install helm can be found [here](https://helm.sh/docs/intro/install/).
+
+Once Helm has been installed, you need to clone the Yggdrasil repository, cd into it and run a helm dependency update. 
+
+```
+git clone https://github.com/distributed-technologies/yggdrasil.git
+cd yggdrasil/
+helm dependency update nidhogg/
+```
+
+Yggdrasil uses a GitOps architecture and therefore needs to have an environment repository to monitor. It is therefore necessary that you configure Yggdrasil to fit your environment and then push it to your own repository.
+
+To set any cluster configurations, you should edit the nidhogg/values.yaml file. Once you are satisfied with the configurations of the cluster, edit the yggdrasil/values.yaml file and enable the services that you would like to enable on the cluster. You should change the installCNI flag to "false" and change the enableCephAKS to "true". The value nidhogg.yggdrasil.repoURL should be set to the repository URL of your new github repository. You should also configure the nidhogg.yggdrasil.targetRevision to be the branch you are using in your repository. 
+
+For development purposes, the admin password during development for argoCD has been set in the Nidhogg values file. However, since you might expose argoCD with a public IP through a loadbalancer, it is recommended that you remove this value and let argoCD create an admin password and store it in a secret. Delete the value nidhogg.argo-cd-proxy-chart.argo-cd.configs.secret. In order to access the argoCD dashboard through a public IP, you need to change the service type value nidhogg.argo-cd-proxy-chart.argo-cd.server.service.type to LoadBalancer. 
+
+You also need to set the storage class that Yggdrasils applications and services should use. This is done in the yggdrasil/values.yaml file. If you choose to use the Ceph filesystem for storage, this value should be "ceph-filesystem". If you do not want to enable Ceph on AKS, you should put "default". 
+
+```
+storageClass: <your-storageclass-here>
+```
+
+You are now ready to install Yggdrasil on the cluster by running this command: 
+
+```
+helm install --create-namespace -n yggdrasil nidhogg nidhogg/
+```
+
+The platform will now bootstrap onto the AKS cluster and you can follow this process by executing the command: 
+
+```
+watch kubectl get pods -A
+```
+
+Once the pods are all in a Running state, it is possible for you to gain access to the ArgoCD dashboard. In order to do so, you will need to change the service to a type Loadbalancer and you will need to extract the password from the secret inside the cluster. 
+
+The default user is "admin". To extract the password(if you have unset it in the Nidhogg values file), run:
+
+```
+kubectl -n yggdrasil get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+
+Now that you have the password, you need to get the public IP of the loadbalancer argoCD has created. To find the public IP of the loadbalancer, run: 
+
+```
+kubectl get svc -n yggdrasil
+```
+Here, you should see the service called nidhogg-argocd-server and be able to see a public IP that you can access from your browser and login with the username and password. 
+
 # Changes in 2.0.0
 In this version we have done the following changes: 
 - Removed project definition from config.yaml and put it into its own file. This has been done because we are seeing a need to use all the configurations an argo project gives us, not just the limited subset that we had first configured. 
