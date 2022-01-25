@@ -4,7 +4,7 @@
 You can create a development environment that uses Yggdrasil. This development environment will consist of 3 nodes and 3 storage nodes that together form an AKS cluster.
 When clicking the deployment button, you will be redirected to Azure. Here, you will have to configure the deployment the way you would like. Most settings are preconfigured with values that are standard. However, you have to fill in the resource group you would like for the resource to be created in. 
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdistributed-technologies%2Fyggdrasil%2Faks-cluster%2Farm-templates%2Ftemplate.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdistributed-technologies%2Fyggdrasil%2Fmain%2Farm-templates%2Ftemplate.json)
 
 When the resource creation finishes, you can choose to either use the shell in Azure found in the top right corner where the terminal icon is, or if you would like to authenticate to the cluster from your local development machine. We recommend authenticating from your own machine. A prerequisite to do this is the Azure CLI. You can find information on how to install that [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). When you have installed the Azure CLI, you can use the following command to authenticate to the AKS cluster: 
 ```
