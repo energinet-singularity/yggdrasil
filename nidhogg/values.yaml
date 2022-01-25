@@ -4,6 +4,9 @@ nidhogg:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
     targetRevision: "jesper_aks_dev"
 
+    # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
+    enableCephAKS: true
+
     # ingress:
       # Set either a subdomain or a path here
       # domain: <your-ingress-domain-here>
@@ -20,8 +23,6 @@ nidhogg:
   installCNI: false
   # Whether to enable the circular reference to allow nidhogg to monitor itself
   monitorNidhogg: true
-  # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
-  enableCephAKS: true
 
   argo-cd-proxy-chart:
     argo-cd:
