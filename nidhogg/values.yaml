@@ -6,10 +6,10 @@ nidhogg:
     # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
     enableCephAKS: true
 
-    # ingress:
+    ingress:
       # Set either a subdomain or a path here
-      # domain: <your-ingress-domain-here>
-      # loadBalancerIP: 0.0.0.0
+      domain: test.dk
+      loadBalancerIP: 0.0.0.0
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
 
