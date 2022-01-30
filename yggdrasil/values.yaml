@@ -6,22 +6,22 @@ storageClass: ceph-filesystem
 # registry: <your-registry-here>
 
 applications:
-  argowf: true
-  argo-events: true
+  argowf: false
+  argo-events: false
   cache: false
   ceph: true
   cert-manager: false
   example-guestbook: false
   grafana: true
-  harbor: true
+  harbor: false
   influxdb: false
-  ingress: true
-  jaeger: true
-  kafka: true
+  ingress: false
+  jaeger: false
+  kafka: false
   loadbalancer: false
-  loki: true
+  loki: false
   nifi: false
-  ntp: true
+  ntp: false
   prometheus: true
   rook: true
   thanos: false
