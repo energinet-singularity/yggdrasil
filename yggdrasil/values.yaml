@@ -1,28 +1,28 @@
 # By setting the storage class, you enable the hard-coded ceph storageclass in the values files. If not set,
 # the charts will default to the standard storage class
-# storageClass: ceph-filesystem
+storageClass: ceph-filesystem
 
 # If registry is not set, it will pull from the default registries
 # registry: <your-registry-here>
 
 applications:
-  argowf: false
-  argo-events: false
+  argowf: true
+  argo-events: true
   cache: false
-  ceph: false
+  ceph: true
   cert-manager: false
   example-guestbook: false
-  grafana: false
-  harbor: false
+  grafana: true
+  harbor: true
   influxdb: false
-  ingress: false
-  jaeger: false
-  kafka: false
+  ingress: true
+  jaeger: true
+  kafka: true
   loadbalancer: false
-  loki: false
+  loki: true
   nifi: false
-  ntp: false
-  prometheus: false
-  rook: false
+  ntp: true
+  prometheus: true
+  rook: true
   thanos: false
   vault: false
