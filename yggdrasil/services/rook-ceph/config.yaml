@@ -8,14 +8,14 @@ description: Rook.
 apps:
   - name: rook
     source:
-      repoURL: "https://distributed-technologies.github.io/helm-charts/"
-      targetRevision: 0.1.3
-      chart: rook
+      repoURL: "https://charts.rook.io/release"
+      targetRevision: v1.8.3
+      chart: rook-ceph
       valuesFile: "rook.yaml"
   - name: ceph
     source:
-      repoURL: "https://distributed-technologies.github.io/helm-charts/"
-      targetRevision: 0.1.6
+      repoURL: "https://charts.rook.io/release"
+      targetRevision: v1.8.3
       chart: rook-ceph-cluster
       valuesFile: "ceph.yaml"
   - name: ntp

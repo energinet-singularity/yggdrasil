@@ -8,9 +8,9 @@ description: All the monitoring apps, including but not limited to prometheus, g
 apps:
   - name: prometheus
     source:
-      repoURL: 'https://distributed-technologies.github.io/helm-charts/'
-      targetRevision: 0.1.2
-      chart: prometheus
+      repoURL: 'https://prometheus-community.github.io/helm-charts'
+      targetRevision: 30.2.0
+      chart: kube-prometheus-stack
       valuesFile: "prometheus.yaml"
     ingress:
       - subDomain: prometheus
@@ -19,12 +19,6 @@ apps:
         serviceName: prometheus-kube-prometheus-prometheus
         annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
-  - name: thanos
-    source:
-      repoURL: 'https://distributed-technologies.github.io/helm-charts/'
-      targetRevision: 0.1.1
-      chart: thanos
-      valuesFile: "thanos.yaml"
   - name: grafana
     source:
       repoURL: 'https://distributed-technologies.github.io/helm-charts/'
@@ -40,14 +34,14 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: loki
     source:
-      repoURL: 'https://distributed-technologies.github.io/helm-charts/'
-      targetRevision: 0.1.2
-      chart: loki
+      repoURL: 'https://grafana.github.io/helm-charts'
+      targetRevision: 2.5.1
+      chart: loki-stack
       valuesFile: "loki.yaml"
   - name: jaeger
     source:
-      repoURL: 'https://distributed-technologies.github.io/helm-charts/'
-      targetRevision: 0.1.2
+      repoURL: 'https://jaegertracing.github.io/helm-charts'
+      targetRevision: 2.27.1
       chart: jaeger
       valuesFile: "jaeger.yaml"
     ingress:
