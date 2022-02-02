@@ -59,7 +59,7 @@ apps:
           traefik.ingress.kubernetes.io/router.entrypoints: web
   - name: tempo
     source:
-      repoURL: 'https://github.com/grafana/helm-charts' # TODO Change this
+      repoURL: 'https://github.com/distributed-technologies/helm-charts' # TODO Change this
       targetRevision: feature/tempo # TODO Changes this
       # chart: tempo-distributed # TODO Comment back in
       path: charts/tempo-distributed/chart
