@@ -57,3 +57,17 @@ apps:
         serviceName: jaeger-query
         annotation:
           traefik.ingress.kubernetes.io/router.entrypoints: web
+  - name: tempo
+    source:
+      repoURL: 'https://distributed-technologies.github.io/helm-charts/'
+      targetRevision: feature/tempo #TODO Changes this
+      # chart: tempo-distributed #TODO Comment back in
+      path: /charts/tempo-distributed/chart
+      valuesFile: "tempo.yaml"
+    # ingress:
+    #   - subDomain: tempo
+    #     path: /
+    #     servicePort: 80
+    #     serviceName: jaeger-query
+    #     annotation:
+    #       traefik.ingress.kubernetes.io/router.entrypoints: web
