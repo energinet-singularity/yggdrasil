@@ -24,5 +24,6 @@ applications:
   ntp: false
   prometheus: false
   rook: true
+  tempo-distributed: true
   thanos: false
   vault: false
