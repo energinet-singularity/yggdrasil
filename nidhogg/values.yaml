@@ -2,21 +2,21 @@ nidhogg:
   # A reference to this repo itself.
   yggdrasil:
     repoURL: "https://github.com/distributed-technologies/yggdrasil.git"
-    targetRevision: "main"
+    targetRevision: "singularity"
     # Enable the "enableCephAKS" to enable Ceph on AKS cluster. You can edit the number of OSDs in the values file for Ceph found in yggdrasil/services/rook-ceph/ceph/values.yaml
     enableCephAKS: false
 
-    # ingress:
+    ingress:
       # Set either a subdomain or a path here
-      # domain: <your-ingress-domain-here>
-      # loadBalancerIP: 0.0.0.0
+      domain: sig.garagen
+      loadBalancerIP: 192.168.129.130
       # This value should be set if you want to deploy to an AKS cluster and want to use their ingress
       # loadbalancerResourceGroup: <your-resource-group-here>
 
     # Configure the loadbalancer if you plan on using the loadbalancer included in SCCP
-    # loadbalancer:
-      # ipRangeStart: 0.0.0.0
-      # ipRangeStop: 0.0.0.0
+    loadbalancer:
+      ipRangeStart: 192.168.129.20
+      ipRangeStop: 192.168.129.130
 
   # Whether to install the container network interface on the cluster. Should be false when using a managed Kubernetes solution (ex: Azure's AKS)
   installCNI: true
@@ -62,7 +62,7 @@ nidhogg:
                 hs.status = "Healthy"
                 return hs
         service:
-          type: NodePort
+          type: LoadBalancer
 
       configs:
         secret:

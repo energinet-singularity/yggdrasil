@@ -1,4 +1,10 @@
+# https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 grafana:
+  service:
+    enabled: true
+    type: LoadBalancer
+    port: 80
+    targetPort: 3000
   {{- if .Values.registry }}
   image:
     repository: {{ .Values.registry }}/grafana/grafana

@@ -1,10 +1,38 @@
+strimzi-kafka-operator:
+  resources:
+    limits:
+      memory: 1500Mi
+      cpu: 1000m
+    requests:
+      memory: 384Mi
+      cpu: 200m
+  generateNetworkPolicy: false
 cluster:
   kafka:
+    replicas: 3
+    offsetTopicReplicationFactor: 3
+    transactionStateLog:
+      replicationFactor: 3
+      minimumInSyncReplicas: 2
     listeners:
     - name: internal
       port: 9092
       type: internal
       tls: false
+    - name: external
+      port: 9093
+      type: loadbalancer
+      tls: false
+      configuration:
+        bootstrap:
+          loadBalancerIP: 192.168.129.122
+        brokers:
+          - broker: 0
+            loadBalancerIP: 192.168.129.123
+          - broker: 1
+            loadBalancerIP: 192.168.129.124
+          - broker: 2
+            loadBalancerIP: 192.168.129.125
     storage:
       size: 5Gi
     {{- if .Values.storageClass }}
@@ -18,6 +46,7 @@ cluster:
         memory: 2Gi
         cpu: "500m"
   zookeeper:
+    replicas: 3
     storage:
       size: 5Gi
     {{- if .Values.storageClass }}
@@ -39,15 +68,31 @@ cluster:
         limits:
           memory: 128Mi
           cpu: 200m
-  topicOperator:
+    topicOperator:
       resources:
         requests:
           memory: 256Mi
           cpu: "0m"
         limits:
+          memory: 500Mi
+          cpu: "400m"
+    userOperator:
+      resources:
+        requests:
           memory: 256Mi
-          cpu: "200m"
-
+          cpu: "0m"
+        limits:
+          memory: 500Mi
+          cpu: "400m"
+  kafkaExporter:
+    resources:
+      requests:
+        memory: 64Mi
+        cpu: "0m"
+      limits:
+        memory: 254Mi
+        cpu: "200m"
+            
 cp-helm-charts:
   cp-kafka-connect:
     enabled: false
@@ -60,7 +105,8 @@ cp-helm-charts:
     kafka:
       bootstrapServers: my-cluster-kafka-bootstrap:9092
     external:
-      enabled: false
+      enabled: true
+      
     prometheus:
       jmx:
         enabled: false
@@ -89,19 +135,61 @@ cp-helm-charts:
         cpu: 0m
         memory: 256Mi
 
-strimzi-kafka-operator:
-  resources:
-    requests:
-      memory: 200Mi
-      cpu: "0m"
-    limits:
-      memory: 400Mi
-      cpu: "300m"
-
 prometheus-kafka-exporter:
   enabled: false
 
-topics:
-  - name: test
+topics: 
+  - name: dlr-test
+    partitions: 1
+    replicas: 1
+  - name: dlr-test2
+    partitions: 1
+    replicas: 1
+  - name: dlr-scada-amps
+    partitions: 1
+    replicas: 1
+  - name: weather-forecast-raw
+    partitions: 1
+    replicas: 1
+  - name: vku-test
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.correction.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.demand.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.input.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.input.calc.state
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.target.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-p.target.calc.state
+    partitions: 1
+    replicas: 1
+  - name: lfc-mw.diff.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-pbr.response.value
+    partitions: 1
+    replicas: 1
+  - name: scada-analog
+    partitions: 1
+    replicas: 1
+  - name: scada-status
+    partitions: 1
+    replicas: 1
+  - name: lfc-bsp.lmol.value
+    partitions: 1
+    replicas: 1
+  - name: lfc-bsp.activated.value
+    partitions: 1
+    replicas: 1
+  - name: scada-point
     partitions: 1
     replicas: 1
