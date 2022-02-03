@@ -102,18 +102,6 @@ prometheus-kafka-exporter:
   enabled: false
 
 topics:
-  - name: dlr-test
-    partitions: 1
-    replicas: 1
-  - name: dlr-test2
-    partitions: 1
-    replicas: 1
-  - name: dlr-scada-amps
-    partitions: 1
-    replicas: 1
-  - name: weather-forecast-raw
-    partitions: 1
-    replicas: 1
-  - name: vku-test
+  - name: test
     partitions: 1
     replicas: 1
