@@ -14,6 +14,17 @@ grafana:
           url: http://prometheus-kube-prometheus-prometheus:9090
           access: proxy
           isDefault: true
+        - name: Tempo
+          type: tempo
+          access: proxy
+          orgId: 1
+          url: http://tempo-tempo-distributed-query-frontend:3100
+          basicAuth: false
+          isDefault: false
+          version: 1
+          editable: false
+          apiVersion: 1
+          uid: tempo
         - name: Loki
           type: loki
           url: http://loki:3100
