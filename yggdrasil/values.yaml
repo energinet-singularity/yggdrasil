@@ -20,10 +20,10 @@ applications:
   jaeger: false
   kafka: false
   loadbalancer: false
-  loki: false
+  loki: true
   nifi: false
   ntp: false
-  prometheus: false
+  prometheus: true
   rook: true
   tempo: true
   tns: true
