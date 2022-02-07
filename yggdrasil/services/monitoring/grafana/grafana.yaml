@@ -18,7 +18,7 @@ grafana:
           type: tempo
           access: proxy
           orgId: 1
-          url: http://tempo-tempo-distributed-query-frontend-discovery:16686
+          url: http://tempo-tempo-distributed-query-frontend:16686
           basicAuth: false
           isDefault: false
           version: 1
