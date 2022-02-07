@@ -22,7 +22,7 @@ tempo-distributed:
     opencensus: false
     # -- Enable Tempo to ingest traces from Kafka. Reference: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkareceiver
     kafka: {}
-    # ServiceMonitor configuration
+  # ServiceMonitor configuration
   serviceMonitor:
     # -- If enabled, ServiceMonitor resources for Prometheus Operator are created
     enabled: true
