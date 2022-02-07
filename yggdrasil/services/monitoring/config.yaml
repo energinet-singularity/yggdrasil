@@ -71,10 +71,3 @@ apps:
       # chart: tempo-distributed # TODO Comment back in
       path: charts/tns/chart
       valuesFile: "tns.yaml"
-    # ingress:
-    #   - subDomain: tempo
-    #     path: /
-    #     servicePort: 80
-    #     serviceName: jaeger-query
-    #     annotation:
-    #       traefik.ingress.kubernetes.io/router.entrypoints: web
