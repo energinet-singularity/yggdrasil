@@ -1,1 +1,3 @@
-jaeger_agent_host: tempo-tempo-distributed-ingester.monitoring.svc
+ENV:
+  - name: JAEGER_AGENT_HOST
+    value: http://distributor-jaeger-thrift-http.monitoring.svc:14268/api/traces
