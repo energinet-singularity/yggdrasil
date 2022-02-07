@@ -1,22 +1,22 @@
-tempo-distributed:
-  traces:
-    jaeger:
-      # -- Enable Tempo to ingest Jaeger GRPC traces
-      grpc: true
-      # -- Enable Tempo to ingest Jaeger Thrift Binary traces
-      thriftBinary: true
-      # -- Enable Tempo to ingest Jaeger Thrift Compact traces
-      thriftCompact: true
-      # -- Enable Tempo to ingest Jaeger Thrift HTTP traces
-      thriftHttp: true
-    # -- Enable Tempo to ingest Zipkin traces
-    zipkin: false
-    otlp:
-      # -- Enable Tempo to ingest Open Telemetry HTTP traces
-      http: false
-      # -- Enable Tempo to ingest Open Telemetry GRPC traces
-      grpc: false
-    # -- Enable Tempo to ingest Open Census traces
-    opencensus: false
-    # -- Enable Tempo to ingest traces from Kafka. Reference: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkareceiver
-    kafka: {}
+# tempo-distributed:
+#   traces:
+#     jaeger:
+#       # -- Enable Tempo to ingest Jaeger GRPC traces
+#       grpc: true
+#       # -- Enable Tempo to ingest Jaeger Thrift Binary traces
+#       thriftBinary: true
+#       # -- Enable Tempo to ingest Jaeger Thrift Compact traces
+#       thriftCompact: true
+#       # -- Enable Tempo to ingest Jaeger Thrift HTTP traces
+#       thriftHttp: true
+#     # -- Enable Tempo to ingest Zipkin traces
+#     zipkin: false
+#     otlp:
+#       # -- Enable Tempo to ingest Open Telemetry HTTP traces
+#       http: false
+#       # -- Enable Tempo to ingest Open Telemetry GRPC traces
+#       grpc: false
+#     # -- Enable Tempo to ingest Open Census traces
+#     opencensus: false
+#     # -- Enable Tempo to ingest traces from Kafka. Reference: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkareceiver
+#     kafka: {}
