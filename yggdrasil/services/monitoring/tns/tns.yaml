@@ -1,3 +1,3 @@
 ENV:
   - name: JAEGER_AGENT_HOST
-    value: distributor-jaeger-thrift-compact.monitoring.svc
+    value: tempo-tempo-distributed-distributor
