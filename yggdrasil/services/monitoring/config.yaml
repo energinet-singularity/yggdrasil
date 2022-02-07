@@ -64,6 +64,13 @@ apps:
       # chart: tempo-distributed # TODO Comment back in
       path: charts/tempo-distributed/chart
       valuesFile: "tempo.yaml"
+  - name: grafana-agent-operator
+    source:
+      repoURL: 'https://github.com/distributed-technologies/helm-charts' # TODO Change this
+      targetRevision: feature/tempo # TODO Changes this
+      # chart: tempo-distributed # TODO Comment back in
+      path: charts/grafana-agent-operator/chart
+      valuesFile: "grafana-agent-operator.yaml"
   - name: tns
     source:
       repoURL: 'https://github.com/distributed-technologies/helm-charts' # TODO Change this
