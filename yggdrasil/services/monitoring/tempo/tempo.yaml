@@ -1,4 +1,6 @@
 tempo-distributed:
+  search:
+    enabled: true
   traces:
     jaeger:
       # -- Enable Tempo to ingest Jaeger GRPC traces
