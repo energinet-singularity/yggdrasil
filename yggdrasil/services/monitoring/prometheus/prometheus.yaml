@@ -21,6 +21,8 @@ kube-prometheus-stack:
   prometheus:
     prometheusSpec:
       replicas: 3
+      serviceMonitorSelectorNilUsesHelmValues: false
+
   {{- if .Values.registry }}
       image:
         repository: {{ .Values.registry }}/prometheus/prometheus
