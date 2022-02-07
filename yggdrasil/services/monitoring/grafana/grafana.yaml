@@ -37,7 +37,6 @@ grafana:
               matcherRegex: ((\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+)(\d+|[a-z]+))
               url: '$${__value.raw}'
               name: TraceID
-
         - name: "InfluxDB - dlr - output"
           type: influxdb
           url: http://influxdb.nifi:8086
