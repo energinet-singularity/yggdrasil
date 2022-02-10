@@ -151,9 +151,6 @@ topics:
   - name: weather-forecast-raw
     partitions: 1
     replicas: 1
-  - name: vku-test
-    partitions: 1
-    replicas: 1
   - name: lfc-p.correction.value
     partitions: 1
     replicas: 1
