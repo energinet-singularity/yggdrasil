@@ -190,6 +190,10 @@ topics:
   - name: lfc-bsp.activated.value
     partitions: 1
     replicas: 1
+    config:
+      retention.ms = 900000
   - name: scada-point
     partitions: 1
     replicas: 1
+    config:
+      retention.ms = 900000
