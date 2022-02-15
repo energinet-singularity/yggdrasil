@@ -25,14 +25,14 @@ cluster:
       tls: false
       configuration:
         bootstrap:
-          loadBalancerIP: 192.168.129.122
+          loadBalancerIP: 192.168.130.122
         brokers:
           - broker: 0
-            loadBalancerIP: 192.168.129.123
+            loadBalancerIP: 192.168.130.123
           - broker: 1
-            loadBalancerIP: 192.168.129.124
+            loadBalancerIP: 192.168.130.124
           - broker: 2
-            loadBalancerIP: 192.168.129.125
+            loadBalancerIP: 192.168.130.125
     storage:
       size: 5Gi
     {{- if .Values.storageClass }}
