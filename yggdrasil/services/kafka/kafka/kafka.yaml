@@ -87,26 +87,7 @@ cp-helm-charts:
         memory: 1Gi
       requests:
         cpu: 0m
-        memory: 256Mi
-    listeners:
-    - name: internal
-      port: 8081
-      type: internal
-      tls: false
-    - name: external
-      port: 8082
-      type: loadbalancer
-      tls: false
-      configuration:
-        bootstrap:
-          loadBalancerIP: 192.168.131.122
-        brokers:
-          - broker: 0
-            loadBalancerIP: 192.168.131.123
-          - broker: 1
-            loadBalancerIP: 192.168.131.124
-          - broker: 2
-            loadBalancerIP: 192.168.131.125     
+        memory: 256Mi       
 
 strimzi-kafka-operator:
   resources:
