@@ -1,6 +1,9 @@
 cluster:
   kafka:
     replicas: 3
+    config:
+      logRetentionHours: 48
+      logRollHours: 24
     listeners:
     - name: internal
       port: 9092
