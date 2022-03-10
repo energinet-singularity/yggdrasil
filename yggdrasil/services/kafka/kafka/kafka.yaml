@@ -1,19 +1,6 @@
-strimzi-kafka-operator:
-  resources:
-    limits:
-      memory: 1500Mi
-      cpu: 1000m
-    requests:
-      memory: 384Mi
-      cpu: 200m
-  generateNetworkPolicy: false
 cluster:
   kafka:
     replicas: 3
-    offsetTopicReplicationFactor: 3
-    transactionStateLog:
-      replicationFactor: 3
-      minimumInSyncReplicas: 2
     listeners:
     - name: internal
       port: 9092
